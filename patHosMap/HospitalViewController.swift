@@ -29,11 +29,18 @@ class HospitalViewController: UIViewController {
                     alert.addAction(button)
                     self.present(alert, animated: true, completion: {})
                 }else{
-                    let server_message = String(data: data!, encoding: .utf8)!
-                    print(server_message)
+//                    let server_message = String(data: data!, encoding: .utf8)!
+//                    print(server_message)
                     do{
-                        let xxyy = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! Dictionary<String, String>
-                        print(xxyy)
+                        let hospitalArray = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [[String:String]]
+                        for hospital in hospitalArray{
+                            DispatchQueue.main.async {
+                                if hospital["縣市"]! == sender.titleLabel?.text{
+                                    print(hospital["機構名稱"]!)
+                                }
+                            }
+
+                        }
                     }catch{
                         print("伺服器出錯\(error)")
                     }
