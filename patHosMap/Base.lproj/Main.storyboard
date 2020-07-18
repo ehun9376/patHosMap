@@ -211,6 +211,7 @@
                     <navigationItem key="navigationItem" id="EqL-54-d2F"/>
                     <connections>
                         <outlet property="city" destination="Gbd-Xs-tNf" id="w7i-Pj-175"/>
+                        <outlet property="table" destination="4oo-RL-8Vn" id="LtD-QM-cu2"/>
                         <outletCollection property="citys" destination="hwk-An-D0O" collectionClass="NSMutableArray" id="syg-bU-wHO"/>
                         <outletCollection property="citys" destination="c9N-8e-JFr" collectionClass="NSMutableArray" id="Yk9-Nf-kYZ"/>
                         <outletCollection property="citys" destination="fEv-RP-tuF" collectionClass="NSMutableArray" id="QwC-zv-s2l"/>

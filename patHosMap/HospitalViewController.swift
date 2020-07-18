@@ -1,6 +1,10 @@
 import UIKit
 
-class HospitalViewController: UIViewController {
+class HospitalViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+
+    
+    @IBOutlet weak var table: UITableView!
+    var hosArray:[String] = []
     @IBOutlet var citys: [UIButton]!
     @IBOutlet weak var city: UILabel!
     @IBAction func changeCity(_ sender: UIButton) {
@@ -32,12 +36,18 @@ class HospitalViewController: UIViewController {
 //                    let server_message = String(data: data!, encoding: .utf8)!
 //                    print(server_message)
                     do{
+                        self.hosArray = []
                         let hospitalArray = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [[String:String]]
                         for hospital in hospitalArray{
                             DispatchQueue.main.async {
                                 if hospital["縣市"]! == sender.titleLabel?.text{
-                                    print(hospital["機構名稱"]!)
+//                                    print(hospital["機構名稱"]!)
+                                    self.hosArray.append(hospital["機構名稱"]!)
                                 }
+                            }
+                            DispatchQueue.main.async{
+                                self.table.dataSource = self
+                                self.table.reloadData()
                             }
 
                         }
@@ -56,18 +66,15 @@ class HospitalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return hosArray.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = UITableViewCell()
+        cell.textLabel?.text = hosArray[indexPath.row]
+        return cell
     }
-    */
-
 }
