@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zer-Do-Rze">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGt-Af-Lk8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -342,6 +342,7 @@
                     <connections>
                         <outlet property="acoount" destination="bJK-Ru-gxh" id="ILH-80-I60"/>
                         <outlet property="password" destination="SwL-15-yyz" id="giQ-Td-ImN"/>
+                        <segue destination="FGt-Af-Lk8" kind="show" identifier="toLoginVC" id="sgi-j6-k06"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoY-bp-877" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -670,7 +671,7 @@
         <!--Login View Controller-->
         <scene sceneID="LP6-QO-KeG">
             <objects>
-                <viewController id="FGt-Af-Lk8" customClass="LoginViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="FGt-Af-Lk8" customClass="LoginViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tbE-Oz-b4C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -729,6 +730,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ooZ-7b-fIh"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Kjv-5q-vRi"/>
                     <connections>
                         <outlet property="account" destination="7DE-MH-wWD" id="COx-D7-Blm"/>
                         <outlet property="password" destination="xoe-I5-UzJ" id="Cq2-SE-nld"/>

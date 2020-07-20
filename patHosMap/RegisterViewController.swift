@@ -12,47 +12,50 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var acoount: UITextField!
     @IBOutlet weak var password: UITextField!
     var root:DatabaseReference!
-       let observer:UInt = 0
+
+    let observer:UInt = 0
 //    let sales = root.child("sale_mangers").child("2")
 //    var is_manager = false
 //    sales.setValue([["account":"jacky"],["password":"123456"]])
 //    sales.observe(DataEventType.value) { (data) in
 //        print(data.value!)
     @IBAction func register(_ sender: UIButton) {
-        let user = root.child("user")
         var count = 0
         var is_manager = false
+        let user = root.child("user")
+        let account1 = self.acoount.text
         user.observe(DataEventType.value, with: { (data) in
-            print(data.value!)
+//                        print(data.value!)
             let manager_array = data.value! as! [[String:String]]
-            print(manager_array)
-            
-            for manager in manager_array{
-                count += 1
-                if manager["account"] == self.acoount.text{
-                    is_manager = true
-                    break
+//                        print(manager_array)
+                for manager in manager_array{
+                    count += 1
+                    if manager["account"] == account1{
+                        is_manager = true
+                        let alert = UIAlertController(title: "警告", message: "帳號已存在或已創建", preferredStyle: .alert)
+                        let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+                            self.performSegue(withIdentifier: "toLoginVC", sender: nil)
+                        }
+                        alert.addAction(button)
+                        self.present(alert, animated: true, completion: {})
+                        break
+                    }
                 }
-            }
-            print(count)
-            if is_manager{
-                print("帳號創建失敗")
-                let alert = UIAlertController(title: "警告", message: "帳號已存在", preferredStyle: .alert)
-                let button = UIAlertAction(title: "ok", style: UIAlertAction.Style.default) { (button) in
+            if !is_manager{
+                print("推送\(count),創建帳號")
+                let newUser = self.root.child("user").child("\(count)")
+                let newData = ["account":"\(self.acoount.text!)","password":"\(self.password.text!)"]
+                newUser.setValue(newData)
+                
+                let alert = UIAlertController(title: "警告", message: "帳號已存在或已創建", preferredStyle: .alert)
+                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+                    self.performSegue(withIdentifier: "toLoginVC", sender: nil)
                 }
                 alert.addAction(button)
                 self.present(alert, animated: true, completion: {})
             }
-            else{
-                //推送到資料庫
-//                DispatchQueue.main.async {
-//                    let newUser = self.root.child("user").child("\(count)")
-//                    let newData = [["account":"\(self.acoount.text!)"],["password":"\(self.password.text!)"]]
-//                    newUser.setValue(newData)
-//                }
-
-            }
-          })
+            })
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
