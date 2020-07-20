@@ -416,10 +416,10 @@
             </objects>
             <point key="canvasLocation" x="1101.449275362319" y="836.38392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Animal-->
         <scene sceneID="1d8-ow-VaY">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Zjm-Il-gRu" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Zjm-Il-gRu" customClass="AddAnimal" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FQd-sp-7p3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -503,10 +503,10 @@
             </objects>
             <point key="canvasLocation" x="1980" y="700"/>
         </scene>
-        <!--View Controller-->
+        <!--Vacc Schedule-->
         <scene sceneID="S5O-an-BRi">
             <objects>
-                <viewController id="NFB-QN-HBB" sceneMemberID="viewController">
+                <viewController id="NFB-QN-HBB" customClass="VaccSchedule" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uRP-R8-WoY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

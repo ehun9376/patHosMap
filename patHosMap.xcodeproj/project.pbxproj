@@ -16,6 +16,8 @@
 		3DF35BCE24C535DB00087826 /* HosDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */; };
 		3DF35BD024C55DAC00087826 /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */; };
 		3DF35BD224C5614100087826 /* VaccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD124C5614100087826 /* VaccViewController.swift */; };
+		9537CE8D24C56DC300714D63 /* AddAnimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537CE8C24C56DC300714D63 /* AddAnimal.swift */; };
+		9537CE8F24C56E7100714D63 /* VaccSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537CE8E24C56E7100714D63 /* VaccSchedule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosDetailViewController.swift; sourceTree = "<group>"; };
 		3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
 		3DF35BD124C5614100087826 /* VaccViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccViewController.swift; sourceTree = "<group>"; };
+		9537CE8C24C56DC300714D63 /* AddAnimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimal.swift; sourceTree = "<group>"; };
+		9537CE8E24C56E7100714D63 /* VaccSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccSchedule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				3D06F3E624C1BAB0001F5C3E /* HospitalViewController.swift */,
 				3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */,
 				3DF35BD124C5614100087826 /* VaccViewController.swift */,
+				9537CE8E24C56E7100714D63 /* VaccSchedule.swift */,
+				9537CE8C24C56DC300714D63 /* AddAnimal.swift */,
 				3DBBB7F324C03F04003F5F9F /* Main.storyboard */,
 				3DBBB7F624C03F05003F5F9F /* Assets.xcassets */,
 				3DBBB7F824C03F05003F5F9F /* LaunchScreen.storyboard */,
@@ -151,8 +157,10 @@
 				3DF35BCE24C535DB00087826 /* HosDetailViewController.swift in Sources */,
 				3DBBB7EE24C03F04003F5F9F /* AppDelegate.swift in Sources */,
 				3DBBB7F024C03F04003F5F9F /* SceneDelegate.swift in Sources */,
+				9537CE8D24C56DC300714D63 /* AddAnimal.swift in Sources */,
 				3D06F3E724C1BAB0001F5C3E /* HospitalViewController.swift in Sources */,
 				3DF35BD224C5614100087826 /* VaccViewController.swift in Sources */,
+				9537CE8F24C56E7100714D63 /* VaccSchedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
