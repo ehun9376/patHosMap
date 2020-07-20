@@ -12,17 +12,17 @@
             <objects>
                 <viewController id="7Xy-u4-Rhr" customClass="HospitalViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jB9-Wh-olg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請選擇城市" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbd-Xs-tNf">
-                                <rect key="frame" x="156" y="98" width="102" height="24"/>
+                                <rect key="frame" x="156" y="66" width="102" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fal-C8-4YH">
-                                <rect key="frame" x="280" y="95" width="62" height="30"/>
+                                <rect key="frame" x="280" y="63" width="62" height="30"/>
                                 <state key="normal" title="選擇城市"/>
                                 <connections>
                                     <action selector="changeCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="CTu-ex-xcD"/>
@@ -34,7 +34,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-xW-eZr">
-                                <rect key="frame" x="207" y="133" width="0.0" height="0.0"/>
+                                <rect key="frame" x="207" y="101" width="0.0" height="0.0"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwk-An-D0O">
                                         <rect key="frame" x="-200" y="0.0" width="400" height="0.0"/>
@@ -429,7 +429,7 @@
             <objects>
                 <tableViewController id="gqO-Lv-StV" customClass="VaccTableViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HMr-Fp-mZg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -705,6 +705,9 @@
                                 <rect key="frame" x="258" y="260" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="登入"/>
+                                <connections>
+                                    <action selector="login:" destination="FGt-Af-Lk8" eventType="touchUpInside" id="M1R-Lu-Qms"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHB-DV-fqy">
                                 <rect key="frame" x="258" y="329" width="31" height="30"/>
@@ -718,11 +721,19 @@
                                 <rect key="frame" x="119" y="260" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="清除"/>
+                                <connections>
+                                    <action selector="clean:" destination="FGt-Af-Lk8" eventType="touchUpInside" id="xJa-Qb-Qf6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ooZ-7b-fIh"/>
                     </view>
+                    <connections>
+                        <outlet property="account" destination="7DE-MH-wWD" id="COx-D7-Blm"/>
+                        <outlet property="password" destination="xoe-I5-UzJ" id="Cq2-SE-nld"/>
+                        <segue destination="Zer-Do-Rze" kind="show" identifier="login" id="u0e-NG-jyG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igK-Yd-NQE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -731,7 +742,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="pDB-RZ-EYe">
             <objects>
-                <tabBarController id="Zer-Do-Rze" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" modalPresentationStyle="fullScreen" id="Zer-Do-Rze" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="A8n-de-Qez"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="43q-Uk-pTZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -752,7 +764,7 @@
             <objects>
                 <viewController storyboardIdentifier="MyFavoriteVC" id="aT2-FG-rfu" customClass="MyFavoriteViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ZP-jL-llJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgV-5o-cJz">
@@ -780,7 +792,7 @@
                     <tabBarItem key="tabBarItem" title="清單" image="globe" catalog="system" id="GYd-S5-jNb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6uC-6m-iPg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -799,7 +811,7 @@
                     <tabBarItem key="tabBarItem" title="預防針" image="pencil.tip" catalog="system" id="ICo-Y3-OWj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MDZ-Up-VR8">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

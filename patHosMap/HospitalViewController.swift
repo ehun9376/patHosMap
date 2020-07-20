@@ -65,11 +65,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let HosDetailVC = self.storyboard?.instantiateViewController(identifier: "HosDetail") as! HosDetailViewController
-        let MyFavoriteVC = self.storyboard?.instantiateViewController(identifier: "MyFavoriteVC") as! MyFavoriteViewController
-//        print(self.hospitalsArray)
-        MyFavoriteVC.hospitalsArray = [["sss":"123"]]
         HosDetailVC.test = 100
-//        self.show(MyFavoriteVC, sender: nil)
         self.show(HosDetailVC, sender: nil)
 //        print(self.hospitalsArray[indexPath.row])
 
