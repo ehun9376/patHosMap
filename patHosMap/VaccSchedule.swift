@@ -9,7 +9,7 @@
 import UIKit
 
 class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var Vacc = ["三合一","三合一","結紮","狂犬病","三合一＆狂犬病"]
+    var Vacc = ["三合一","三合一","結紮","狂犬病","三合一＆狂犬病","三合一＆狂犬病","三合一＆狂犬病","三合一＆狂犬病"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Vacc.count
