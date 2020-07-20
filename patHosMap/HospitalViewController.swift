@@ -47,6 +47,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
                             }
                             DispatchQueue.main.async{
                                 self.table.dataSource = self
+                                self.table.delegate = self
                                 self.table.reloadData()
                             }
 
@@ -76,5 +77,9 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         let cell:UITableViewCell = UITableViewCell()
         cell.textLabel?.text = hosArray[indexPath.row]
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+
     }
 }

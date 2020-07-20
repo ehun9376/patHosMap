@@ -394,6 +394,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XDy-HY-dyR"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Kct-Af-ln7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekw-XQ-5uY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
