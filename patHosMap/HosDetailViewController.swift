@@ -1,14 +1,14 @@
 //
-//  animal_hospital_list.swift
+//  HosDetailViewController.swift
 //  patHosMap
 //
-//  Created by 123 on 2020/7/16.
+//  Created by 陳逸煌 on 2020/7/20.
 //  Copyright © 2020 陳逸煌. All rights reserved.
 //
 
 import UIKit
 
-class animal_hospital_list: UIViewController {
+class HosDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

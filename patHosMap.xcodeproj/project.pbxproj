@@ -10,11 +10,10 @@
 		3D06F3E724C1BAB0001F5C3E /* HospitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D06F3E624C1BAB0001F5C3E /* HospitalViewController.swift */; };
 		3DBBB7EE24C03F04003F5F9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBB7ED24C03F04003F5F9F /* AppDelegate.swift */; };
 		3DBBB7F024C03F04003F5F9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBB7EF24C03F04003F5F9F /* SceneDelegate.swift */; };
-		3DBBB7F224C03F04003F5F9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBB7F124C03F04003F5F9F /* ViewController.swift */; };
 		3DBBB7F524C03F04003F5F9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBBB7F324C03F04003F5F9F /* Main.storyboard */; };
 		3DBBB7F724C03F05003F5F9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBBB7F624C03F05003F5F9F /* Assets.xcassets */; };
 		3DBBB7FA24C03F05003F5F9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBBB7F824C03F05003F5F9F /* LaunchScreen.storyboard */; };
-		9D8DF47424C0A1490062A747 /* animal_hospital_list.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8DF47324C0A1490062A747 /* animal_hospital_list.swift */; };
+		3DF35BCE24C535DB00087826 /* HosDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +21,11 @@
 		3DBBB7EA24C03F04003F5F9F /* patHosMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = patHosMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DBBB7ED24C03F04003F5F9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DBBB7EF24C03F04003F5F9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3DBBB7F124C03F04003F5F9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3DBBB7F424C03F04003F5F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DBBB7F624C03F05003F5F9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DBBB7F924C03F05003F5F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DBBB7FB24C03F05003F5F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D8DF47324C0A1490062A747 /* animal_hospital_list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animal_hospital_list.swift; sourceTree = "<group>"; };
+		3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +61,7 @@
 				3DBBB7ED24C03F04003F5F9F /* AppDelegate.swift */,
 				3DBBB7EF24C03F04003F5F9F /* SceneDelegate.swift */,
 				3D06F3E624C1BAB0001F5C3E /* HospitalViewController.swift */,
-				3DBBB7F124C03F04003F5F9F /* ViewController.swift */,
-				9D8DF47324C0A1490062A747 /* animal_hospital_list.swift */,
+				3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */,
 				3DBBB7F324C03F04003F5F9F /* Main.storyboard */,
 				3DBBB7F624C03F05003F5F9F /* Assets.xcassets */,
 				3DBBB7F824C03F05003F5F9F /* LaunchScreen.storyboard */,
@@ -144,8 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DBBB7F224C03F04003F5F9F /* ViewController.swift in Sources */,
-				9D8DF47424C0A1490062A747 /* animal_hospital_list.swift in Sources */,
+				3DF35BCE24C535DB00087826 /* HosDetailViewController.swift in Sources */,
 				3DBBB7EE24C03F04003F5F9F /* AppDelegate.swift in Sources */,
 				3DBBB7F024C03F04003F5F9F /* SceneDelegate.swift in Sources */,
 				3D06F3E724C1BAB0001F5C3E /* HospitalViewController.swift in Sources */,
