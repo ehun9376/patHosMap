@@ -65,7 +65,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         let HosDetailVC = self.storyboard?.instantiateViewController(identifier: "HosDetail") as! HosDetailViewController
         self.show(HosDetailVC, sender: nil)
         print(indexPath.row)
-        HosDetailVC.testvar = 1
+
     }
     
     //

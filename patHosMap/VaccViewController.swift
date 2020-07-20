@@ -1,5 +1,5 @@
 //
-//  HosDetailViewController.swift
+//  VaccViewController.swift
 //  patHosMap
 //
 //  Created by 陳逸煌 on 2020/7/20.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-class HosDetailViewController: UIViewController {
+class VaccViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
     
