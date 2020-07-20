@@ -22,8 +22,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fal-C8-4YH">
-                                <rect key="frame" x="280" y="95" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="280" y="95" width="62" height="30"/>
+                                <state key="normal" title="選擇城市"/>
                                 <connections>
                                     <action selector="changeCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="CTu-ex-xcD"/>
                                 </connections>
@@ -257,6 +257,7 @@
                             <constraint firstItem="fal-C8-4YH" firstAttribute="leading" secondItem="Gbd-Xs-tNf" secondAttribute="trailing" constant="22" id="8Ao-AG-mj3"/>
                             <constraint firstItem="FXP-xW-eZr" firstAttribute="centerX" secondItem="jB9-Wh-olg" secondAttribute="centerX" id="HcA-fs-Ffn"/>
                             <constraint firstItem="FXP-xW-eZr" firstAttribute="top" secondItem="fal-C8-4YH" secondAttribute="bottom" constant="8" id="WFR-0q-KFK"/>
+                            <constraint firstItem="QYP-hK-UUc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fal-C8-4YH" secondAttribute="trailing" symbolic="YES" id="cpt-Rv-USy"/>
                             <constraint firstItem="Gbd-Xs-tNf" firstAttribute="top" secondItem="QYP-hK-UUc" secondAttribute="top" constant="10" id="wTg-ur-kIu"/>
                             <constraint firstItem="Gbd-Xs-tNf" firstAttribute="centerX" secondItem="jB9-Wh-olg" secondAttribute="centerX" id="xca-SK-TZw"/>
                         </constraints>
@@ -581,6 +582,11 @@
                                             <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEy-lH-nyT">
+                                            <rect key="frame" x="316" y="195" width="62" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="加入最愛"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>

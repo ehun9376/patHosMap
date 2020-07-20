@@ -26,10 +26,12 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         }
         self.hosArray = []
         if self.hospitalsArray != [[:]]{
+//            print(self.hospitalsArray)
             for hospital in self.hospitalsArray{
                 DispatchQueue.main.async{
                     if hospital["縣市"]! == sender.titleLabel!.text{
                         self.hosArray.append(hospital["機構名稱"]!)
+                        
                     }
                     self.table.dataSource = self
                     self.table.delegate = self
@@ -64,7 +66,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let HosDetailVC = self.storyboard?.instantiateViewController(identifier: "HosDetail") as! HosDetailViewController
         self.show(HosDetailVC, sender: nil)
-        print(indexPath.row)
+        print(self.hospitalsArray[indexPath.row])
 
     }
     
