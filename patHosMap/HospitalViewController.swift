@@ -18,7 +18,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     }
     @IBAction func choicedCity(_ sender: UIButton) {
         self.city.text = sender.titleLabel?.text
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.5) {
             for city in self.citys{
                 city.isHidden = !city.isHidden
                 self.view.layoutIfNeeded()
