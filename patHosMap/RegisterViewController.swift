@@ -16,6 +16,7 @@ class RegisterViewController: UIViewController {
         let user =  root.child("user")
         user.observe(DataEventType.value,with:  { (data) in
             print(data.value!)
+            
         })
     }
     override func viewDidLoad() {
