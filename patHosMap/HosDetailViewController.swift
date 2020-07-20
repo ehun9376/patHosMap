@@ -9,10 +9,10 @@
 import UIKit
 
 class HosDetailViewController: UIViewController {
-
+    var testvar = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(self.testvar)
         // Do any additional setup after loading the view.
     }
     
