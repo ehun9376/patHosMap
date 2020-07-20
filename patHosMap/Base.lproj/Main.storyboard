@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGt-Af-Lk8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NFB-QN-HBB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -548,12 +548,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0NU-0m-ipR">
-                                <rect key="frame" x="0.0" y="146" width="414" height="750"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0NU-0m-ipR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MhE-SA-4I8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="MhE-SA-4I8">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MhE-SA-4I8" id="ohm-d2-e5n">
@@ -562,23 +561,34 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NFB-QN-HBB" id="CA8-92-OjD"/>
+                                    <outlet property="delegate" destination="NFB-QN-HBB" id="Pwl-tI-5L2"/>
+                                </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寵物名單" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fyg-Vw-wIR">
-                                <rect key="frame" x="146" y="88" width="123" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0NU-0m-ipR" firstAttribute="leading" secondItem="vuD-Fh-qrN" secondAttribute="leading" id="221-Iu-sDW"/>
+                            <constraint firstItem="0NU-0m-ipR" firstAttribute="top" secondItem="vuD-Fh-qrN" secondAttribute="top" id="2JF-F2-LDc"/>
+                            <constraint firstItem="0NU-0m-ipR" firstAttribute="top" secondItem="vuD-Fh-qrN" secondAttribute="top" id="50S-S6-y0T"/>
+                            <constraint firstItem="0NU-0m-ipR" firstAttribute="trailing" secondItem="vuD-Fh-qrN" secondAttribute="trailing" id="54E-Z2-ZGv"/>
+                            <constraint firstItem="0NU-0m-ipR" firstAttribute="trailing" secondItem="vuD-Fh-qrN" secondAttribute="trailing" id="E6g-1v-OCw"/>
+                            <constraint firstItem="0NU-0m-ipR" firstAttribute="leading" secondItem="vuD-Fh-qrN" secondAttribute="leading" id="Eh8-A4-QnM"/>
+                            <constraint firstItem="0NU-0m-ipR" firstAttribute="leading" secondItem="vuD-Fh-qrN" secondAttribute="leading" id="MiL-8u-kyP"/>
+                            <constraint firstAttribute="bottom" secondItem="0NU-0m-ipR" secondAttribute="bottom" id="O3m-Df-bqq"/>
+                            <constraint firstItem="0NU-0m-ipR" firstAttribute="trailing" secondItem="vuD-Fh-qrN" secondAttribute="trailing" id="TFr-X9-t6i"/>
+                            <constraint firstAttribute="bottom" secondItem="0NU-0m-ipR" secondAttribute="bottom" id="lWf-FS-3UX"/>
+                            <constraint firstAttribute="bottom" secondItem="0NU-0m-ipR" secondAttribute="bottom" id="n6V-5h-QoS"/>
+                            <constraint firstItem="0NU-0m-ipR" firstAttribute="top" secondItem="vuD-Fh-qrN" secondAttribute="top" id="xmm-Ud-BdN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vuD-Fh-qrN"/>
                     </view>
                     <navigationItem key="navigationItem" id="4nA-yV-h4r"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjD-nN-vuV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2319" y="1405"/>
+            <point key="canvasLocation" x="2318.840579710145" y="1404.9107142857142"/>
         </scene>
         <!--Hos Detail View Controller-->
         <scene sceneID="tQM-Me-IO7">
