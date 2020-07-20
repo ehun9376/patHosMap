@@ -9,7 +9,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     @IBOutlet var citys: [UIButton]!
     @IBOutlet weak var city: UILabel!
     @IBAction func changeCity(_ sender: UIButton) {
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.5) {
             for city in self.citys{
                 city.isHidden = !city.isHidden
                 self.view.layoutIfNeeded()

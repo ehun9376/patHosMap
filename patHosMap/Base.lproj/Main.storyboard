@@ -27,17 +27,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewO-iG-rSM">
-                                <rect key="frame" x="259" y="99" width="28" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="選擇城市" image="tray" catalog="system"/>
-                                <connections>
-                                    <action selector="changeCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="OiY-sG-Ayl"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwk-An-D0O">
-                                <rect key="frame" x="0.0" y="151" width="414" height="35"/>
+                            <button opaque="NO" tag="1" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwk-An-D0O">
+                                <rect key="frame" x="0.0" y="131" width="414" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30588235294117649" green="0.80392156862745101" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -48,8 +39,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="7es-gM-MmY"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9N-8e-JFr">
-                                <rect key="frame" x="0.0" y="196" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9N-8e-JFr">
+                                <rect key="frame" x="0.0" y="166" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -60,8 +51,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="hVe-3W-LFV"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEv-RP-tuF">
-                                <rect key="frame" x="0.0" y="239" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEv-RP-tuF">
+                                <rect key="frame" x="0.0" y="199" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30588235294117649" green="0.80392156862745101" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -72,8 +63,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="v8V-TD-FiY"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvV-sx-DrN">
-                                <rect key="frame" x="0.0" y="282" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvV-sx-DrN">
+                                <rect key="frame" x="0.0" y="232" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -84,8 +75,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="3eQ-zt-zcb"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVm-L3-d4k">
-                                <rect key="frame" x="0.0" y="325" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVm-L3-d4k">
+                                <rect key="frame" x="0.0" y="265" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30588235294117649" green="0.80392156862745101" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -96,8 +87,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="JG5-93-0hk"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJt-jf-DQn">
-                                <rect key="frame" x="0.0" y="368" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJt-jf-DQn">
+                                <rect key="frame" x="0.0" y="298" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -108,8 +99,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="lsi-H7-FTT"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUd-Ro-eR6">
-                                <rect key="frame" x="0.0" y="411" width="414" height="35"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUd-Ro-eR6">
+                                <rect key="frame" x="0.0" y="331" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30588235294117649" green="0.80392156862745101" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -120,8 +111,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="GyM-VW-HJB"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBE-4h-xWV">
-                                <rect key="frame" x="0.0" y="454" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBE-4h-xWV">
+                                <rect key="frame" x="0.0" y="364" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -132,8 +123,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="6mQ-fI-Iul"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTT-XK-2d2">
-                                <rect key="frame" x="0.0" y="497" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTT-XK-2d2">
+                                <rect key="frame" x="0.0" y="397" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30588235294117649" green="0.80392156862745101" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -144,8 +135,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="5kK-Tl-hxM"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyD-My-1Pf">
-                                <rect key="frame" x="0.0" y="540" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyD-My-1Pf">
+                                <rect key="frame" x="0.0" y="430" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -156,8 +147,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="CxD-VK-g0A"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0g-qH-cSF">
-                                <rect key="frame" x="0.0" y="583" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0g-qH-cSF">
+                                <rect key="frame" x="0.0" y="463" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30588235294117649" green="0.80392156862745101" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -168,8 +159,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="5wv-Da-5UQ"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Th-8w-63f">
-                                <rect key="frame" x="0.0" y="626" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Th-8w-63f">
+                                <rect key="frame" x="0.0" y="496" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -180,8 +171,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="SIq-NZ-4wC"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2L-S3-Izs">
-                                <rect key="frame" x="0.0" y="669" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2L-S3-Izs">
+                                <rect key="frame" x="0.0" y="529" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30588235294117649" green="0.80392156862745101" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -192,8 +183,8 @@
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="sVZ-aN-GP2"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD5-hd-2fe">
-                                <rect key="frame" x="0.0" y="712" width="414" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD5-hd-2fe">
+                                <rect key="frame" x="0.0" y="562" width="414" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -202,6 +193,14 @@
                                 </state>
                                 <connections>
                                     <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="494-xB-w6w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fal-C8-4YH">
+                                <rect key="frame" x="280" y="95" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="changeCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="CTu-ex-xcD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -510,6 +509,5 @@
         <image name="pencil.tip" catalog="system" width="99" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="smartphone-with-map-phone-screen-red-gps-dot-isolated-white-background-illustration-location-search_185004-41" width="626" height="626"/>
-        <image name="tray" catalog="system" width="128" height="88"/>
     </resources>
 </document>
