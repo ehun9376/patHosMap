@@ -32,7 +32,7 @@ class RegisterViewController: UIViewController {
                     count += 1
                     if manager["account"] == account1{
                         is_manager = true
-                        let alert = UIAlertController(title: "警告", message: "帳號已存在或已創建", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "警告", message: "帳號已存在", preferredStyle: .alert)
                         let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
                             self.performSegue(withIdentifier: "toLoginVC", sender: nil)
                         }
@@ -46,8 +46,7 @@ class RegisterViewController: UIViewController {
                 let newUser = self.root.child("user").child("\(count)")
                 let newData = ["account":"\(self.acoount.text!)","password":"\(self.password.text!)"]
                 newUser.setValue(newData)
-                
-                let alert = UIAlertController(title: "警告", message: "帳號已存在或已創建", preferredStyle: .alert)
+                let alert = UIAlertController(title: "通知", message: "帳號已創建", preferredStyle: .alert)
                 let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
                     self.performSegue(withIdentifier: "toLoginVC", sender: nil)
                 }
