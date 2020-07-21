@@ -30,6 +30,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
 //        little_data_center.set("Rita", forKey: "username")
 //        print("OK了")
 //        print(self.test)
+        print("測試")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
