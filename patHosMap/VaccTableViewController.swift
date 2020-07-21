@@ -10,17 +10,32 @@ import UIKit
 
 class VaccTableViewController: UITableViewController {
     var list:[String]!
+    //MARK: -Target Action
+    //導覽列的新增按鈕
+    @objc func buttonEditAction()
+    {
+        print("編輯按鈕被按下")
+        if !self.tableView.isEditing//如果表格不在編輯狀態
+        {
+        self.tableView.isEditing = true
+        self.navigationItem.leftBarButtonItem?.title = "完成"
+        }
+        else
+        {
+            self.tableView.isEditing = false
+            self.navigationItem.leftBarButtonItem?.title = "編輯"
+        }
+    }
     @objc func buttonAddAction(){
         print("新增按鈕被按下")
-        
-
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "我的寵物"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(buttonAddAction))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(buttonEditAction))
+         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(buttonAddAction))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,6 +43,12 @@ class VaccTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
+    
+    
+    
+    
 
     // MARK: - Table view data source
 
