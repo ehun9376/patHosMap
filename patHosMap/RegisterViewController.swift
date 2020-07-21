@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 class RegisterViewController: UIViewController {
-    @IBOutlet weak var acoount: UITextField!
+    @IBOutlet weak var account: UITextField!
     @IBOutlet weak var password: UITextField!
     var root:DatabaseReference!
 
@@ -23,7 +23,7 @@ class RegisterViewController: UIViewController {
         var count = 0
         var is_manager = false
         let user = root.child("user")
-        let account1 = self.acoount.text
+        let account1 = self.account.text
         user.observe(DataEventType.value, with: { (data) in
 //                        print(data.value!)
             let manager_array = data.value! as! [[String:String]]
@@ -42,16 +42,26 @@ class RegisterViewController: UIViewController {
                     }
                 }
             if !is_manager{
-                print("推送\(count),創建帳號")
-                let newUser = self.root.child("user").child("\(count)")
-                let newData = ["account":"\(self.acoount.text!)","password":"\(self.password.text!)"]
-                newUser.setValue(newData)
-                let alert = UIAlertController(title: "通知", message: "帳號已創建", preferredStyle: .alert)
-                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
-                    self.performSegue(withIdentifier: "toLoginVC", sender: nil)
+                if self.account.text != "" && self.password.text != ""{
+                    print("推送\(count),創建帳號")
+                    let newUser = self.root.child("user").child("\(count)")
+                    let newData = ["account":"\(self.account.text!)","password":"\(self.password.text!)"]
+                    newUser.setValue(newData)
+                    let alert = UIAlertController(title: "通知", message: "帳號已創建", preferredStyle: .alert)
+                    let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+                        self.performSegue(withIdentifier: "toLoginVC", sender: nil)
+                    }
+                    alert.addAction(button)
+                    self.present(alert, animated: true, completion: {})
                 }
-                alert.addAction(button)
-                self.present(alert, animated: true, completion: {})
+                else{
+                    let alert = UIAlertController(title: "警告", message: "帳號或密碼不得為空", preferredStyle: .alert)
+                    let button = UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default) { (button) in
+                    }
+                    alert.addAction(button)
+                    self.present(alert, animated: true, completion: {})
+                }
+
             }
             })
         

@@ -11,7 +11,7 @@ import UIKit
 class MyFavoriteViewController: UIViewController {
     
     var hospitalsArray:[[String:String]] = [[:]]
-    
+
     @IBAction func test(_ sender: UIButton) {
         let little_data_center:UserDefaults
         little_data_center = UserDefaults.init()
@@ -24,7 +24,7 @@ class MyFavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("從新")
-        
+
     }
     
 
