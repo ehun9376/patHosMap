@@ -10,7 +10,7 @@
         <!--Hospital View Controller-->
         <scene sceneID="nPP-0Q-B44">
             <objects>
-                <viewController id="7Xy-u4-Rhr" customClass="HospitalViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="listVC" id="7Xy-u4-Rhr" customClass="HospitalViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jB9-Wh-olg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,6 +287,97 @@
             </objects>
             <point key="canvasLocation" x="1039.1304347826087" y="-521.65178571428567"/>
         </scene>
+        <!--Hos Detail View Controller-->
+        <scene sceneID="54W-eZ-KZW">
+            <objects>
+                <viewController storyboardIdentifier="HosDetail" id="VfV-7t-FG0" customClass="HosDetailViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RR0-WS-BWk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="21554565135" translatesAutoresizingMaskIntoConstraints="NO" id="FWA-aS-uxi" userLabel="Header Image View">
+                                <rect key="frame" x="0.0" y="55" width="414" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XU4-Yz-kJJ">
+                                <rect key="frame" x="316" y="239" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="加入最愛"/>
+                                <connections>
+                                    <action selector="btnAddToFavorite:" destination="VfV-7t-FG0" eventType="touchUpInside" id="b3X-gQ-Dif"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新北市林口區" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eV-aq-WB5" userLabel="NameLabel">
+                                <rect key="frame" x="82" y="418" width="296" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.1019607843" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zb1-Du-H2l">
+                                <rect key="frame" x="0.0" y="542" width="414" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="MwH-5c-X6D"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lc4-tv-TB1">
+                                <rect key="frame" x="0.0" y="542" width="414" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="fwz-1K-nkR"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="buttonOpenMap:" destination="VfV-7t-FG0" eventType="touchUpInside" id="eoP-7x-jIE"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-je-GNi">
+                                <rect key="frame" x="35" y="366" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pets" translatesAutoresizingMaskIntoConstraints="NO" id="QXx-yp-c0z">
+                                <rect key="frame" x="32" y="424" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RJ-bA-o2J">
+                                <rect key="frame" x="82" y="365" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.1019607843" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPhone:" destination="VfV-7t-FG0" eventType="touchUpInside" id="g6P-HY-qhl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8M-LR-LaZ" userLabel="NameLabel">
+                                <rect key="frame" x="35" y="77" width="260" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" red="0.30588235294117649" green="0.80392156862745101" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lc4-tv-TB1" firstAttribute="trailing" secondItem="Xfc-Gb-xG3" secondAttribute="trailing" id="AAG-eC-zfW"/>
+                            <constraint firstItem="zb1-Du-H2l" firstAttribute="trailing" secondItem="Xfc-Gb-xG3" secondAttribute="trailing" id="F86-75-OwQ"/>
+                            <constraint firstItem="Xfc-Gb-xG3" firstAttribute="bottom" secondItem="lc4-tv-TB1" secondAttribute="bottom" constant="20" id="G1D-7f-fJY"/>
+                            <constraint firstItem="zb1-Du-H2l" firstAttribute="leading" secondItem="Xfc-Gb-xG3" secondAttribute="leading" id="LGS-e1-z6Q"/>
+                            <constraint firstItem="Xfc-Gb-xG3" firstAttribute="bottom" secondItem="zb1-Du-H2l" secondAttribute="bottom" constant="20" id="c4y-Ck-TqI"/>
+                            <constraint firstItem="lc4-tv-TB1" firstAttribute="leading" secondItem="Xfc-Gb-xG3" secondAttribute="leading" id="dle-ZN-OR7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xfc-Gb-xG3"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonPhone" destination="0RJ-bA-o2J" id="fqB-Aq-y8i"/>
+                        <outlet property="hosAddress" destination="5eV-aq-WB5" id="RGN-1f-cC2"/>
+                        <outlet property="hosName" destination="K8M-LR-LaZ" id="1RA-fX-V5p"/>
+                        <outlet property="mapView" destination="zb1-Du-H2l" id="4mp-g7-p5q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jRZ-AY-F1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863.7681159420292" y="-522.32142857142856"/>
+        </scene>
         <!--Register View Controller-->
         <scene sceneID="V5K-Uj-vJl">
             <objects>
@@ -340,7 +431,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tGd-m3-7bv"/>
                     <connections>
-                        <outlet property="acoount" destination="bJK-Ru-gxh" id="ILH-80-I60"/>
+                        <outlet property="account" destination="bJK-Ru-gxh" id="ILH-80-I60"/>
                         <outlet property="password" destination="SwL-15-yyz" id="giQ-Td-ImN"/>
                         <segue destination="FGt-Af-Lk8" kind="show" identifier="toLoginVC" id="sgi-j6-k06"/>
                     </connections>
@@ -591,10 +682,10 @@
             </objects>
             <point key="canvasLocation" x="2318.840579710145" y="1404.9107142857142"/>
         </scene>
-        <!--Hos Detail View Controller-->
+        <!--View Controller-->
         <scene sceneID="tQM-Me-IO7">
             <objects>
-                <viewController storyboardIdentifier="HosDetail" id="QbB-PB-56m" customClass="HosDetailViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QbB-PB-56m" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kw9-QJ-iog">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -666,7 +757,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekw-XQ-5uY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2022" y="-522"/>
+            <point key="canvasLocation" x="2699" y="-522"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="LP6-QO-KeG">
@@ -690,13 +781,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DE-MH-wWD">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="anna" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DE-MH-wWD">
                                 <rect key="frame" x="225" y="127" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xoe-I5-UzJ">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xoe-I5-UzJ">
                                 <rect key="frame" x="225" y="169" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -764,7 +855,7 @@
         <!--Item-->
         <scene sceneID="B31-HQ-XUR">
             <objects>
-                <viewController storyboardIdentifier="MyFavoriteVC" id="aT2-FG-rfu" customClass="MyFavoriteViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyFavoriteVC" modalPresentationStyle="fullScreen" id="aT2-FG-rfu" customClass="MyFavoriteViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ZP-jL-llJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -790,7 +881,7 @@
         <!--清單-->
         <scene sceneID="FDt-8T-2cJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fme-nH-uo1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="fme-nH-uo1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="清單" image="globe" catalog="system" id="GYd-S5-jNb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6uC-6m-iPg">
@@ -827,8 +918,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="21554565135" width="400" height="300"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="pencil.tip" catalog="system" width="99" height="128"/>
+        <image name="pets" width="64" height="64"/>
+        <image name="phone" width="64" height="64"/>
         <image name="smartphone-with-map-phone-screen-red-gps-dot-isolated-white-background-illustration-location-search_185004-41" width="626" height="626"/>
     </resources>
 </document>

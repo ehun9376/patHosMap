@@ -1,37 +1,98 @@
-//
-//  HosDetailViewController.swift
-//  patHosMap
-//
-//  Created by 陳逸煌 on 2020/7/20.
-//  Copyright © 2020 陳逸煌. All rights reserved.
-//
-
 import UIKit
+import MapKit
+import CoreLocation
 
 class HosDetailViewController: UIViewController {
-    var test = 1
+    var strtel = ""
+    var straddr = ""
+    var strname = ""
+    var latitude:CLLocationDegrees!
+    var longitude:CLLocationDegrees!
+    let annomation = MKPointAnnotation()
+    fileprivate let application = UIApplication.shared
+    @IBOutlet weak var hosName: UILabel!
+    //@IBOutlet weak var hosTelephone: UILabel!
+    @IBOutlet weak var buttonPhone: UIButton!
+    @IBOutlet weak var hosAddress: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    
     @IBAction func btnAddToFavorite(_ sender: UIButton) {
-        let little_data_center:UserDefaults
-        little_data_center = UserDefaults.init()
-        little_data_center.set(45, forKey: "age")
-        little_data_center.set("Rita", forKey: "username")
-        print("OK了")
-        print(self.test)
+//        let little_data_center:UserDefaults
+//        little_data_center = UserDefaults.init()
+//        little_data_center.set(45, forKey: "age")
+//        little_data_center.set("Rita", forKey: "username")
+//        print("OK了")
+//        print(self.test)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //self.hosTelephone.text = strtel
+        self.buttonPhone.setTitle(strtel, for: .normal)
+        self.hosAddress.text = straddr
+        self.hosName.text = strname
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews()
+    {
+        getDestination()
     }
-    */
+    
+    func getDestination()
+    {
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(hosAddress.text!) { (placemarks, error) in
+            if let err = error
+            {
+                print("轉碼錯誤\(err)")
+            }
+            else
+            {
+                let placemarks = placemarks
+                let location = placemarks?.first?.location as! CLLocation
+                //print(location.coordinate.latitude, location.coordinate.longitude)
+                self.latitude = location.coordinate.latitude
+                self.longitude = location.coordinate.longitude
+                print("latitude:\(self.latitude!),longitude:\(self.longitude!)")
+                
+                
+                //annomation.coordinate = CLLocationCoordinate2DMake(24.916062, 121.210480)
+                self.annomation.coordinate = CLLocationCoordinate2DMake(self.latitude, self.longitude)
+                self.annomation.title = self.hosName.text
+                //self.annomation.subtitle = self.hosAddress
+                self.mapView.addAnnotation(self.annomation)
+                
+                let region = MKCoordinateRegion(center: self.annomation.coordinate, latitudinalMeters: 100, longitudinalMeters: 100)
+                
+                self.mapView.setRegion(region, animated: true)
+            }
+        }
+    }
+    
+    @IBAction func buttonOpenMap(_ sender: UIButton)
+    {
+        let mapURL = URL(string: "http://maps.apple.com/?daddr=\(latitude!),\(longitude!)")
+        print(latitude!, longitude!)
+        if (UIApplication.shared.canOpenURL(mapURL!)){
+            UIApplication.shared.open(mapURL!, options: [:], completionHandler: nil)
+        } else {
+                // do nothing
+        }
+    }
+    
+    @IBAction func buttonPhone(_ sender: UIButton)
+    {
+        if let phoneURL = URL(string: "tel://0123456789")
+        {
+            if application.canOpenURL(phoneURL)
+            {
+                application.open(phoneURL, options: [:], completionHandler: nil)
+            }
+            else
+            {
+                //alert
+            }
+        }
+    }
+    
 
 }
