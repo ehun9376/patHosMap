@@ -9,8 +9,8 @@
 import UIKit
 
 class HosDetailViewController: UIViewController {
-    var strtel = "123"
-    var straddr = "456"
+    var strtel = ""
+    var straddr = ""
     @IBOutlet weak var hosTelephone: UILabel!
     @IBOutlet weak var hosAddress: UILabel!
     
@@ -23,7 +23,6 @@ class HosDetailViewController: UIViewController {
 //        print(self.test)
     }
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.hosTelephone.text = strtel
         self.hosAddress.text = straddr
