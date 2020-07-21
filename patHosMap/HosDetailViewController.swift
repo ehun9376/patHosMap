@@ -2,19 +2,27 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class HosDetailViewController: UIViewController {
+class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var strtel = ""
     var straddr = ""
     var strname = ""
-    var latitude:CLLocationDegrees!
-    var longitude:CLLocationDegrees!
-    let annomation = MKPointAnnotation()
-    fileprivate let application = UIApplication.shared
+   
     @IBOutlet weak var hosName: UILabel!
     //@IBOutlet weak var hosTelephone: UILabel!
     @IBOutlet weak var buttonPhone: UIButton!
     @IBOutlet weak var hosAddress: UILabel!
+    @IBOutlet weak var labelDistance: UILabel!
+    //Map相關
     @IBOutlet weak var mapView: MKMapView!
+    let annomation = MKPointAnnotation()
+    fileprivate let application = UIApplication.shared
+    var latitude:CLLocationDegrees!
+    var longitude:CLLocationDegrees!
+    //locationManager，用於偵測用戶位置變化
+    var locationManager = CLLocationManager()
+    //紀錄使用者位置
+    var userlatitube:CLLocationDegrees!
+    var userlongitube:CLLocationDegrees!
     
     @IBAction func btnAddToFavorite(_ sender: UIButton) {
 //        let little_data_center:UserDefaults
@@ -30,11 +38,14 @@ class HosDetailViewController: UIViewController {
         self.buttonPhone.setTitle(strtel, for: .normal)
         self.hosAddress.text = straddr
         self.hosName.text = strname
-    }
-    
-    override func viewDidLayoutSubviews()
-    {
         getDestination()
+        locationManager.delegate = self  //委派給ViewController
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest  //設定為最佳精度
+        locationManager.requestWhenInUseAuthorization()  //user授權
+        locationManager.startUpdatingLocation()  //開始update user位置
+        mapView.delegate = self  //委派給ViewController
+        mapView.showsUserLocation = true   //顯示user位置
+        mapView.userTrackingMode = .follow  //隨著user移動
     }
     
     func getDestination()
@@ -61,11 +72,30 @@ class HosDetailViewController: UIViewController {
                 //self.annomation.subtitle = self.hosAddress
                 self.mapView.addAnnotation(self.annomation)
                 
-                let region = MKCoordinateRegion(center: self.annomation.coordinate, latitudinalMeters: 100, longitudinalMeters: 100)
+                let region = MKCoordinateRegion(center: self.annomation.coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
                 
                 self.mapView.setRegion(region, animated: true)
+                
+                //計算距離
+                var firsLocation = CLLocation(latitude:self.latitude, longitude:self.longitude)
+                var secondLocation = CLLocation(latitude: self.userlatitube, longitude: self.userlongitube)
+                let distance = firsLocation.distance(from: secondLocation) / 1000
+                //顯示於label上
+                self.labelDistance.text = " \(String(format:"%.01f", distance)) KM "
             }
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        userlatitube = locValue.latitude
+        userlongitube = locValue.longitude
+        
+        print("userlocation\(userlatitube),\(userlongitube)")
+        
+        
     }
     
     @IBAction func buttonOpenMap(_ sender: UIButton)
@@ -81,7 +111,7 @@ class HosDetailViewController: UIViewController {
     
     @IBAction func buttonPhone(_ sender: UIButton)
     {
-        if let phoneURL = URL(string: "tel://0123456789")
+        if let phoneURL = URL(string: "tel://\(strtel)")
         {
             if application.canOpenURL(phoneURL)
             {

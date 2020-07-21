@@ -1,9 +1,11 @@
 import UIKit
+import CoreLocation
 
 class HospitalViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     
     @IBOutlet weak var table: UITableView!
+    var locationManager = CLLocationManager()
     var cityHosArray:[[String:String]] = [[:]]
     var hosNameArray:[String] = []
     var hosTelArray:[String] = []
@@ -63,6 +65,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.download()
+        locationManager.requestWhenInUseAuthorization()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

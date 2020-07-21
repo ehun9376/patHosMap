@@ -37,7 +37,7 @@
 		3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosDetailViewController.swift; sourceTree = "<group>"; };
 		3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
 		3DF35BD324C598CF00087826 /* VaccTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccTableViewController.swift; sourceTree = "<group>"; };
-		3DF35BD524C5A02B00087826 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3DF35BD524C5A02B00087826 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "patHosMap/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3DF35BD724C5A4F500087826 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3DF35BD924C5A51C00087826 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		548A8636DCED64BA45F4C677 /* Pods-patHosMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patHosMap.release.xcconfig"; path = "Target Support Files/Pods-patHosMap/Pods-patHosMap.release.xcconfig"; sourceTree = "<group>"; };
