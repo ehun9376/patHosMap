@@ -28,7 +28,8 @@ class VaccTableViewController: UITableViewController {
     }
     @objc func buttonAddAction(){
         print("新增按鈕被按下")
-        
+        let addVC = self.storyboard!.instantiateViewController(identifier: "AddAnimal") as! AddAnimal
+        self.show(addVC, sender: nil)
     }
 
     override func viewDidLoad() {

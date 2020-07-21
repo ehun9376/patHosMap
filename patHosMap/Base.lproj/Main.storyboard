@@ -568,7 +568,7 @@
         <!--Add Animal-->
         <scene sceneID="1d8-ow-VaY">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Zjm-Il-gRu" customClass="AddAnimal" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddAnimal" modalPresentationStyle="fullScreen" id="Zjm-Il-gRu" customClass="AddAnimal" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FQd-sp-7p3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
