@@ -9,11 +9,22 @@
 import UIKit
 
 class MyFavoriteViewController: UIViewController {
-
+    
+    var hospitalsArray:[[String:String]] = [[:]]
+    
+    @IBAction func test(_ sender: UIButton) {
+        let little_data_center:UserDefaults
+        little_data_center = UserDefaults.init()
+        let age = little_data_center.integer(forKey: "age")
+        let name = little_data_center.string(forKey: "username")!
+        print("\(age),\(name)")
+        print(self.hospitalsArray)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print("從新")
+        
     }
     
 

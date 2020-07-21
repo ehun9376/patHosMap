@@ -65,8 +65,9 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let HosDetailVC = self.storyboard?.instantiateViewController(identifier: "HosDetail") as! HosDetailViewController
+        HosDetailVC.test = 100
         self.show(HosDetailVC, sender: nil)
-        print(self.hospitalsArray[indexPath.row])
+//        print(self.hospitalsArray[indexPath.row])
 
     }
     

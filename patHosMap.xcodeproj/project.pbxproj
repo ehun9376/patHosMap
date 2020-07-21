@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,12 +15,17 @@
 		3DBBB7FA24C03F05003F5F9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBBB7F824C03F05003F5F9F /* LaunchScreen.storyboard */; };
 		3DF35BCE24C535DB00087826 /* HosDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */; };
 		3DF35BD024C55DAC00087826 /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */; };
-		3DF35BD224C5614100087826 /* VaccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD124C5614100087826 /* VaccViewController.swift */; };
+		3DF35BD424C598CF00087826 /* VaccTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD324C598CF00087826 /* VaccTableViewController.swift */; };
+		3DF35BD624C5A02B00087826 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DF35BD524C5A02B00087826 /* GoogleService-Info.plist */; };
+		3DF35BD824C5A4F500087826 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD724C5A4F500087826 /* LoginViewController.swift */; };
+		3DF35BDA24C5A51C00087826 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD924C5A51C00087826 /* RegisterViewController.swift */; };
+		85505153D2AD3BD0FFA824B9 /* Pods_patHosMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B90A8FD0A5DB3E22247E4C /* Pods_patHosMap.framework */; };
 		9537CE8D24C56DC300714D63 /* AddAnimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537CE8C24C56DC300714D63 /* AddAnimal.swift */; };
 		9537CE8F24C56E7100714D63 /* VaccSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537CE8E24C56E7100714D63 /* VaccSchedule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11B90A8FD0A5DB3E22247E4C /* Pods_patHosMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_patHosMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D06F3E624C1BAB0001F5C3E /* HospitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalViewController.swift; sourceTree = "<group>"; };
 		3DBBB7EA24C03F04003F5F9F /* patHosMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = patHosMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DBBB7ED24C03F04003F5F9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,9 +36,14 @@
 		3DBBB7FB24C03F05003F5F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosDetailViewController.swift; sourceTree = "<group>"; };
 		3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
-		3DF35BD124C5614100087826 /* VaccViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccViewController.swift; sourceTree = "<group>"; };
+		3DF35BD324C598CF00087826 /* VaccTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccTableViewController.swift; sourceTree = "<group>"; };
+		3DF35BD524C5A02B00087826 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3DF35BD724C5A4F500087826 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3DF35BD924C5A51C00087826 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		548A8636DCED64BA45F4C677 /* Pods-patHosMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patHosMap.release.xcconfig"; path = "Target Support Files/Pods-patHosMap/Pods-patHosMap.release.xcconfig"; sourceTree = "<group>"; };
 		9537CE8C24C56DC300714D63 /* AddAnimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimal.swift; sourceTree = "<group>"; };
 		9537CE8E24C56E7100714D63 /* VaccSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccSchedule.swift; sourceTree = "<group>"; };
+		B8909154AF0687E70C9C0427 /* Pods-patHosMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patHosMap.debug.xcconfig"; path = "Target Support Files/Pods-patHosMap/Pods-patHosMap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +51,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85505153D2AD3BD0FFA824B9 /* Pods_patHosMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29AF5F736941FE4D3A506645 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8909154AF0687E70C9C0427 /* Pods-patHosMap.debug.xcconfig */,
+				548A8636DCED64BA45F4C677 /* Pods-patHosMap.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3DBBB7E124C03F04003F5F9F = {
 			isa = PBXGroup;
 			children = (
 				3DBBB7EC24C03F04003F5F9F /* patHosMap */,
 				3DBBB7EB24C03F04003F5F9F /* Products */,
+				29AF5F736941FE4D3A506645 /* Pods */,
+				F6C35B2633DDBE4FE8AA215D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,18 +90,29 @@
 			children = (
 				3DBBB7ED24C03F04003F5F9F /* AppDelegate.swift */,
 				3DBBB7EF24C03F04003F5F9F /* SceneDelegate.swift */,
-				3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */,
+				3DF35BD724C5A4F500087826 /* LoginViewController.swift */,
+				3DF35BD924C5A51C00087826 /* RegisterViewController.swift */,
 				3D06F3E624C1BAB0001F5C3E /* HospitalViewController.swift */,
 				3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */,
-				3DF35BD124C5614100087826 /* VaccViewController.swift */,
+				3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */,
+				3DF35BD324C598CF00087826 /* VaccTableViewController.swift */,
 				9537CE8E24C56E7100714D63 /* VaccSchedule.swift */,
 				9537CE8C24C56DC300714D63 /* AddAnimal.swift */,
 				3DBBB7F324C03F04003F5F9F /* Main.storyboard */,
 				3DBBB7F624C03F05003F5F9F /* Assets.xcassets */,
 				3DBBB7F824C03F05003F5F9F /* LaunchScreen.storyboard */,
 				3DBBB7FB24C03F05003F5F9F /* Info.plist */,
+				3DF35BD524C5A02B00087826 /* GoogleService-Info.plist */,
 			);
 			path = patHosMap;
+			sourceTree = "<group>";
+		};
+		F6C35B2633DDBE4FE8AA215D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11B90A8FD0A5DB3E22247E4C /* Pods_patHosMap.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DBBB7FE24C03F05003F5F9F /* Build configuration list for PBXNativeTarget "patHosMap" */;
 			buildPhases = (
+				955B47F3FA8AF942D8C5101A /* [CP] Check Pods Manifest.lock */,
 				3DBBB7E624C03F04003F5F9F /* Sources */,
 				3DBBB7E724C03F04003F5F9F /* Frameworks */,
 				3DBBB7E824C03F04003F5F9F /* Resources */,
+				123182D508DCE963D044788A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DBBB7FA24C03F05003F5F9F /* LaunchScreen.storyboard in Resources */,
+				3DF35BD624C5A02B00087826 /* GoogleService-Info.plist in Resources */,
 				3DBBB7F724C03F05003F5F9F /* Assets.xcassets in Resources */,
 				3DBBB7F524C03F04003F5F9F /* Main.storyboard in Resources */,
 			);
@@ -148,18 +184,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		123182D508DCE963D044788A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-patHosMap/Pods-patHosMap-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-patHosMap/Pods-patHosMap-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-patHosMap/Pods-patHosMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		955B47F3FA8AF942D8C5101A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-patHosMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3DBBB7E624C03F04003F5F9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF35BD824C5A4F500087826 /* LoginViewController.swift in Sources */,
+				3DF35BDA24C5A51C00087826 /* RegisterViewController.swift in Sources */,
 				3DF35BD024C55DAC00087826 /* MyFavoriteViewController.swift in Sources */,
 				3DF35BCE24C535DB00087826 /* HosDetailViewController.swift in Sources */,
 				3DBBB7EE24C03F04003F5F9F /* AppDelegate.swift in Sources */,
 				3DBBB7F024C03F04003F5F9F /* SceneDelegate.swift in Sources */,
+				3DF35BD424C598CF00087826 /* VaccTableViewController.swift in Sources */,
 				9537CE8D24C56DC300714D63 /* AddAnimal.swift in Sources */,
 				3D06F3E724C1BAB0001F5C3E /* HospitalViewController.swift in Sources */,
-				3DF35BD224C5614100087826 /* VaccViewController.swift in Sources */,
 				9537CE8F24C56E7100714D63 /* VaccSchedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +382,7 @@
 		};
 		3DBBB7FF24C03F05003F5F9F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8909154AF0687E70C9C0427 /* Pods-patHosMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -311,7 +392,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ehun.con.tw.patHosMap;
+				PRODUCT_BUNDLE_IDENTIFIER = animal109.conm.tw.patHosMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -320,6 +401,7 @@
 		};
 		3DBBB80024C03F05003F5F9F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 548A8636DCED64BA45F4C677 /* Pods-patHosMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -329,7 +411,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ehun.con.tw.patHosMap;
+				PRODUCT_BUNDLE_IDENTIFIER = animal109.conm.tw.patHosMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
