@@ -299,20 +299,6 @@
                                 <rect key="frame" x="0.0" y="55" width="414" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8M-LR-LaZ" userLabel="NameLabel">
-                                <rect key="frame" x="19" y="239" width="100" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkB-AQ-nSX" userLabel="NameLabel">
-                                <rect key="frame" x="29" y="418" width="100" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XU4-Yz-kJJ">
                                 <rect key="frame" x="316" y="239" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -321,39 +307,70 @@
                                     <action selector="btnAddToFavorite:" destination="VfV-7t-FG0" eventType="touchUpInside" id="b3X-gQ-Dif"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0987162501" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsG-1R-ytu" userLabel="NameLabel">
-                                <rect key="frame" x="119" y="368" width="229" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新北市林口區" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eV-aq-WB5" userLabel="NameLabel">
-                                <rect key="frame" x="119" y="418" width="210" height="42"/>
+                                <rect key="frame" x="82" y="418" width="296" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.1019607843" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="電話" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzY-35-z3r" userLabel="NameLabel">
-                                <rect key="frame" x="29" y="368" width="100" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zb1-Du-H2l">
-                                <rect key="frame" x="0.0" y="480" width="414" height="358"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zb1-Du-H2l">
+                                <rect key="frame" x="0.0" y="542" width="414" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="MwH-5c-X6D"/>
+                                </constraints>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lc4-tv-TB1">
+                                <rect key="frame" x="0.0" y="542" width="414" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="fwz-1K-nkR"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="buttonOpenMap:" destination="VfV-7t-FG0" eventType="touchUpInside" id="eoP-7x-jIE"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-je-GNi">
+                                <rect key="frame" x="35" y="366" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pets" translatesAutoresizingMaskIntoConstraints="NO" id="QXx-yp-c0z">
+                                <rect key="frame" x="32" y="424" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RJ-bA-o2J">
+                                <rect key="frame" x="82" y="365" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.1019607843" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPhone:" destination="VfV-7t-FG0" eventType="touchUpInside" id="g6P-HY-qhl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8M-LR-LaZ" userLabel="NameLabel">
+                                <rect key="frame" x="35" y="77" width="260" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" red="0.30588235294117649" green="0.80392156862745101" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lc4-tv-TB1" firstAttribute="trailing" secondItem="Xfc-Gb-xG3" secondAttribute="trailing" id="AAG-eC-zfW"/>
+                            <constraint firstItem="zb1-Du-H2l" firstAttribute="trailing" secondItem="Xfc-Gb-xG3" secondAttribute="trailing" id="F86-75-OwQ"/>
+                            <constraint firstItem="Xfc-Gb-xG3" firstAttribute="bottom" secondItem="lc4-tv-TB1" secondAttribute="bottom" constant="20" id="G1D-7f-fJY"/>
+                            <constraint firstItem="zb1-Du-H2l" firstAttribute="leading" secondItem="Xfc-Gb-xG3" secondAttribute="leading" id="LGS-e1-z6Q"/>
+                            <constraint firstItem="Xfc-Gb-xG3" firstAttribute="bottom" secondItem="zb1-Du-H2l" secondAttribute="bottom" constant="20" id="c4y-Ck-TqI"/>
+                            <constraint firstItem="lc4-tv-TB1" firstAttribute="leading" secondItem="Xfc-Gb-xG3" secondAttribute="leading" id="dle-ZN-OR7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Xfc-Gb-xG3"/>
                     </view>
                     <connections>
+                        <outlet property="buttonPhone" destination="0RJ-bA-o2J" id="fqB-Aq-y8i"/>
                         <outlet property="hosAddress" destination="5eV-aq-WB5" id="RGN-1f-cC2"/>
                         <outlet property="hosName" destination="K8M-LR-LaZ" id="1RA-fX-V5p"/>
-                        <outlet property="hosTelephone" destination="IsG-1R-ytu" id="YVc-F8-Nwi"/>
                         <outlet property="mapView" destination="zb1-Du-H2l" id="4mp-g7-p5q"/>
                     </connections>
                 </viewController>
@@ -904,6 +921,8 @@
         <image name="21554565135" width="400" height="300"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="pencil.tip" catalog="system" width="99" height="128"/>
+        <image name="pets" width="64" height="64"/>
+        <image name="phone" width="64" height="64"/>
         <image name="smartphone-with-map-phone-screen-red-gps-dot-isolated-white-background-illustration-location-search_185004-41" width="626" height="626"/>
     </resources>
 </document>

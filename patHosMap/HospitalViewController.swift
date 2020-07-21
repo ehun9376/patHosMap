@@ -84,6 +84,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         print(self.hosAddrArray[indexPath.row])
         HosDetailVC.strtel = self.hosTelArray[indexPath.row]
         HosDetailVC.straddr = self.hosAddrArray[indexPath.row]
+        HosDetailVC.strname = self.hosNameArray[indexPath.row]
         self.show(HosDetailVC, sender: nil)
     }
     

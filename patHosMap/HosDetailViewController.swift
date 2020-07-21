@@ -5,11 +5,14 @@ import CoreLocation
 class HosDetailViewController: UIViewController {
     var strtel = ""
     var straddr = ""
+    var strname = ""
     var latitude:CLLocationDegrees!
     var longitude:CLLocationDegrees!
     let annomation = MKPointAnnotation()
+    fileprivate let application = UIApplication.shared
     @IBOutlet weak var hosName: UILabel!
-    @IBOutlet weak var hosTelephone: UILabel!
+    //@IBOutlet weak var hosTelephone: UILabel!
+    @IBOutlet weak var buttonPhone: UIButton!
     @IBOutlet weak var hosAddress: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
@@ -23,8 +26,14 @@ class HosDetailViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hosTelephone.text = strtel
+        //self.hosTelephone.text = strtel
+        self.buttonPhone.setTitle(strtel, for: .normal)
         self.hosAddress.text = straddr
+        self.hosName.text = strname
+    }
+    
+    override func viewDidLayoutSubviews()
+    {
         getDestination()
     }
     
@@ -58,6 +67,32 @@ class HosDetailViewController: UIViewController {
             }
         }
     }
-
+    
+    @IBAction func buttonOpenMap(_ sender: UIButton)
+    {
+        let mapURL = URL(string: "http://maps.apple.com/?daddr=\(latitude!),\(longitude!)")
+        print(latitude!, longitude!)
+        if (UIApplication.shared.canOpenURL(mapURL!)){
+            UIApplication.shared.open(mapURL!, options: [:], completionHandler: nil)
+        } else {
+                // do nothing
+        }
+    }
+    
+    @IBAction func buttonPhone(_ sender: UIButton)
+    {
+        if let phoneURL = URL(string: "tel://0123456789")
+        {
+            if application.canOpenURL(phoneURL)
+            {
+                application.open(phoneURL, options: [:], completionHandler: nil)
+            }
+            else
+            {
+                //alert
+            }
+        }
+    }
+    
 
 }
