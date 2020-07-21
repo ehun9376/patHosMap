@@ -6,7 +6,6 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var strtel = ""
     var straddr = ""
     var strname = ""
-   
     @IBOutlet weak var hosName: UILabel!
     //@IBOutlet weak var hosTelephone: UILabel!
     @IBOutlet weak var buttonPhone: UIButton!
@@ -123,6 +122,4 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             }
         }
     }
-    
-
 }
