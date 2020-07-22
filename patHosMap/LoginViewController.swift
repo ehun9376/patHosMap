@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     var root:DatabaseReference!
     let observer:UInt = 0
     var count = 0
+    var FavoriteVC:MyFavoriteViewController!
+    var manager_array:[[String:String]] = []
     @IBAction func clean(_ sender: UIButton) {
         self.account.text = ""
         self.password.text = ""
@@ -23,9 +25,9 @@ class LoginViewController: UIViewController {
         var is_manager = false
         user.observe(DataEventType.value, with: { (data) in
             print(data.value!)
-            let manager_array = data.value! as! [[String:String]]
-            print(manager_array)
-            for manager in manager_array{
+            self.manager_array = (data.value! as? [[String:String]])!
+            print(self.manager_array)
+            for manager in self.manager_array{
                 self.count += 1
                 if manager["account"] == self.account.text && manager["password"] == self.password.text{
                     is_manager = true
@@ -52,10 +54,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         root = Database.database().reference()
-        print("123")
-        print("456")
-        print("789")
-        print("1010111")
     }
 
 }
