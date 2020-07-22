@@ -14,8 +14,9 @@ class MyFavoriteViewController: UIViewController {
 
     @IBAction func test(_ sender: UIButton) {
         print("寫不出來傳遞頁面資訊")
-
-        
+        let listVC = self.storyboard?.instantiateViewController(identifier: "listVC") as! HospitalViewController
+        listVC.loadViewIfNeeded()
+        print(listVC.cityHosArray)
     }
     
     override func viewDidLoad() {

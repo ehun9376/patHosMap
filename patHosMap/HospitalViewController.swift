@@ -83,7 +83,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let HosDetailVC = self.storyboard?.instantiateViewController(identifier: "HosDetail") as! HosDetailViewController
+        let HosDetailVC = self.storyboard?.instantiateViewController(identifier: "HosDetailVC") as! HosDetailViewController
         HosDetailVC.strtel = self.hosTelArray[indexPath.row]
         HosDetailVC.straddr = self.hosAddrArray[indexPath.row]
         HosDetailVC.strname = self.hosNameArray[indexPath.row]
