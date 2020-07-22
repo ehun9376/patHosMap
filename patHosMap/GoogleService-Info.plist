@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>583951637759-j1v6sicks1b1rffvotb2ilc7srs2jgmh.apps.googleusercontent.com</string>
+	<string>583951637759-nms3vpr383ki91c7cgi6veal5slj8g37.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.583951637759-j1v6sicks1b1rffvotb2ilc7srs2jgmh</string>
+	<string>com.googleusercontent.apps.583951637759-nms3vpr383ki91c7cgi6veal5slj8g37</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCrhbO2fC8uoKXGBp9XuI_slwb70jEFKtY</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>animal109.com.tw.patHosMap</string>
+	<string>animal109.conm.tw.patHosMap</string>
 	<key>PROJECT_ID</key>
 	<string>animal109</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:583951637759:ios:fa1cc556129d727ca700ca</string>
+	<string>1:583951637759:ios:c9359e9e2113e865a700ca</string>
 	<key>DATABASE_URL</key>
 	<string>https://animal109.firebaseio.com</string>
 </dict>

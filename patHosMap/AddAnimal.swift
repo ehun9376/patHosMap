@@ -14,6 +14,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!
+    
     @IBOutlet weak var imgPicture: UIImageView!
     @IBOutlet weak var btnCat: UIButton!
     @IBOutlet weak var btnDog: UIButton!
@@ -21,60 +22,17 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     @IBOutlet weak var btnEdit: UIButton!
     
     var pkvBirthday:UIPickerView!
-   // @IBAction func selectRoleButtonPr
-    @objc func keyboardWillHide(){
-        print("鍵盤收合！")
-        //將畫面移回原來位置
-        self.view.frame.origin.y = 0
-    }
-    @IBAction func editDidBegin(_ sender: UITextField) {
-        print("開始編輯")
-        switch sender.tag {
-            case 1: //name
-                sender.keyboardType = .phonePad
-            case 2://birthday
-                sender.keyboardType = .emailAddress
-            default:
-                sender.keyboardType = .default
-        }
-        //計算輸入元件的Ｙ軸底元位置
-        currentObjectBottomPosition = sender.frame.origin.y + sender.frame.size.height
-    }
-    
-    
-    @objc func keyboardWillShow(_ sender:Notification){
-        print("鍵盤彈出！")
-        print("通知資訊：\(sender)")
-        if let keyboardHeight = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height {
-            print("鍵盤高度：\(keyboardHeight)")
-            //整個高度減去鍵盤高度（計算扣除鍵盤後的可視高度）
-            let visibleHeight = self.view.bounds.size.height - keyboardHeight
-            //如果”Ｙ軸底緣位置“比“可視高度”還高，表示元件被鍵盤遮住
-            
-            if currentObjectBottomPosition > visibleHeight{
-                //移動“Ｙ軸底緣位置”與“可視高度”之間的差值（即被遮住的範圍高度再少１０點）
-                self.view.frame.origin.y -= currentObjectBottomPosition - visibleHeight + 10
-            }
-        }
-    }
-    
-    
+    let arrBirthday = [["1988","1988","189"],["1","2"],["10","11"]]
+
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let notificationCenter = NotificationCenter.default
-        //向通知中心註冊鍵盤彈出通知
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
-        // Do any additional setup after loading the view.
         pkvBirthday = UIPickerView()
         txtBirthday.inputView = pkvBirthday
         pkvBirthday.delegate = self
         pkvBirthday.dataSource = self
     }
-    
-
     //相機
     //使用代理協定UIImagePickerControllerDelegate,UINavigationControllerDelegate
     @IBAction func btnCamera(_ sender: UIButton) {
@@ -88,9 +46,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         imagePicker.delegate = self
         self.show(imagePicker, sender: nil)
     }
-    
     //相簿
-    
     @IBAction func btnPhotoAlbum(_ sender: UIButton) {
         if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
                print("此裝置沒有相簿")
@@ -140,9 +96,13 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     }
     //每一段滾輪有幾個選項（內迴圈數量）
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-
-        return 0
+        
+            return arrBirthday.count
     }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arrBirthday[row]
+    }
+    
 
 
 }
