@@ -1,0 +1,6 @@
+framework module Pods_patHosMap {
+  umbrella header "Pods-patHosMap-umbrella.h"
+
+  export *
+  module * { export * }
+}
