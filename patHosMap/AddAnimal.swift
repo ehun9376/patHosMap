@@ -68,6 +68,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         print("anna")
         print("ritaaa")
         print("123")
+        print("annaaaa")
         // Do any additional setup after loading the view.
     }
     
