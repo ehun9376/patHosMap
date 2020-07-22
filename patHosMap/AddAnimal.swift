@@ -99,9 +99,9 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         
             return arrBirthday.count
     }
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return arrBirthday[row]
-//    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arrBirthday[row]
+    }
     
 
 
