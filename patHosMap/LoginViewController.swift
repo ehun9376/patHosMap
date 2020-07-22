@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
             }
             if is_manager{
                 print("使用者登入成功")
-//                print(self.count)
+                print(self.count)
                 let HosDetailVC = self.storyboard?.instantiateViewController(identifier: "HosDetail") as! HosDetailViewController
                 user.removeObserver(withHandle: self.observer)
                 self.performSegue(withIdentifier: "login", sender: nil)
