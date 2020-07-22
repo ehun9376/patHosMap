@@ -6,6 +6,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var strtel = ""
     var straddr = ""
     var strname = ""
+    var count = 0
     @IBOutlet weak var hosName: UILabel!
     //@IBOutlet weak var hosTelephone: UILabel!
     @IBOutlet weak var buttonPhone: UIButton!
@@ -24,13 +25,9 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var userlongitube:CLLocationDegrees!
     
     @IBAction func btnAddToFavorite(_ sender: UIButton) {
-//        let little_data_center:UserDefaults
-//        little_data_center = UserDefaults.init()
-//        little_data_center.set(45, forKey: "age")
-//        little_data_center.set("Rita", forKey: "username")
-//        print("OK了")
-//        print(self.test)
+
         print("測試")
+        print(self.count)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

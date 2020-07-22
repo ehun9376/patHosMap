@@ -5,15 +5,17 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
 
     
     @IBOutlet weak var table: UITableView!
+
+    @IBOutlet var citys: [UIButton]!
+    @IBOutlet weak var city: UILabel!
     var locationManager = CLLocationManager()
     var cityHosArray:[[String:String]] = [[:]]
     var hosNameArray:[String] = []
     var hosTelArray:[String] = []
     var hosAddrArray:[String] = []
     var hospitalsArray:[[String:String]] = [[:]]
-    @IBOutlet var citys: [UIButton]!
-    @IBOutlet weak var city: UILabel!
     @IBAction func changeCity(_ sender: UIButton) {
+        
         UIView.animate(withDuration: 0.5) {
             for city in self.citys{
                 city.isHidden = !city.isHidden

@@ -13,15 +13,13 @@ class MyFavoriteViewController: UIViewController {
     var hospitalsArray:[[String:String]] = [[:]]
 
     @IBAction func test(_ sender: UIButton) {
-        let LoginVC = self.storyboard?.instantiateViewController(identifier: "LoginVC") as! LoginViewController
-        LoginVC
-        print(self.hospitalsArray)
+        print("寫不出來傳遞頁面資訊")
+
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("從新")
-
     }
     
 
