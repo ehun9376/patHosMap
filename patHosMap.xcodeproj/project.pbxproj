@@ -16,12 +16,12 @@
 		3DF35BCE24C535DB00087826 /* HosDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */; };
 		3DF35BD024C55DAC00087826 /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */; };
 		3DF35BD424C598CF00087826 /* VaccTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD324C598CF00087826 /* VaccTableViewController.swift */; };
-		3DF35BD624C5A02B00087826 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DF35BD524C5A02B00087826 /* GoogleService-Info.plist */; };
 		3DF35BD824C5A4F500087826 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD724C5A4F500087826 /* LoginViewController.swift */; };
 		3DF35BDA24C5A51C00087826 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD924C5A51C00087826 /* RegisterViewController.swift */; };
 		85505153D2AD3BD0FFA824B9 /* Pods_patHosMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B90A8FD0A5DB3E22247E4C /* Pods_patHosMap.framework */; };
 		9537CE8D24C56DC300714D63 /* AddAnimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537CE8C24C56DC300714D63 /* AddAnimal.swift */; };
 		9537CE8F24C56E7100714D63 /* VaccSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537CE8E24C56E7100714D63 /* VaccSchedule.swift */; };
+		95AA741D24C7C18D000B364E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95AA741C24C7C18D000B364E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,12 +37,12 @@
 		3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosDetailViewController.swift; sourceTree = "<group>"; };
 		3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
 		3DF35BD324C598CF00087826 /* VaccTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccTableViewController.swift; sourceTree = "<group>"; };
-		3DF35BD524C5A02B00087826 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "patHosMap/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3DF35BD724C5A4F500087826 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3DF35BD924C5A51C00087826 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		548A8636DCED64BA45F4C677 /* Pods-patHosMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patHosMap.release.xcconfig"; path = "Target Support Files/Pods-patHosMap/Pods-patHosMap.release.xcconfig"; sourceTree = "<group>"; };
 		9537CE8C24C56DC300714D63 /* AddAnimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimal.swift; sourceTree = "<group>"; };
 		9537CE8E24C56E7100714D63 /* VaccSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccSchedule.swift; sourceTree = "<group>"; };
+		95AA741C24C7C18D000B364E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8909154AF0687E70C9C0427 /* Pods-patHosMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patHosMap.debug.xcconfig"; path = "Target Support Files/Pods-patHosMap/Pods-patHosMap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +102,7 @@
 				3DBBB7F624C03F05003F5F9F /* Assets.xcassets */,
 				3DBBB7F824C03F05003F5F9F /* LaunchScreen.storyboard */,
 				3DBBB7FB24C03F05003F5F9F /* Info.plist */,
-				3DF35BD524C5A02B00087826 /* GoogleService-Info.plist */,
+				95AA741C24C7C18D000B364E /* GoogleService-Info.plist */,
 			);
 			path = patHosMap;
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DBBB7FA24C03F05003F5F9F /* LaunchScreen.storyboard in Resources */,
-				3DF35BD624C5A02B00087826 /* GoogleService-Info.plist in Resources */,
+				95AA741D24C7C18D000B364E /* GoogleService-Info.plist in Resources */,
 				3DBBB7F724C03F05003F5F9F /* Assets.xcassets in Resources */,
 				3DBBB7F524C03F04003F5F9F /* Main.storyboard in Resources */,
 			);
@@ -386,7 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NZT54R9366;
+				DEVELOPMENT_TEAM = X48T94437K;
 				INFOPLIST_FILE = patHosMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -405,7 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NZT54R9366;
+				DEVELOPMENT_TEAM = X48T94437K;
 				INFOPLIST_FILE = patHosMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

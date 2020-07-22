@@ -8,9 +8,13 @@
 
 import UIKit
 
-class AddAnimal: UIViewController {
+class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
         var currentObjectBottomPosition:CGFloat = 0
+    
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtBirthday: UITextField!
+    
     
     
     
@@ -63,6 +67,21 @@ class AddAnimal: UIViewController {
     }
     
 
+    //相機
+    //使用代理協定UIImagePickerControllerDelegate,UINavigationControllerDelegate
+    @IBAction func btnCamera(_ sender: UIButton) {
+        if
+            !UIImagePickerController.isSourceTypeAvailable(.camera){
+                print("此裝置沒有相機")
+            return
+        }
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+        imagePicker.delegate = self
+    }
+    
+    //相簿
+    //Todo
     /*
     // MARK: - Navigation
 
@@ -72,9 +91,14 @@ class AddAnimal: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    //MARK - UIImagePickerControllerDelegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("影像資訊:\(info)")
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //編輯用鍵盤使用結束後收起
         self.view.endEditing(true)
     }
+    
 
 }

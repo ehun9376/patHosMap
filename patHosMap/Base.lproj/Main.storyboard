@@ -660,6 +660,9 @@
                                 <rect key="frame" x="325" y="290" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="btnCamera:" destination="Zjm-Il-gRu" eventType="touchUpInside" id="eEn-35-5S3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="狗" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KF1-zE-C6X">
                                 <rect key="frame" x="161" y="433" width="21" height="24"/>
@@ -706,6 +709,10 @@
                         <viewLayoutGuide key="safeArea" id="9HH-Mh-IcS"/>
                     </view>
                     <navigationItem key="navigationItem" id="avF-Yb-H1l"/>
+                    <connections>
+                        <outlet property="txtBirthday" destination="WUb-3A-j6e" id="iis-gw-K70"/>
+                        <outlet property="txtName" destination="0BB-IJ-flb" id="lHF-4G-YmQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WEd-xC-kk8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -996,9 +1003,6 @@
             <point key="canvasLocation" x="191.30434782608697" y="836.38392857142856"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="sgi-j6-k06"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="21554565135" width="400" height="300"/>
         <image name="globe" catalog="system" width="128" height="121"/>
