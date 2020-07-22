@@ -65,23 +65,32 @@ class VaccTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    
-    
-    
-    
-
+ 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return arrTable.count
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! MyCell
+        print("現在準備Section:\(indexPath.section)，Row:\(indexPath.row)")
+    structRow = arrTable[indexPath.row]
+    cell.lblName.text = structRow.name
+        if let aPicture = structRow.picture
+        {
+            cell.imgPicture.image = UIImage(data: aPicture)
+
+        }
+        
+    return cell
+    }
+    
+    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {   //準備"更多"按鈕
         let actionMore = UIContextualAction(style: .normal, title: "更多") { (action, view, completionHanlder) in
