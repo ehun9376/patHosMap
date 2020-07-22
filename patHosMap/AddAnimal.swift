@@ -22,7 +22,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     @IBOutlet weak var btnEdit: UIButton!
     
     var pkvBirthday:UIPickerView!
-    let arrBirthday = [["10","11","11","11","11","12"]]
+    let arrBirthday = [["10","11","11","11","11","10"]]
 
  
     override func viewDidLoad() {
