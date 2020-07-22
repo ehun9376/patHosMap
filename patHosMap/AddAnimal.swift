@@ -10,7 +10,8 @@ import UIKit
 
 class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIPickerViewDelegate {
     
-        var currentObjectBottomPosition:CGFloat = 0
+    weak var vaccTableViewController:VaccTableViewController!
+    var currentObjectBottomPosition:CGFloat = 0
     
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!

@@ -551,7 +551,7 @@
         <!--Vacc Table View Controller-->
         <scene sceneID="SJ5-Wk-Kr1">
             <objects>
-                <tableViewController id="gqO-Lv-StV" customClass="VaccTableViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="VaccTableViewController" id="gqO-Lv-StV" customClass="VaccTableViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HMr-Fp-mZg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

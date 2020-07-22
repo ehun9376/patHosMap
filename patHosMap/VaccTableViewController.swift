@@ -7,8 +7,15 @@
 //
 
 import UIKit
-
+struct Animal {
+    var name = ""
+    var picture:Data?
+}
 class VaccTableViewController: UITableViewController {
+    var structRow = Animal()
+    //查詢到的資料表所存放的陣列（用於離線資料集）
+    var arrTable = [Animal]()
+    var currentRow = 0
     var list:[String]!
     //MARK: -Target Action
     //導覽列的新增按鈕
@@ -31,20 +38,32 @@ class VaccTableViewController: UITableViewController {
         let addVC = self.storyboard!.instantiateViewController(identifier: "AddAnimal") as! AddAnimal
         self.show(addVC, sender: nil)
     }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        arrTable = [
+            Animal(name: "來寶", picture:UIImage(named: "DefaultPhoto.jpg")!.jpegData(compressionQuality: 0.8)),
+            Animal(name: "旺福", picture:UIImage(named: "DefaultPhoto.jpg")!.jpegData(compressionQuality: 0.8)),
+        ]
         self.navigationItem.title = "我的寵物"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(buttonEditAction))
-         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(buttonAddAction))
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(buttonAddAction))
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        super.prepare(for: segue, sender: sender)
+        print("即將由換頁線換頁")
+        //由線換頁取得下一頁
+        let detailVC = segue.destination as! AddAnimal
+        //將本頁的執行實體通知下一頁
+        detailVC.vaccTableViewController = self
+    }
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        print("畫面重現：\(arrTable[currentRow])")
+        //重整表格（重新執行Table view data source代理事件）
+        self.tableView.reloadData()
+    }
     
     
     
@@ -63,42 +82,6 @@ class VaccTableViewController: UITableViewController {
         return 0
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {   //準備"更多"按鈕
         let actionMore = UIContextualAction(style: .normal, title: "更多") { (action, view, completionHanlder) in
@@ -123,22 +106,6 @@ class VaccTableViewController: UITableViewController {
         return config
     }
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
