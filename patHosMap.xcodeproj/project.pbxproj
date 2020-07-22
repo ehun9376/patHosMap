@@ -13,6 +13,7 @@
 		3DBBB7F524C03F04003F5F9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBBB7F324C03F04003F5F9F /* Main.storyboard */; };
 		3DBBB7F724C03F05003F5F9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBBB7F624C03F05003F5F9F /* Assets.xcassets */; };
 		3DBBB7FA24C03F05003F5F9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBBB7F824C03F05003F5F9F /* LaunchScreen.storyboard */; };
+		3DCFB56624C8302F0082CD13 /*  .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 3DCFB56524C8302F0082CD13 /*  .gitattributes */; };
 		3DF35BCE24C535DB00087826 /* HosDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */; };
 		3DF35BD024C55DAC00087826 /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */; };
 		3DF35BD424C598CF00087826 /* VaccTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD324C598CF00087826 /* VaccTableViewController.swift */; };
@@ -34,6 +35,7 @@
 		3DBBB7F624C03F05003F5F9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DBBB7F924C03F05003F5F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DBBB7FB24C03F05003F5F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DCFB56524C8302F0082CD13 /*  .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = " .gitattributes"; sourceTree = "<group>"; };
 		3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosDetailViewController.swift; sourceTree = "<group>"; };
 		3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
 		3DF35BD324C598CF00087826 /* VaccTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccTableViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		3DBBB7E124C03F04003F5F9F = {
 			isa = PBXGroup;
 			children = (
+				3DCFB56524C8302F0082CD13 /*  .gitattributes */,
 				3DBBB7EC24C03F04003F5F9F /* patHosMap */,
 				3DBBB7EB24C03F04003F5F9F /* Products */,
 				29AF5F736941FE4D3A506645 /* Pods */,
@@ -175,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCFB56624C8302F0082CD13 /*  .gitattributes in Resources */,
 				3DBBB7FA24C03F05003F5F9F /* LaunchScreen.storyboard in Resources */,
 				95AA741F24C8199F000B364E /* GoogleService-Info.plist in Resources */,
 				3DBBB7F724C03F05003F5F9F /* Assets.xcassets in Resources */,
@@ -386,13 +390,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X48T94437K;
+				DEVELOPMENT_TEAM = NZT54R9366;
 				INFOPLIST_FILE = patHosMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = animal109.com.tw.patHosMap;
+				PRODUCT_BUNDLE_IDENTIFIER = animal109.conm.tw.patHosMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
