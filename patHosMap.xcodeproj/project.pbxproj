@@ -22,7 +22,8 @@
 		9537CE8D24C56DC300714D63 /* AddAnimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537CE8C24C56DC300714D63 /* AddAnimal.swift */; };
 		9537CE8F24C56E7100714D63 /* VaccSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537CE8E24C56E7100714D63 /* VaccSchedule.swift */; };
 		9DFCEFF424C86093006E865D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DFCEFF324C86093006E865D /* GoogleService-Info.plist */; };
-		9DFCEFF624C87068006E865D /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFCEFF524C87068006E865D /* MyCell.swift */; };
+		9DFCEFF824C88634006E865D /* MyCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFCEFF724C88634006E865D /* MyCellTableViewCell.swift */; };
+		9DFCEFFC24C88B6F006E865D /* DetailAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFCEFFB24C88B6F006E865D /* DetailAnimalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +45,8 @@
 		9537CE8C24C56DC300714D63 /* AddAnimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimal.swift; sourceTree = "<group>"; };
 		9537CE8E24C56E7100714D63 /* VaccSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccSchedule.swift; sourceTree = "<group>"; };
 		9DFCEFF324C86093006E865D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9DFCEFF524C87068006E865D /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		9DFCEFF724C88634006E865D /* MyCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellTableViewCell.swift; sourceTree = "<group>"; };
+		9DFCEFFB24C88B6F006E865D /* DetailAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalViewController.swift; sourceTree = "<group>"; };
 		B8909154AF0687E70C9C0427 /* Pods-patHosMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patHosMap.debug.xcconfig"; path = "Target Support Files/Pods-patHosMap/Pods-patHosMap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,8 +100,9 @@
 				3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */,
 				3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */,
 				3DF35BD324C598CF00087826 /* VaccTableViewController.swift */,
-				9DFCEFF524C87068006E865D /* MyCell.swift */,
+				9DFCEFF724C88634006E865D /* MyCellTableViewCell.swift */,
 				9537CE8C24C56DC300714D63 /* AddAnimal.swift */,
+				9DFCEFFB24C88B6F006E865D /* DetailAnimalViewController.swift */,
 				9537CE8E24C56E7100714D63 /* VaccSchedule.swift */,
 				3DBBB7F324C03F04003F5F9F /* Main.storyboard */,
 				3DBBB7F624C03F05003F5F9F /* Assets.xcassets */,
@@ -239,12 +242,13 @@
 				3DF35BD024C55DAC00087826 /* MyFavoriteViewController.swift in Sources */,
 				3DF35BCE24C535DB00087826 /* HosDetailViewController.swift in Sources */,
 				3DBBB7EE24C03F04003F5F9F /* AppDelegate.swift in Sources */,
-				9DFCEFF624C87068006E865D /* MyCell.swift in Sources */,
 				3DBBB7F024C03F04003F5F9F /* SceneDelegate.swift in Sources */,
+				9DFCEFFC24C88B6F006E865D /* DetailAnimalViewController.swift in Sources */,
 				3DF35BD424C598CF00087826 /* VaccTableViewController.swift in Sources */,
 				9537CE8D24C56DC300714D63 /* AddAnimal.swift in Sources */,
 				3D06F3E724C1BAB0001F5C3E /* HospitalViewController.swift in Sources */,
 				9537CE8F24C56E7100714D63 /* VaccSchedule.swift in Sources */,
+				9DFCEFF824C88634006E865D /* MyCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
