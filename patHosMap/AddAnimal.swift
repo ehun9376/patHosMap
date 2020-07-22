@@ -66,10 +66,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        print("anna")
-        print("ritaaa")
-        print("123")
-        print("annaaaa")
+
         // Do any additional setup after loading the view.
         pkvBirthday = UIPickerView()
         txtBirthday.inputView = pkvBirthday
