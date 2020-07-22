@@ -67,6 +67,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         print("anna")
         print("ritaaa")
+        print("123")
         // Do any additional setup after loading the view.
     }
     
