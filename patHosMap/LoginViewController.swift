@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     var root:DatabaseReference!
     let observer:UInt = 0
+    var count = 0
     @IBAction func clean(_ sender: UIButton) {
         self.account.text = ""
         self.password.text = ""
@@ -25,7 +26,7 @@ class LoginViewController: UIViewController {
             let manager_array = data.value! as! [[String:String]]
             print(manager_array)
             for manager in manager_array{
-                
+                self.count += 1
                 if manager["account"] == self.account.text && manager["password"] == self.password.text{
                     is_manager = true
                     break
@@ -33,6 +34,8 @@ class LoginViewController: UIViewController {
             }
             if is_manager{
                 print("使用者登入成功")
+//                print(self.count)
+                let HosDetailVC = self.storyboard?.instantiateViewController(identifier: "HosDetail") as! HosDetailViewController
                 user.removeObserver(withHandle: self.observer)
                 self.performSegue(withIdentifier: "login", sender: nil)
             }
