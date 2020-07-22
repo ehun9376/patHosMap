@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
     
         var currentObjectBottomPosition:CGFloat = 0
     
@@ -20,18 +20,19 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     @IBOutlet weak var btnDecide: UIButton!
     @IBOutlet weak var btnEdit: UIButton!
     
+    var pkvBirthday:UIPickerView!
+   // @IBAction func selectRoleButtonPr
     @objc func keyboardWillHide(){
         print("鍵盤收合！")
         //將畫面移回原來位置
         self.view.frame.origin.y = 0
     }
-    
     @IBAction func editDidBegin(_ sender: UITextField) {
         print("開始編輯")
         switch sender.tag {
-            case 3: //phone
+            case 1: //name
                 sender.keyboardType = .phonePad
-            case 6://email
+            case 2://birthday
                 sender.keyboardType = .emailAddress
             default:
                 sender.keyboardType = .default
@@ -70,6 +71,10 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         print("123")
         print("annaaaa")
         // Do any additional setup after loading the view.
+        pkvBirthday = UIPickerView()
+        txtBirthday.inputView = pkvBirthday
+        pkvBirthday.delegate = self
+        pkvBirthday.dataSource = self
     }
     
 
@@ -131,6 +136,16 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         self.view.endEditing(true)
     }
     
+    //MARK - UIPickerViewDataSource
+    //滾輪有幾段(外迴圈數量)
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3
+    }
+    //每一段滾輪有幾個選項（內迴圈數量）
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
+        return 0
+    }
 
 
 }
