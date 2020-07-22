@@ -69,6 +69,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         print("ritaaa")
         print("123")
         print("annaaaa")
+        print("有沒有更新")
         // Do any additional setup after loading the view.
     }
     
