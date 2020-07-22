@@ -54,6 +54,7 @@ class LoginViewController: UIViewController {
         root = Database.database().reference()
         print("123")
         print("456")
+        print("789")
     }
 
 }
