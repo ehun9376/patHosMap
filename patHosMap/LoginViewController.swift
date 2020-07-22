@@ -53,6 +53,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         root = Database.database().reference()
         print("123")
+        print("456")
     }
 
 }
