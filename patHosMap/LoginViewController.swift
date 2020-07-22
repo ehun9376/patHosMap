@@ -52,6 +52,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         root = Database.database().reference()
+        print("123")
+        print("456")
+        print("789")
+        print("1010111")
     }
 
 }
