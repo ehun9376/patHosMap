@@ -43,7 +43,7 @@ class RegisterViewController: UIViewController {
                 if self.account.text != "" && self.password.text != ""{
                     print("推送\(count),創建帳號")
                     let newUser = self.root.child("user").child("\(count)")
-                    let newData = ["account":"\(self.account.text!)","password":"\(self.password.text!)"]
+                    let newData = ["account":"\(self.account.text!)","password":"\(self.password.text!)","favorite":""]
                     newUser.setValue(newData)
                     let alert = UIAlertController(title: "通知", message: "帳號已創建", preferredStyle: .alert)
                     let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in

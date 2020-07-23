@@ -33,7 +33,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         little_data_center = UserDefaults.init()
         let userID = little_data_center.integer(forKey: "userID") - 1
         print(userID)
-        
+        let datafavorite =  root.child("user").child("\(userID)").child("favorite")
         if self.userFavoriteName != nil{
             if self.userFavoriteName.components(separatedBy: ",").contains(strname){
                 let alert = UIAlertController(title: "警告", message: "已在最愛", preferredStyle: .alert)
@@ -43,16 +43,13 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 self.present(alert, animated: true, completion: {})
             }
             else{
-                little_data_center.set(self.userFavoriteName + "," + strname, forKey: "favorite")
+                datafavorite.setValue(self.userFavoriteName + "," + strname)
             }
 
         }
         else{
-            little_data_center.set(self.strname, forKey: "favorite")
+            datafavorite.setValue(strname)
         }
-        
-        let datafavorite =  root.child("user").child("\(userID)").child("favorite")
-        datafavorite.setValue("123")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,10 +71,15 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         root = Database.database().reference()
         let little_data_center:UserDefaults
         little_data_center = UserDefaults.init()
-        if let defaultsFavoriteName = little_data_center.string(forKey: "favorite"){
-            self.userFavoriteName = defaultsFavoriteName
+        let userID = little_data_center.integer(forKey: "userID") - 1
+        let datafavorite =  root.child("user").child("\(userID)").child("favorite")
+        datafavorite.observeSingleEvent(of: .value) { (shot) in
+            let data = shot.value! as! String
+            if data != ""{
+                self.userFavoriteName = data
+                print(self.userFavoriteName!)
+            }
         }
-        print(self.userFavoriteName)
     }
     
     func getDestination()
