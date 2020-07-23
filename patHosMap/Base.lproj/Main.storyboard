@@ -1121,9 +1121,6 @@
             <point key="canvasLocation" x="191.30434782608697" y="836.38392857142856"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="fd6-8o-SIB"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="21554565135" width="400" height="300"/>
         <image name="globe" catalog="system" width="128" height="121"/>

@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     var root:DatabaseReference!
     let observer:UInt = 0
+    var count = 0
     var manager_array:[[String:String]] = []
     @IBAction func clean(_ sender: UIButton) {
         self.account.text = ""
@@ -24,6 +25,7 @@ class LoginViewController: UIViewController {
         user.observe(DataEventType.value, with: { (data) in
             self.manager_array = (data.value! as? [[String:String]])!
             for manager in self.manager_array{
+                self.count += 1
                 if manager["account"] == self.account.text && manager["password"] == self.password.text{
                     is_manager = true
                     break
@@ -31,7 +33,9 @@ class LoginViewController: UIViewController {
             }
             if is_manager{
                 print("使用者登入成功")
-                let favorite = self.tabBarController?.viewControllers?[1] as! MyFavoriteViewController
+                let favorite = self.storyboard?.instantiateViewController(identifier: "MyFavoriteVC") as! MyFavoriteViewController
+                favorite.count = self.count
+                print(favorite.count)
                 user.removeObserver(withHandle: self.observer)
                 self.performSegue(withIdentifier: "login", sender: nil)
             }
