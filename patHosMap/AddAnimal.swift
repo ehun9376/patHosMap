@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+import Firebase
 class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIPickerViewDelegate {
     
     weak var vaccTableViewController:VaccTableViewController!
     var currentObjectBottomPosition:CGFloat = 0
-    
+    var root:DatabaseReference!
     
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!
