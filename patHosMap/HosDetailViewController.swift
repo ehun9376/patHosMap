@@ -27,12 +27,30 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var userlatitube:CLLocationDegrees!
     var userlongitube:CLLocationDegrees!
     var stringWithLink:String!
-    
+    var userFavoriteName:String!
     @IBAction func btnAddToFavorite(_ sender: UIButton) {
         let little_data_center:UserDefaults
         little_data_center = UserDefaults.init()
         let userID = little_data_center.integer(forKey: "userID") - 1
         print(userID)
+        
+        if self.userFavoriteName != nil{
+            if self.userFavoriteName.components(separatedBy: ",").contains(strname){
+                let alert = UIAlertController(title: "警告", message: "已在最愛", preferredStyle: .alert)
+                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+                }
+                alert.addAction(button)
+                self.present(alert, animated: true, completion: {})
+            }
+            else{
+                little_data_center.set(self.userFavoriteName + "," + strname, forKey: "favorite")
+            }
+
+        }
+        else{
+            little_data_center.set(self.strname, forKey: "favorite")
+        }
+        
         let datafavorite =  root.child("user").child("\(userID)").child("favorite")
         datafavorite.setValue("123")
     }
@@ -54,6 +72,12 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         mapView.showsUserLocation = true   //顯示user位置
         mapView.userTrackingMode = .follow  //隨著user移動
         root = Database.database().reference()
+        let little_data_center:UserDefaults
+        little_data_center = UserDefaults.init()
+        if let defaultsFavoriteName = little_data_center.string(forKey: "favorite"){
+            self.userFavoriteName = defaultsFavoriteName
+        }
+        print(self.userFavoriteName)
     }
     
     func getDestination()
