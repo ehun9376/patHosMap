@@ -10,6 +10,7 @@ import UIKit
 struct Animal {
     var name = ""
     var picture:Data?
+    var birthday = ""
 }
 class VaccTableViewController: UITableViewController {
     var structRow = Animal()
@@ -42,8 +43,8 @@ class VaccTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         arrTable = [
-            Animal(name: "來寶", picture:UIImage(named: "DefaultPhoto.jpg")!.jpegData(compressionQuality: 0.8)),
-            Animal(name: "旺福", picture:UIImage(named: "DefaultPhoto.jpg")!.jpegData(compressionQuality: 0.8)),
+            Animal(name: "來寶", picture:UIImage(named: "DefaultPhoto.jpg")!.jpegData(compressionQuality: 0.8), birthday:"2015/06/15"),
+            Animal(name: "旺福", picture:UIImage(named: "DefaultPhoto.jpg")!.jpegData(compressionQuality: 0.8), birthday: "2018/08/16"),
         ]
         self.navigationItem.title = "我的寵物"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(buttonEditAction))
