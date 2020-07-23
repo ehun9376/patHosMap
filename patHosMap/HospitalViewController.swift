@@ -83,7 +83,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         let cell:UITableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "listCell")
         if indexPath.row <= self.hosNameArray.count{
             cell.textLabel?.text = hosNameArray[indexPath.row]
-            print(hosAddrArray[indexPath.row])
+//            print(hosAddrArray[indexPath.row])
             let geocoder = CLGeocoder()
             geocoder.geocodeAddressString(hosAddrArray[indexPath.row])
             {
