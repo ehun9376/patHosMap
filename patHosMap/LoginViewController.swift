@@ -8,11 +8,13 @@
 
 import UIKit
 import FirebaseDatabase
-class LoginViewController: UIViewController {
+import CoreLocation
+
+class LoginViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var account: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var busy: UIActivityIndicatorView!
-    
+    var locationManager = CLLocationManager()
     var root:DatabaseReference!
     var observer:UInt = 0
     var count = 0
@@ -61,6 +63,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         root = Database.database().reference()
         busy.isHidden = true
+        locationManager.requestWhenInUseAuthorization()
     }
 
 }
