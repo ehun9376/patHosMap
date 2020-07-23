@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gnB-EH-Nkc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGt-Af-Lk8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -551,7 +551,7 @@
         <!--Vacc Table View Controller-->
         <scene sceneID="SJ5-Wk-Kr1">
             <objects>
-                <tableViewController storyboardIdentifier="VaccTableViewController" id="gqO-Lv-StV" customClass="VaccTableViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="VaccTableViewController" modalPresentationStyle="fullScreen" id="gqO-Lv-StV" customClass="VaccTableViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HMr-Fp-mZg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1104,7 +1104,7 @@
         <!--預防針-->
         <scene sceneID="u0f-sX-Gda">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gnB-EH-Nkc" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="gnB-EH-Nkc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="預防針" image="pencil.tip" catalog="system" id="ICo-Y3-OWj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MDZ-Up-VR8">

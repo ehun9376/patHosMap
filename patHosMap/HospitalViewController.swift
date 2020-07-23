@@ -36,11 +36,8 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         self.hosTelArray = []
         self.hosAddrArray = []
         if self.hospitalsArray != [[:]]{
-            print(self.cityHosArray)
-            print(self.hosNameArray)
             for hospital in self.hospitalsArray{
                 if hospital["縣市"]! == sender.titleLabel!.text{
-                    print(hospital)
                     self.cityHosArray.append(hospital)
                     self.hosNameArray.append(hospital["機構名稱"]!)
                     self.hosTelArray.append(hospital["機構電話"]!)
@@ -48,8 +45,6 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
                 }
                 
             }
-//            print(self.cityHosArray)
-//            print(self.hosNameArray)
             self.table.dataSource = self
             self.table.delegate = self
             self.table.reloadData()
@@ -84,9 +79,13 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let HosDetailVC = self.storyboard?.instantiateViewController(identifier: "HosDetailVC") as! HosDetailViewController
+        let favorite = self.tabBarController?.viewControllers?[1] as! MyFavoriteViewController
+        
         HosDetailVC.strtel = self.hosTelArray[indexPath.row]
         HosDetailVC.straddr = self.hosAddrArray[indexPath.row]
         HosDetailVC.strname = self.hosNameArray[indexPath.row]
+        favorite.hospitalsArray = self.hospitalsArray
+        print(favorite.hospitalsArray[0])
         self.show(HosDetailVC, sender: nil)
     }
     

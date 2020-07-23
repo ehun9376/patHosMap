@@ -10,13 +10,10 @@ import UIKit
 
 class MyFavoriteViewController: UIViewController {
     
-    var hospitalsArray:[[String:String]] = [[:]]
-
+    var hospitalsArray:[[String:String]]! = [[:]]
+    var count = 0
     @IBAction func test(_ sender: UIButton) {
-        print("寫不出來傳遞頁面資訊")
-        let listVC = self.storyboard?.instantiateViewController(identifier: "listVC") as! HospitalViewController
-        listVC.loadViewIfNeeded()
-        print(listVC.cityHosArray)
+        print(self.hospitalsArray[0])
     }
     
     override func viewDidLoad() {

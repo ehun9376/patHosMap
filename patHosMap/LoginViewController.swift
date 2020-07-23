@@ -22,9 +22,7 @@ class LoginViewController: UIViewController {
         let user = root.child("user")
         var is_manager = false
         user.observe(DataEventType.value, with: { (data) in
-            print(data.value!)
             self.manager_array = (data.value! as? [[String:String]])!
-            print(self.manager_array)
             for manager in self.manager_array{
                 if manager["account"] == self.account.text && manager["password"] == self.password.text{
                     is_manager = true
@@ -33,6 +31,7 @@ class LoginViewController: UIViewController {
             }
             if is_manager{
                 print("使用者登入成功")
+                let favorite = self.tabBarController?.viewControllers?[1] as! MyFavoriteViewController
                 user.removeObserver(withHandle: self.observer)
                 self.performSegue(withIdentifier: "login", sender: nil)
             }

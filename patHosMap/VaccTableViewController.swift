@@ -67,27 +67,30 @@ class VaccTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrTable.count
     }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return arrTable.count
 //    }
     //準備每一儲存格顯示內容
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "MyCellTableViewCell", for: indexPath) as! MyCellTableViewCell
+        let cell:UITableViewCell = UITableViewCell()
+//        let cell = self.tableView.dequeueReusableCell(withIdentifier: "MyCellTableViewCell", for: indexPath) as! MyCellTableViewCell
         print("現在準備Section:\(indexPath.section)，Row:\(indexPath.row)")
         structRow = arrTable[indexPath.row]
-        cell.lblName.text = structRow.name
+        cell.textLabel!.text = structRow.name
 
         if let aPicture = structRow.picture
         {
-            cell.imgPicture.image = UIImage(data: aPicture)
-
+            cell.imageView?.image = UIImage(data: aPicture)
+//            cell.imgPicture.image = UIImage(data: aPicture)
         }
+
 
     return cell
     }
