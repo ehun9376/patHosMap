@@ -73,6 +73,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         let cell:UITableViewCell = UITableViewCell()
         if indexPath.row <= self.hosNameArray.count{
             cell.textLabel?.text = hosNameArray[indexPath.row]
+            cell.detailTextLabel?.text = hosTelArray[indexPath.row]
         }
         
         return cell
