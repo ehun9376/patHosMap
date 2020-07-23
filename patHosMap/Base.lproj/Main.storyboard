@@ -653,6 +653,9 @@
                                 <rect key="frame" x="193" y="498" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="修改資料"/>
+                                <connections>
+                                    <action selector="btnUpdate:" destination="Dz1-U4-WvP" eventType="touchUpInside" id="xFH-zU-dea"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -709,12 +712,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEndOnExit:" destination="Zjm-Il-gRu" eventType="editingDidEndOnExit" id="seF-gD-4IU"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WUb-3A-j6e">
                                 <rect key="frame" x="147" y="229" width="199" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEndOnExit:" destination="Zjm-Il-gRu" eventType="editingDidEndOnExit" id="ca7-R2-0FW"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eH-4B-wHW">
                                 <rect key="frame" x="234" y="433" width="46" height="30"/>
@@ -765,6 +774,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="確認"/>
+                                <connections>
+                                    <action selector="btnInsert:" destination="Zjm-Il-gRu" eventType="touchUpInside" id="msq-p8-boH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -773,7 +785,6 @@
                     <navigationItem key="navigationItem" id="avF-Yb-H1l"/>
                     <connections>
                         <outlet property="btnCat" destination="7eH-4B-wHW" id="jyZ-ys-1sB"/>
-                        <outlet property="btnDecide" destination="xix-Ye-bck" id="j2h-KR-MLT"/>
                         <outlet property="btnDog" destination="iNH-nG-EE2" id="p07-ce-uFB"/>
                         <outlet property="imgPicture" destination="Xhp-DJ-PAk" id="F1r-1H-kf8"/>
                         <outlet property="txtBirthday" destination="WUb-3A-j6e" id="iis-gw-K70"/>
