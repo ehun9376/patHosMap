@@ -11,6 +11,8 @@ import FirebaseDatabase
 class LoginViewController: UIViewController {
     @IBOutlet weak var account: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var busy: UIActivityIndicatorView!
+    
     var root:DatabaseReference!
     var observer:UInt = 0
     var count = 0
@@ -20,6 +22,7 @@ class LoginViewController: UIViewController {
         self.password.text = ""
     }
     @IBAction func login(_ sender: UIButton) {
+        busy.isHidden = false
         let user = root.child("user")
         var is_manager = false
         user.observeSingleEvent(of: .value) { (data) in
@@ -57,6 +60,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         root = Database.database().reference()
+        busy.isHidden = true
     }
 
 }

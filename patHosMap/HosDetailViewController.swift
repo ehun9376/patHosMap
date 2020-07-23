@@ -13,6 +13,8 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     @IBOutlet weak var buttonPhone: UIButton!
     @IBOutlet weak var hosAddress: UILabel!
     @IBOutlet weak var labelDistance: UILabel!
+    @IBOutlet weak var background: UIImageView!
+    
     //Map相關
     @IBOutlet weak var mapView: MKMapView!
     let annomation = MKPointAnnotation()
@@ -24,6 +26,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     //紀錄使用者位置
     var userlatitube:CLLocationDegrees!
     var userlongitube:CLLocationDegrees!
+    var stringWithLink:String!
     
     @IBAction func btnAddToFavorite(_ sender: UIButton) {
         let little_data_center:UserDefaults
@@ -35,10 +38,13 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        background.layer.cornerRadius = 25
         //self.hosTelephone.text = strtel
         self.buttonPhone.setTitle(strtel, for: .normal)
         self.hosAddress.text = straddr
         self.hosName.text = strname
+        stringWithLink = "http://maps.apple.com/?daddr=\(hosAddress.text!)"
+        //print(stringWithLink)
         getDestination()
         locationManager.delegate = self  //委派給ViewController
         locationManager.desiredAccuracy = kCLLocationAccuracyBest  //設定為最佳精度
@@ -83,7 +89,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 var secondLocation = CLLocation(latitude: self.userlatitube, longitude: self.userlongitube)
                 let distance = firsLocation.distance(from: secondLocation) / 1000
                 //顯示於label上
-                self.labelDistance.text = " \(String(format:"%.01f", distance)) KM "
+                self.labelDistance.text = " \(String(format:"%.01f", distance)) 公里 "
             }
         }
     }
@@ -125,4 +131,14 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             }
         }
     }
+    
+    @IBAction func buttonShare(_ sender: Any)
+    {
+        let activityController = UIActivityViewController(activityItems: [stringWithLink!], applicationActivities: nil)
+        
+         self.present(activityController, animated: true) {
+             print("presented")
+         }
+    }
+    
 }
