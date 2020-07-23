@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGt-Af-Lk8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGt-Af-Lk8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -584,7 +584,7 @@
         <!--Detail Animal View Controller-->
         <scene sceneID="MOn-Re-opg">
             <objects>
-                <viewController id="Dz1-U4-WvP" customClass="DetailAnimalViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailAnimalViewController" id="Dz1-U4-WvP" customClass="DetailAnimalViewController" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LDC-IU-Of1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -685,12 +685,13 @@
                     </view>
                     <connections>
                         <outlet property="imgPicture" destination="TgH-IF-EH2" id="AT9-Yo-WE4"/>
+                        <outlet property="txtBirthday" destination="d7o-hc-p1k" id="tOy-Cb-asc"/>
                         <outlet property="txtName" destination="wX7-Ur-zDG" id="f4u-Xa-BYq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbC-c9-En6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1925" y="659"/>
+            <point key="canvasLocation" x="1864" y="398"/>
         </scene>
         <!--Add Animal-->
         <scene sceneID="1d8-ow-VaY">
@@ -813,12 +814,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WEd-xC-kk8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2764" y="659"/>
+            <point key="canvasLocation" x="1864" y="1744"/>
         </scene>
         <!--Vacc Schedule-->
         <scene sceneID="S5O-an-BRi">
             <objects>
-                <viewController id="NFB-QN-HBB" customClass="VaccSchedule" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VaccSchedule" id="NFB-QN-HBB" customClass="VaccSchedule" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uRP-R8-WoY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -863,7 +864,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjD-nN-vuV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1925" y="1344"/>
+            <point key="canvasLocation" x="1864" y="1080"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tQM-Me-IO7">

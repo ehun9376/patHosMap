@@ -49,16 +49,6 @@ class VaccTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(buttonEditAction))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(buttonAddAction))
     }
-    //即將由換頁線換頁
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        super.prepare(for: segue, sender: sender)
-        print("即將由換頁線換頁")
-        //由線換頁取得下一頁
-        let detailVC = segue.destination as! DetailAnimalViewController
-        //將本頁的執行實體通知下一頁
-        detailVC.vaccTableViewController = self
-    }
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
@@ -70,12 +60,7 @@ class VaccTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrTable.count
     }
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return arrTable.count
-//    }
+
     //準備每一儲存格顯示內容
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
@@ -84,23 +69,17 @@ class VaccTableViewController: UITableViewController {
         print("現在準備Section:\(indexPath.section)，Row:\(indexPath.row)")
         structRow = arrTable[indexPath.row]
         cell.textLabel!.text = structRow.name
-//        cell.lblName.text = structRow.name
         if let aPicture = structRow.picture
         {
             cell.imageView?.image = UIImage(data: aPicture)
-//            cell.imgPicture.image = UIImage(data: aPicture)
         }
-
-
     return cell
     }
 
-    //以下不一定要
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        print("點選儲存格：\(arrTable[indexPath.row])")
-        //紀錄被點選的儲存格位置
-        currentRow = indexPath.row
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    currentRow = indexPath.row
+    let VaccS = self.storyboard?.instantiateViewController(identifier: "VaccSchedule") as! VaccSchedule
+        self.show(VaccS, sender: nil)
     }
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath)
     {
@@ -132,24 +111,23 @@ class VaccTableViewController: UITableViewController {
                 print("刪除後陣列：\(arrTable)")
     //        }
         }
-    
-    //以上不一定要
-    
-    
+ 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {   //準備"更多"按鈕
-        let actionMore = UIContextualAction(style: .normal, title: "更多") { (action, view, completionHanlder) in
-            print("更多按鈕被按下")
+        let actionMore = UIContextualAction(style: .normal, title: "修改") { (action, view, completionHanlder) in
+            let DetailAnimalVC = self.storyboard?.instantiateViewController(identifier: "DetailAnimalViewController") as! DetailAnimalViewController
+                self.show(DetailAnimalVC, sender: nil)
+            print("修改按鈕被按下")
         }
         actionMore.backgroundColor = .blue
         //準備"刪除"按鈕
         let actionDelete = UIContextualAction(style: .normal, title: "刪除") { (action, view, completionHanlder) in
-            print("刪除前陣列：\(self.list)")
+            print("刪除前陣列：\(self.arrTable)")
             //step.1先刪除表格對應的該筆陣列資料
-            self.list.remove(at: indexPath.row)
+            self.arrTable.remove(at: indexPath.row)
              //step2.再刪除介面上的該筆儲存格
             tableView.deleteRows(at: [indexPath], with: .fade)
-            print("刪除後陣列：\(self.list)")
+            print("刪除後陣列：\(self.arrTable)")
         }
         
         actionDelete.backgroundColor = .red

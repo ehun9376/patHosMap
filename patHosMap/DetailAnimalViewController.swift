@@ -24,6 +24,11 @@ class DetailAnimalViewController: UIViewController {
     
     weak var vaccTableViewController:VaccTableViewController!
     var currentData = Animal()
+    
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtBirthday: UITextField!
+    @IBOutlet weak var imgPicture: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
