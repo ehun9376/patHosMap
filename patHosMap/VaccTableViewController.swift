@@ -84,7 +84,7 @@ class VaccTableViewController: UITableViewController {
         print("現在準備Section:\(indexPath.section)，Row:\(indexPath.row)")
         structRow = arrTable[indexPath.row]
         cell.textLabel!.text = structRow.name
-
+//        cell.lblName.text = structRow.name
         if let aPicture = structRow.picture
         {
             cell.imageView?.image = UIImage(data: aPicture)
@@ -94,6 +94,7 @@ class VaccTableViewController: UITableViewController {
 
     return cell
     }
+
     //以下不一定要
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {

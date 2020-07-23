@@ -13,7 +13,10 @@ class MyFavoriteViewController: UIViewController {
     var hospitalsArray:[[String:String]]! = [[:]]
     var count = 0
     @IBAction func test(_ sender: UIButton) {
-        print(self.hospitalsArray[0])
+        let little_data_center:UserDefaults
+        little_data_center = UserDefaults.init()
+        let userID = little_data_center.integer(forKey: "userID")
+        print(userID)
     }
     
     override func viewDidLoad() {

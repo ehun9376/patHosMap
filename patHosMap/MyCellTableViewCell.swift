@@ -17,9 +17,9 @@ class MyCellTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        imgPicture.clipsToBounds = true
-//        imgPicture.contentMode = .scaleAspectFill
-//        imgPicture.layer.cornerRadius = imgPicture.bounds.size.width / 2
+        imgPicture.clipsToBounds = true
+        imgPicture.contentMode = .scaleAspectFill
+        imgPicture.layer.cornerRadius = imgPicture.bounds.size.width / 2
         // Initialization code
     }
 

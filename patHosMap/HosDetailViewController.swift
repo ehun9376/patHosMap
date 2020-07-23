@@ -1,12 +1,13 @@
 import UIKit
 import MapKit
 import CoreLocation
-
+import Firebase
 class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var strtel = ""
     var straddr = ""
     var strname = ""
     var count = 0
+    var root:DatabaseReference!
     @IBOutlet weak var hosName: UILabel!
     //@IBOutlet weak var hosTelephone: UILabel!
     @IBOutlet weak var buttonPhone: UIButton!
@@ -25,9 +26,12 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var userlongitube:CLLocationDegrees!
     
     @IBAction func btnAddToFavorite(_ sender: UIButton) {
-
-        print("測試")
-        print(self.count)
+        let little_data_center:UserDefaults
+        little_data_center = UserDefaults.init()
+        let userID = little_data_center.integer(forKey: "userID") - 1
+        print(userID)
+        let datafavorite =  root.child("user").child("\(userID)").child("favorite")
+        datafavorite.setValue("123")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +47,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         mapView.delegate = self  //委派給ViewController
         mapView.showsUserLocation = true   //顯示user位置
         mapView.userTrackingMode = .follow  //隨著user移動
+        root = Database.database().reference()
     }
     
     func getDestination()
@@ -60,7 +65,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 //print(location.coordinate.latitude, location.coordinate.longitude)
                 self.latitude = location.coordinate.latitude
                 self.longitude = location.coordinate.longitude
-                print("latitude:\(self.latitude!),longitude:\(self.longitude!)")
+//                print("latitude:\(self.latitude!),longitude:\(self.longitude!)")
                 
                 
                 //annomation.coordinate = CLLocationCoordinate2DMake(24.916062, 121.210480)
@@ -90,7 +95,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         userlatitube = locValue.latitude
         userlongitube = locValue.longitude
         
-        print("userlocation\(userlatitube),\(userlongitube)")
+//        print("userlocation\(userlatitube),\(userlongitube)")
         
         
     }

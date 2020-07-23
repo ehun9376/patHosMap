@@ -24,23 +24,21 @@ class RegisterViewController: UIViewController {
         var is_manager = false
         let user = root.child("user")
         let account1 = self.account.text
-        user.observe(DataEventType.value, with: { (data) in
-//                        print(data.value!)
-            let manager_array = data.value! as! [[String:String]]
-//                        print(manager_array)
-                for manager in manager_array{
-                    count += 1
-                    if manager["account"] == account1{
-                        is_manager = true
-                        let alert = UIAlertController(title: "警告", message: "帳號已存在", preferredStyle: .alert)
-                        let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
-                            self.performSegue(withIdentifier: "toLoginVC", sender: nil)
-                        }
-                        alert.addAction(button)
-                        self.present(alert, animated: true, completion: {})
-                        break
+        user.observeSingleEvent(of: .value) { (data) in
+        let manager_array = data.value! as! [[String:String]]
+            for manager in manager_array{
+                count += 1
+                if manager["account"] == account1{
+                    is_manager = true
+                    let alert = UIAlertController(title: "警告", message: "帳號已存在", preferredStyle: .alert)
+                    let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+                        self.performSegue(withIdentifier: "toLoginVC", sender: nil)
                     }
+                    alert.addAction(button)
+                    self.present(alert, animated: true, completion: {})
+                    break
                 }
+            }
             if !is_manager{
                 if self.account.text != "" && self.password.text != ""{
                     print("推送\(count),創建帳號")
@@ -63,8 +61,8 @@ class RegisterViewController: UIViewController {
                 }
 
             }
-            })
-        
+        }
+    
     }
     override func viewDidLoad() {
         super.viewDidLoad()
