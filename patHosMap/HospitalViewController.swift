@@ -1,7 +1,7 @@
 import UIKit
 import CoreLocation
 
-class HospitalViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class HospitalViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate {
 
     
     @IBOutlet weak var table: UITableView!
@@ -14,6 +14,13 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     var hosTelArray:[String] = []
     var hosAddrArray:[String] = []
     var hospitalsArray:[[String:String]] = [[:]]
+    //各家經緯度
+    var latitude:CLLocationDegrees!
+    var longitude:CLLocationDegrees!
+    //紀錄使用者位置
+    var userlatitube:CLLocationDegrees!
+    var userlongitube:CLLocationDegrees!
+    
     @IBAction func changeCity(_ sender: UIButton) {
         
         UIView.animate(withDuration: 0.5) {
@@ -63,6 +70,9 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         super.viewDidLoad()
         self.download()
         locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()  //開始update user位置
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,10 +80,36 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = UITableViewCell()
+        let cell:UITableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "listCell")
         if indexPath.row <= self.hosNameArray.count{
             cell.textLabel?.text = hosNameArray[indexPath.row]
-            cell.detailTextLabel?.text = hosTelArray[indexPath.row]
+            print(hosAddrArray[indexPath.row])
+            let geocoder = CLGeocoder()
+            geocoder.geocodeAddressString(hosAddrArray[indexPath.row])
+            {
+                (arrPlaceMarks, error)
+                in
+                if let err = error
+                {
+                    print("轉碼錯誤\(err)")
+                }
+                else
+                {
+                    let placemarks = arrPlaceMarks
+                    let location = placemarks?.first?.location as! CLLocation
+                    //print(location.coordinate.latitude, location.coordinate.longitude)
+                    self.latitude = location.coordinate.latitude
+                    self.longitude = location.coordinate.longitude
+                    
+                    //計算距離
+                    var firsLocation = CLLocation(latitude:self.latitude, longitude:self.longitude)
+                    var secondLocation = CLLocation(latitude: self.userlatitube, longitude: self.userlongitube)
+                    let distance = firsLocation.distance(from: secondLocation) / 1000
+                    //顯示於label上
+                    cell.detailTextLabel?.text = " \(String(format:"%.01f", distance)) 公里 "
+                }
+            }
+            cell.detailTextLabel?.textColor = UIColor.gray
         }
         
         return cell
@@ -111,5 +147,13 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
             }
         }
         task.resume()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        userlatitube = locValue.latitude
+        userlongitube = locValue.longitude
     }
 }
