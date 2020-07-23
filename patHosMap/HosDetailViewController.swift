@@ -12,6 +12,8 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     @IBOutlet weak var buttonPhone: UIButton!
     @IBOutlet weak var hosAddress: UILabel!
     @IBOutlet weak var labelDistance: UILabel!
+    @IBOutlet weak var background: UIImageView!
+    
     //Map相關
     @IBOutlet weak var mapView: MKMapView!
     let annomation = MKPointAnnotation()
@@ -31,6 +33,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        background.layer.cornerRadius = 25
         //self.hosTelephone.text = strtel
         self.buttonPhone.setTitle(strtel, for: .normal)
         self.hosAddress.text = straddr
@@ -78,7 +81,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 var secondLocation = CLLocation(latitude: self.userlatitube, longitude: self.userlongitube)
                 let distance = firsLocation.distance(from: secondLocation) / 1000
                 //顯示於label上
-                self.labelDistance.text = " \(String(format:"%.01f", distance)) KM "
+                self.labelDistance.text = " \(String(format:"%.01f", distance)) 公里 "
             }
         }
     }
