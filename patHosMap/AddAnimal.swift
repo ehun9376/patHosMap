@@ -13,14 +13,14 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     weak var vaccTableViewController:VaccTableViewController!
     var currentObjectBottomPosition:CGFloat = 0
     
+    
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!
     let Picker = UIDatePicker()
     @IBOutlet weak var imgPicture: UIImageView!
     @IBOutlet weak var btnCat: UIButton!
     @IBOutlet weak var btnDog: UIButton!
-    @IBOutlet weak var btnDecide: UIButton!
-    @IBOutlet weak var btnEdit: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         creatDatePicker()
@@ -44,6 +44,11 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         txtBirthday.text = "\(dateString)"
         self.view.endEditing(true)
     }
+    
+        @IBAction func didEndOnExit(_ sender: UITextField)
+        {
+
+        }
     //相機
     @IBAction func btnCamera(_ sender: UIButton) {
         if
@@ -90,4 +95,31 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         self.view.endEditing(true)
     }
 
+    @IBAction func btnInsert(_ sender: UIButton) {
+        if txtName.text!.isEmpty || txtBirthday.text!.isEmpty || imgPicture.image == nil {
+            //製作訊息視窗
+            let alert = UIAlertController(title: "資料輸入錯誤", message: "任何一個欄位都不可空白", preferredStyle: .alert)
+            //初始化訊息視窗準備使用的按鈕
+            let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)
+            //將按鈕加入訊息視窗
+            alert.addAction(btnOK)
+            //顯示訊息視窗
+            self.present(alert, animated: true, completion: nil)
+            //離開函式
+            return
+        }
+        let newRow =
+            Animal(name: txtName.text!, picture: imgPicture.image!.jpegData(compressionQuality: 0.8), birthday: txtBirthday.text!)
+        vaccTableViewController.arrTable.append(newRow)
+        let alert = UIAlertController(title: "資料處理訊息", message: "資料新增成功！", preferredStyle: .alert)
+        //初始化訊息視窗準備使用的按鈕
+        let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)
+        //將按鈕加入訊息視窗
+        alert.addAction(btnOK)
+        //顯示訊息視窗
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
 }
