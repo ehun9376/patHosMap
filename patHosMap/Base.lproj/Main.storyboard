@@ -743,22 +743,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xix-Ye-bck">
-                                <rect key="frame" x="282" y="494" width="41" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="確認"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNH-nG-EE2">
                                 <rect key="frame" x="95" y="433" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVd-JC-PFm">
-                                <rect key="frame" x="119" y="494" width="41" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="修改"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xhp-DJ-PAk">
                                 <rect key="frame" x="147" y="290" width="143" height="93"/>
@@ -772,6 +760,12 @@
                                     <action selector="btnPhotoAlbum:" destination="Zjm-Il-gRu" eventType="touchUpInside" id="qP5-gn-0FG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xix-Ye-bck">
+                                <rect key="frame" x="187" y="489" width="41" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="確認"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="9HH-Mh-IcS"/>
@@ -781,7 +775,6 @@
                         <outlet property="btnCat" destination="7eH-4B-wHW" id="jyZ-ys-1sB"/>
                         <outlet property="btnDecide" destination="xix-Ye-bck" id="j2h-KR-MLT"/>
                         <outlet property="btnDog" destination="iNH-nG-EE2" id="p07-ce-uFB"/>
-                        <outlet property="btnEdit" destination="nVd-JC-PFm" id="AIh-H3-Nuo"/>
                         <outlet property="imgPicture" destination="Xhp-DJ-PAk" id="F1r-1H-kf8"/>
                         <outlet property="txtBirthday" destination="WUb-3A-j6e" id="iis-gw-K70"/>
                         <outlet property="txtName" destination="0BB-IJ-flb" id="lHF-4G-YmQ"/>
