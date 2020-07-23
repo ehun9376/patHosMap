@@ -345,7 +345,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XU4-Yz-kJJ">
-                                <rect key="frame" x="354" y="267" width="30" height="30"/>
+                                <rect key="frame" x="369" y="271" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="post"/>
                                 <connections>
@@ -361,6 +361,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="buttonOpenMap:" destination="VfV-7t-FG0" eventType="touchUpInside" id="eoP-7x-jIE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LuN-il-xjb">
+                                <rect key="frame" x="366" y="404" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                <connections>
+                                    <action selector="buttonShare:" destination="VfV-7t-FG0" eventType="touchUpInside" id="J8T-eB-ywy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -991,6 +1000,10 @@
                                     <action selector="clean:" destination="FGt-Af-Lk8" eventType="touchUpInside" id="xJa-Qb-Qf6"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="6c2-Ew-HUE">
+                                <rect key="frame" x="197" y="417" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ooZ-7b-fIh"/>
@@ -998,6 +1011,7 @@
                     <navigationItem key="navigationItem" id="Kjv-5q-vRi"/>
                     <connections>
                         <outlet property="account" destination="7DE-MH-wWD" id="COx-D7-Blm"/>
+                        <outlet property="busy" destination="6c2-Ew-HUE" id="TP5-fS-16u"/>
                         <outlet property="password" destination="xoe-I5-UzJ" id="Cq2-SE-nld"/>
                         <segue destination="Zer-Do-Rze" kind="show" identifier="login" id="u0e-NG-jyG"/>
                     </connections>
@@ -1099,5 +1113,6 @@
         <image name="phone" width="64" height="64"/>
         <image name="post" width="256" height="256"/>
         <image name="smartphone-with-map-phone-screen-red-gps-dot-isolated-white-background-illustration-location-search_185004-41" width="626" height="626"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>

@@ -25,6 +25,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     //紀錄使用者位置
     var userlatitube:CLLocationDegrees!
     var userlongitube:CLLocationDegrees!
+    var stringWithLink:String!
     
     @IBAction func btnAddToFavorite(_ sender: UIButton) {
 
@@ -38,6 +39,8 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.buttonPhone.setTitle(strtel, for: .normal)
         self.hosAddress.text = straddr
         self.hosName.text = strname
+        stringWithLink = "http://maps.apple.com/?daddr=\(hosAddress.text!)"
+        //print(stringWithLink)
         getDestination()
         locationManager.delegate = self  //委派給ViewController
         locationManager.desiredAccuracy = kCLLocationAccuracyBest  //設定為最佳精度
@@ -123,4 +126,14 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             }
         }
     }
+    
+    @IBAction func buttonShare(_ sender: Any)
+    {
+        let activityController = UIActivityViewController(activityItems: [stringWithLink!], applicationActivities: nil)
+        
+         self.present(activityController, animated: true) {
+             print("presented")
+         }
+    }
+    
 }
