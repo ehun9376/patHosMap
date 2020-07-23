@@ -10,18 +10,6 @@ import UIKit
 
 class DetailAnimalViewController: UIViewController {
 
-    
-    
-    @IBOutlet weak var txtName: UITextField!
-    
-
-    
-    
-    @IBOutlet weak var imgPicture: UIImageView!
-    
-    
-    
-    
     weak var vaccTableViewController:VaccTableViewController!
     var currentData = Animal()
     
