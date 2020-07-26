@@ -50,11 +50,19 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
                     self.hosTelArray.append(hospital["機構電話"]!)
                     self.hosAddrArray.append(hospital["機構地址"]!)
                 }
-                
+                self.hospitalsArray[0]["距離"] = "20"
+                 //print("\(self.hospitalsArray[0])")
+                 for i in 0..<self.hospitalsArray.count
+                 {
+                    self.hospitalsArray[i]["距離"] = "20"
+                 }
             }
+            print("\(self.hospitalsArray[60])")
             self.table.dataSource = self
             self.table.delegate = self
             self.table.reloadData()
+            
+          
         }
         else{
             DispatchQueue.main.async{
@@ -141,6 +149,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
             else{
                 do{
                     self.hospitalsArray = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [[String:String]]
+                   
                 }catch{
                     print("伺服器出錯\(error)")
                 }
