@@ -1020,10 +1020,10 @@
             </objects>
             <point key="canvasLocation" x="-820" y="-116"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Favorite-->
         <scene sceneID="MIL-cf-gAm">
             <objects>
-                <tableViewController id="7Ox-VH-J8o" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FavoriteVC" id="7Ox-VH-J8o" customClass="Favorite" customModule="patHosMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d1f-9X-j7P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

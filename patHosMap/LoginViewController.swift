@@ -42,9 +42,6 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
                     let little_data_center:UserDefaults
                     little_data_center = UserDefaults.init()
                     little_data_center.set(self.count, forKey: "userID")
-                    let favorite = self.storyboard?.instantiateViewController(identifier: "MyFavoriteVC") as! MyFavoriteViewController
-                    favorite.count = self.count
-    //                print(favorite.count)
                     user.removeObserver(withHandle: self.observer)
                     self.observer = 0
                     self.performSegue(withIdentifier: "login", sender: nil)
