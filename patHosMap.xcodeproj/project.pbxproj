@@ -18,6 +18,7 @@
 		3DF35BD424C598CF00087826 /* VaccTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD324C598CF00087826 /* VaccTableViewController.swift */; };
 		3DF35BD824C5A4F500087826 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD724C5A4F500087826 /* LoginViewController.swift */; };
 		3DF35BDA24C5A51C00087826 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD924C5A51C00087826 /* RegisterViewController.swift */; };
+		3DFF6C2C24CD5FC50015D9AB /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF6C2B24CD5FC50015D9AB /* Favorite.swift */; };
 		85505153D2AD3BD0FFA824B9 /* Pods_patHosMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B90A8FD0A5DB3E22247E4C /* Pods_patHosMap.framework */; };
 		9537CE8D24C56DC300714D63 /* AddAnimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537CE8C24C56DC300714D63 /* AddAnimal.swift */; };
 		9537CE8F24C56E7100714D63 /* VaccSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537CE8E24C56E7100714D63 /* VaccSchedule.swift */; };
@@ -41,6 +42,7 @@
 		3DF35BD324C598CF00087826 /* VaccTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccTableViewController.swift; sourceTree = "<group>"; };
 		3DF35BD724C5A4F500087826 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3DF35BD924C5A51C00087826 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3DFF6C2B24CD5FC50015D9AB /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		548A8636DCED64BA45F4C677 /* Pods-patHosMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patHosMap.release.xcconfig"; path = "Target Support Files/Pods-patHosMap/Pods-patHosMap.release.xcconfig"; sourceTree = "<group>"; };
 		9537CE8C24C56DC300714D63 /* AddAnimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimal.swift; sourceTree = "<group>"; };
 		9537CE8E24C56E7100714D63 /* VaccSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccSchedule.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				3DF35BD924C5A51C00087826 /* RegisterViewController.swift */,
 				3D06F3E624C1BAB0001F5C3E /* HospitalViewController.swift */,
 				3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */,
+				3DFF6C2B24CD5FC50015D9AB /* Favorite.swift */,
 				3DF35BCF24C55DAC00087826 /* MyFavoriteViewController.swift */,
 				3DF35BD324C598CF00087826 /* VaccTableViewController.swift */,
 				9DFCEFF724C88634006E865D /* MyCellTableViewCell.swift */,
@@ -239,6 +242,7 @@
 			files = (
 				3DF35BD824C5A4F500087826 /* LoginViewController.swift in Sources */,
 				3DF35BDA24C5A51C00087826 /* RegisterViewController.swift in Sources */,
+				3DFF6C2C24CD5FC50015D9AB /* Favorite.swift in Sources */,
 				3DF35BD024C55DAC00087826 /* MyFavoriteViewController.swift in Sources */,
 				3DF35BCE24C535DB00087826 /* HosDetailViewController.swift in Sources */,
 				3DBBB7EE24C03F04003F5F9F /* AppDelegate.swift in Sources */,

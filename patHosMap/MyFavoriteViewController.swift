@@ -7,16 +7,28 @@
 //
 
 import UIKit
-
+import Firebase
 class MyFavoriteViewController: UIViewController {
     
     var hospitalsArray:[[String:String]]! = [[:]]
     var count = 0
+    var root:DatabaseReference!
+    var userFavoriteName:String!
     @IBAction func test(_ sender: UIButton) {
         let little_data_center:UserDefaults
         little_data_center = UserDefaults.init()
-        let userID = little_data_center.integer(forKey: "userID")
+        let userID = little_data_center.integer(forKey: "userID") - 1
         print(userID)
+        root = Database.database().reference()
+        let datafavorite =  root.child("user").child("\(userID)").child("favorite")
+        datafavorite.observeSingleEvent(of: .value) { (shot) in
+            let data = shot.value! as! String
+            if data != ""{
+                self.userFavoriteName = data
+                print(self.userFavoriteName!)
+            }
+        }
+
     }
     
     override func viewDidLoad() {
