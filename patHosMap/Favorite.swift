@@ -16,14 +16,20 @@ class Favorite: UITableViewController {
     var userFavoriteName:String!
     var userID = 0
     var userFavoriteNameArray:[String]!
-    var signal = false
+    var signal = 0
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        self.signal = 0
         self.tableView.reloadData()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.download()
+        self.root = Database.database().reference()
+        self.navigationItem.title = "我的最愛"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(buttonEditAction))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(buttonAddAction))
+        
     }
     // MARK: - Table view data source
 
@@ -35,7 +41,35 @@ class Favorite: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return self.userFavoriteNameArray.count
         print("資料載入中")
-        var section:Int!
+        var section = 0
+//        DispatchQueue.main.async {
+//            let little_data_center:UserDefaults
+//            little_data_center = UserDefaults.init()
+//            self.userID = little_data_center.integer(forKey: "userID") - 1
+//            self.root = Database.database().reference()
+//            let datafavorite =  self.root.child("user").child("\(self.userID)").child("favorite")
+//            datafavorite.observeSingleEvent(of: .value) { (shot) in
+//                let data = shot.value! as! String
+//                if data != ""{
+//                    self.userFavoriteNameArray = data.components(separatedBy: ",")
+//                    print(self.userFavoriteNameArray!)
+//                    self.signal = true
+//                }
+//            }
+//            if self.signal == false{
+//                let alert = UIAlertController(title: "請稍等", message: "最愛資料載入中", preferredStyle: .alert)
+//                let button = UIAlertAction(title: "從新載入", style: UIAlertAction.Style.default) { (button) in
+//                    self.tableView.reloadData()
+//                }
+//                alert.addAction(button)
+//                self.present(alert, animated: true, completion: {})
+//            }
+//            else{
+//                section = self.userFavoriteNameArray.count
+//                print(section)
+//            }
+//
+//        }
         DispatchQueue.main.async {
             let little_data_center:UserDefaults
             little_data_center = UserDefaults.init()
@@ -47,23 +81,31 @@ class Favorite: UITableViewController {
                 if data != ""{
                     self.userFavoriteNameArray = data.components(separatedBy: ",")
                     print(self.userFavoriteNameArray!)
-                    self.signal = true
+                    self.signal = 1
+                }
+                else{
+                    self.signal = 2
                 }
             }
         }
-        if self.signal == false{
-            section = 0
-            DispatchQueue.main.async {
-                let alert = UIAlertController(title: "請稍等", message: "最愛資料載入中", preferredStyle: .alert)
-                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
-                    self.tableView.reloadData()
-                }
-                alert.addAction(button)
-                self.present(alert, animated: true, completion: {})
+        if signal == 0{
+            let alert = UIAlertController(title: "警告", message: "資料下載中", preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+                self.tableView.reloadData()
             }
+            alert.addAction(button)
+            self.present(alert, animated: true, completion: {})
         }
-        else{
+        else if signal == 1{
             section = self.userFavoriteNameArray.count
+        }
+        else if signal == 2{
+            let alert = UIAlertController(title: "警告", message: "找不到資料", preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+            }
+            alert.addAction(button)
+            self.present(alert, animated: true, completion: {})
+            section = 0
         }
         return section
     }
@@ -81,6 +123,18 @@ class Favorite: UITableViewController {
         actionMore.backgroundColor = .blue
         //準備"刪除"按鈕
         let actionDelete = UIContextualAction(style: .normal, title: "刪除") { (action, view, completionHanlder) in
+            print("刪除按鈕被按下")
+            //刪除本地也要刪除資料庫
+//            print("刪除前陣列：\(self.userFavoriteNameArray!)")
+//            self.userFavoriteNameArray.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            //
+//            let datafavorite =  self.root.child("user").child("\(self.userID)").child("favorite")
+//            datafavorite.setValue(self.userFavoriteNameArray)
+//
+//            //
+//            print("刪除後陣列：\(self.userFavoriteNameArray!)")
+            
         }
         actionDelete.backgroundColor = .red
         //將兩個按鈕合併
@@ -89,9 +143,9 @@ class Favorite: UITableViewController {
         //回傳按鈕組合
         return config
     }
-        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
-                tableView.deleteRows(at: [indexPath], with: .fade)
-        }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+            tableView.deleteRows(at: [indexPath], with: .fade)
+    }
     
     // MARK: - 自訂函示
     func download() -> Void {
@@ -116,5 +170,12 @@ class Favorite: UITableViewController {
             }
         }
         task.resume()
+    }
+    @objc func buttonEditAction()
+    {
+        print("編輯按鈕被按下")
+    }
+    @objc func buttonAddAction(){
+        print("新增按鈕被按下")
     }
 }

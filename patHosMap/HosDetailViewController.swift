@@ -43,7 +43,6 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 self.present(alert, animated: true, completion: {})
             }
             else{
-                
                 datafavorite.setValue(self.userFavoriteName + "," + strname)
                 count = 1
                 let alert = UIAlertController(title: "通知", message: "已將\(strname)加入最愛", preferredStyle: .alert)
