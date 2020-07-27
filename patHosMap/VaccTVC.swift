@@ -22,9 +22,8 @@ class VaccTVC: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.download()
-
-       
+     
+ 
     }
 
     // MARK: - Table view data source
@@ -44,6 +43,7 @@ class VaccTVC: UITableViewController {
         let addPet = self.root.child("mypet").child("\(self.userID)")
         addPet.observeSingleEvent(of: .value) { (shot) in
             let data = shot.value! as! [[String:String]]
+            print(data)
             if data != []{
                 self.array = data
                 print(self.array!)
@@ -80,7 +80,7 @@ class VaccTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell()
-       // cell.textLabel?.text=self.array[indexPath.row]
+        cell.textLabel?.text=self.array[indexPath.row]["name"]
         return cell
     }
     
@@ -130,9 +130,6 @@ class VaccTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    func download() -> Void {
-        let session:URLSession = URLSession(configuration: .default)
-    //    let task:URLSessionDataTask = session.dataTask(with: URL(string: ""))
-    }
+
 
 }
