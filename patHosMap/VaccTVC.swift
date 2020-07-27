@@ -79,7 +79,7 @@ class VaccTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell()
-      // cell.title.text=self.array[indexPath.row]
+       // cell.textLabel?.text=self.array[indexPath.row]
         return cell
     }
     
