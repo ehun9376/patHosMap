@@ -35,6 +35,9 @@ class VaccTVC: UITableViewController {
     }
     @objc func buttonAddAction(){
         print("新增按鈕被按下")
+        let addVC = self.storyboard!.instantiateViewController(identifier: "AddAnimal") as! AddAnimal
+        addVC.VaccTVC = self
+        self.show(addVC, sender: nil)
     }
     // MARK: - Table view data source
 

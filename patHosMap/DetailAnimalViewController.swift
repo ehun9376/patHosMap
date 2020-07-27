@@ -10,8 +10,8 @@ import UIKit
 
 class DetailAnimalViewController: UIViewController {
 
-    weak var vaccTableViewController:VaccTableViewController!
-    var currentData = Animal()
+    weak var VaccTVC:VaccTVC!
+    //var currentData = Animal()
     
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!

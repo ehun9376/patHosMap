@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIPickerViewDelegate {
     
-    weak var vaccTableViewController:VaccTableViewController!
+    weak var VaccTVC:VaccTVC!
     var currentObjectBottomPosition:CGFloat = 0
     var root:DatabaseReference!
     var addanimalname:String!
