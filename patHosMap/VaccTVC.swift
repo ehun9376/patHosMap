@@ -99,11 +99,14 @@ class VaccTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
         //準備"更多"按鈕
         let actionMore = UIContextualAction(style: .normal, title: "修改") { (action, view, completionHanlder) in
+            let DetailAnimalVC = self.storyboard?.instantiateViewController(identifier: "DetailAnimalViewController") as! DetailAnimalViewController
+                self.show(DetailAnimalVC, sender: nil)
             print("修改按鈕被按下")
         }
         actionMore.backgroundColor = .blue
         //準備"刪除"按鈕
         let actionDelete = UIContextualAction(style: .normal, title: "刪除") { (action, view, completionHanlder) in
+            
             print("刪除按鈕被按下")
         }
         actionDelete.backgroundColor = .systemPink
