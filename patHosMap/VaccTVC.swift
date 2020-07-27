@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 class VaccTVC: UITableViewController {
-
+    var array:[[String:String]]!
     var root:DatabaseReference!
     var userID = 0
     override func viewDidLoad() {
@@ -33,9 +33,12 @@ class VaccTVC: UITableViewController {
         self.root = Database.database().reference()
         let addPet = self.root.child("mypet").child("\(self.userID)")
         addPet.observeSingleEvent(of: .value) { (shot) in
+            let data = shot.value! as! [[String:String]]
+            print(data)
+            self.array = data
             //todo
         }
-        return 0
+        return array.count
         
     }
 
