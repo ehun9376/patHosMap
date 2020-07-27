@@ -36,8 +36,15 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "疫苗施打紀錄"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "儲存", style: .plain, target: self, action: #selector(buttonAddAction))
         // Do any additional setup after loading the view.
+    }
+    @objc func buttonAddAction(){
+        print("儲存按鈕被按下")
+//        let addVC = self.storyboard!.instantiateViewController(identifier: "AddAnimal") as! AddAnimal
+//        addVC.vaccTableViewController = self
+//        self.show(addVC, sender: nil)
     }
     
 

@@ -54,7 +54,7 @@
 //        self.tableView.reloadData()
 //    }
 //    // MARK: - Table view data source
-//    
+//
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return arrTable.count
 //    }
@@ -85,7 +85,7 @@
 //        print("移動前的陣列：\(arrTable)")
 //        //<方法一>對調移動的來源儲存格與目的地儲存格
 //        arrTable.insert(arrTable.remove(at: fromIndexPath.row), at: to.row)
-//        
+//
 //        /*
 //        //<方法二>為<方法一>的分階段執行
 //        //Step1.先記憶即將被移除的陣列元素（一開始的來源位置的元素），同時移除該元素
@@ -93,7 +93,7 @@
 //        //Step2.再將已經移除的元素，往移動的目的地位置安插
 //        arrTable.insert(tmp, at: to.row)
 //        */
-//        
+//
 //        print("移動後的陣列：\(arrTable)")
 //    }
 //        //注意：實作表格的編輯事件之後，表格可以滑動"刪除"
@@ -109,7 +109,7 @@
 //                print("刪除後陣列：\(arrTable)")
 //    //        }
 //        }
-// 
+//
 //    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
 //    {   //準備"更多"按鈕
 //        let actionMore = UIContextualAction(style: .normal, title: "修改") { (action, view, completionHanlder) in
@@ -127,7 +127,7 @@
 //            tableView.deleteRows(at: [indexPath], with: .fade)
 //            print("刪除後陣列：\(self.arrTable)")
 //        }
-//        
+//
 //        actionDelete.backgroundColor = .red
 //        //將兩個按鈕合併
 //        let config = UISwipeActionsConfiguration(actions: [actionDelete,actionMore])

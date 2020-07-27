@@ -32,6 +32,16 @@ class VaccTVC: UITableViewController {
     @objc func buttonEditAction()
     {
         print("編輯按鈕被按下")
+        if !self.tableView.isEditing//如果表格不在編輯狀態
+        {
+        self.tableView.isEditing = true
+        self.navigationItem.leftBarButtonItem?.title = "完成"
+        }
+        else
+        {
+            self.tableView.isEditing = false
+            self.navigationItem.leftBarButtonItem?.title = "編輯"
+        }
     }
     @objc func buttonAddAction(){
         print("新增按鈕被按下")
@@ -94,6 +104,13 @@ class VaccTVC: UITableViewController {
         cell.textLabel?.text=self.array[indexPath.row]["name"]
         return cell
     }
+    //畫面轉入VaccSchedule
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    count = indexPath.row
+    let VaccS = self.storyboard?.instantiateViewController(identifier: "VaccSchedule") as! VaccSchedule
+        self.show(VaccS, sender: nil)
+    }
+    
     
     //左滑修改及刪除
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
@@ -104,10 +121,12 @@ class VaccTVC: UITableViewController {
             print("修改按鈕被按下")
         }
         actionMore.backgroundColor = .blue
-        //準備"刪除"按鈕
+        //準備"刪除"按鈕//todo尚未完全
         let actionDelete = UIContextualAction(style: .normal, title: "刪除") { (action, view, completionHanlder) in
-            
+            self.array.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             print("刪除按鈕被按下")
+            print("刪除後陣列：\(self.array)")
         }
         actionDelete.backgroundColor = .systemPink
         //將兩個按鈕合併
