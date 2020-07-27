@@ -12,6 +12,13 @@ class VaccTVC: UITableViewController {
     var array:[[String:String]]!
     var root:DatabaseReference!
     var userID = 0
+    var signal = 0
+    var count = 0
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.signal = 0
+        self.tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +34,7 @@ class VaccTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("資料載入中")
+        var section = 0
         let mypet_data_center:UserDefaults
         mypet_data_center = UserDefaults.init()
         self.userID = mypet_data_center.integer(forKey: "userID") - 1
@@ -34,13 +42,41 @@ class VaccTVC: UITableViewController {
         let addPet = self.root.child("mypet").child("\(self.userID)")
         addPet.observeSingleEvent(of: .value) { (shot) in
             let data = shot.value! as! [[String:String]]
-            print(data)
-            self.array = data
-            //todo
+            if data != []{
+                self.array = data
+                print(self.array!)
+                self.signal = 1
+            }
+            else {
+                self.signal = 2
+            }
+//            print(data)
+//            self.array = data
         }
-        return array.count
+      
+        if signal == 0{
+            let alert = UIAlertController(title: "警告", message: "資料下載中", preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+                self.tableView.reloadData()
+            }
+            alert.addAction(button)
+            self.present(alert, animated: true, completion: {})
+        }
+        else if signal == 1 {
+            section = self.array.count
+        }
+        else if signal == 2 {
+            let alert = UIAlertController(title: "警告", message: "找不到資料", preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+            }
+            alert.addAction(button)
+            self.present(alert, animated: true,completion: {})
+            section = 0
+        }
+          return array.count
         
     }
+
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
