@@ -44,7 +44,7 @@ class VaccTVC: UITableViewController {
         addPet.observeSingleEvent(of: .value) { (shot) in
             let data = shot.value! as! [[String:String]]
             print(data)
-            if data != []{
+            if data != [["birthday": "", "name": "", "kind": ""]]{
                 self.array = data
                 print(self.array!)
                 self.signal = 1
