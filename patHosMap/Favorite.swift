@@ -39,37 +39,9 @@ class Favorite: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.userFavoriteNameArray.count
+
         print("資料載入中")
         var section = 0
-//        DispatchQueue.main.async {
-//            let little_data_center:UserDefaults
-//            little_data_center = UserDefaults.init()
-//            self.userID = little_data_center.integer(forKey: "userID") - 1
-//            self.root = Database.database().reference()
-//            let datafavorite =  self.root.child("user").child("\(self.userID)").child("favorite")
-//            datafavorite.observeSingleEvent(of: .value) { (shot) in
-//                let data = shot.value! as! String
-//                if data != ""{
-//                    self.userFavoriteNameArray = data.components(separatedBy: ",")
-//                    print(self.userFavoriteNameArray!)
-//                    self.signal = true
-//                }
-//            }
-//            if self.signal == false{
-//                let alert = UIAlertController(title: "請稍等", message: "最愛資料載入中", preferredStyle: .alert)
-//                let button = UIAlertAction(title: "從新載入", style: UIAlertAction.Style.default) { (button) in
-//                    self.tableView.reloadData()
-//                }
-//                alert.addAction(button)
-//                self.present(alert, animated: true, completion: {})
-//            }
-//            else{
-//                section = self.userFavoriteNameArray.count
-//                print(section)
-//            }
-//
-//        }
         DispatchQueue.main.async {
             let little_data_center:UserDefaults
             little_data_center = UserDefaults.init()

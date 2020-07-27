@@ -669,7 +669,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbC-c9-En6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2773.913043478261" y="397.76785714285711"/>
+            <point key="canvasLocation" x="1936" y="383"/>
         </scene>
         <!--Add Animal-->
         <scene sceneID="1d8-ow-VaY">
@@ -729,6 +729,9 @@
                                 <rect key="frame" x="234" y="433" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btncat:" destination="Zjm-Il-gRu" eventType="touchUpInside" id="ERF-fN-CXX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vF-oo-3W7">
                                 <rect key="frame" x="325" y="290" width="31" height="30"/>
@@ -756,6 +759,9 @@
                                 <rect key="frame" x="95" y="433" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btndog:" destination="Zjm-Il-gRu" eventType="touchUpInside" id="dH4-I4-iFG"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xhp-DJ-PAk">
                                 <rect key="frame" x="147" y="290" width="143" height="93"/>
@@ -793,7 +799,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WEd-xC-kk8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="1744"/>
+            <point key="canvasLocation" x="1935" y="1746"/>
         </scene>
         <!--Vacc Schedule-->
         <scene sceneID="S5O-an-BRi">
@@ -843,7 +849,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjD-nN-vuV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="1080"/>
+            <point key="canvasLocation" x="1936" y="1073"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tQM-Me-IO7">

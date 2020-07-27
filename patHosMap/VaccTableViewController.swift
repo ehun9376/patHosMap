@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 struct Animal {
     var name = ""
     var picture:Data?
@@ -18,6 +19,7 @@ class VaccTableViewController: UITableViewController {
     var arrTable = [Animal]()
     var currentRow = 0
     var list:[String]!
+    var root:DatabaseReference!
     //MARK: -Target Action
     //導覽列的新增按鈕
     @objc func buttonEditAction()
@@ -58,6 +60,7 @@ class VaccTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     // MARK: - Table view data source
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrTable.count
     }

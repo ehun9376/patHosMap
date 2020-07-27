@@ -13,14 +13,25 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     weak var vaccTableViewController:VaccTableViewController!
     var currentObjectBottomPosition:CGFloat = 0
     var root:DatabaseReference!
-    
+    var addanimalname:String!
+    var addname = ""
+    var vc:UIImagePickerController!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!
     let Picker = UIDatePicker()
     @IBOutlet weak var imgPicture: UIImageView!
+    
+    var kind = 1
     @IBOutlet weak var btnCat: UIButton!
     @IBOutlet weak var btnDog: UIButton!
 
+    @IBAction func btndog(_ sender: UIButton) {
+        kind = 1
+    }
+    @IBAction func btncat(_ sender: UIButton) {
+        kind = 2
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         creatDatePicker()
@@ -51,15 +62,23 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         }
     //相機
     @IBAction func btnCamera(_ sender: UIButton) {
-        if
-            !UIImagePickerController.isSourceTypeAvailable(.camera){
-                print("此裝置沒有相機")
-            return
-        }
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
-        imagePicker.delegate = self
-        self.show(imagePicker, sender: nil)
+        vc = UIImagePickerController()
+        //vc.cameraCaptureMode = UITraitCollection.
+        vc.sourceType = .camera
+        vc.allowsEditing = true
+        vc.cameraDevice = .rear
+        vc.delegate = self
+        self.present(vc, animated: true, completion: {})
+//
+//        if
+//            !UIImagePickerController.isSourceTypeAvailable(.camera){
+//                print("此裝置沒有相機")
+//            return
+//        }
+//        let imagePicker = UIImagePickerController()
+//        imagePicker.sourceType = .camera
+//        imagePicker.delegate = self
+//        self.show(imagePicker, sender: nil)
     }
     //相簿
     @IBAction func btnPhotoAlbum(_ sender: UIButton) {
@@ -108,18 +127,27 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
             //離開函式
             return
         }
-        let newRow =
-            Animal(name: txtName.text!, picture: imgPicture.image!.jpegData(compressionQuality: 0.8), birthday: txtBirthday.text!)
-        vaccTableViewController.arrTable.append(newRow)
-        let alert = UIAlertController(title: "資料處理訊息", message: "資料新增成功！", preferredStyle: .alert)
-        //初始化訊息視窗準備使用的按鈕
-        let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)
-        //將按鈕加入訊息視窗
-        alert.addAction(btnOK)
-        //顯示訊息視窗
-        self.present(alert, animated: true, completion: nil)
+        //假資料
+//        let newRow =
+//            Animal(name: txtName.text!, picture: imgPicture.image!.jpegData(compressionQuality: 0.8), birthday: txtBirthday.text!)
+//        vaccTableViewController.arrTable.append(newRow)
+//        let alert = UIAlertController(title: "資料處理訊息", message: "資料新增成功！", preferredStyle: .alert)
+//        //初始化訊息視窗準備使用的按鈕
+//        let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)
+//        //將按鈕加入訊息視窗
+//        alert.addAction(btnOK)
+//        //顯示訊息視窗
+//        self.present(alert, animated: true, completion: nil)
+        //新增動物資料到firebase
+        let little_data_center:UserDefaults
+        little_data_center = UserDefaults.init()
+        let userID = little_data_center.integer(forKey: "userID") - 1
         
+        let dataAddanimal =  root.child("mypet").child("\(userID)").child("0")
+        let newData = ["name":"\(self.txtName.text!)","birthday":"\(self.txtBirthday.text!)","picture":"\(self.imgPicture.image!)","kind":"\(self.kind)",]
+        dataAddanimal.setValue(newData)
+        let alert = UIAlertController(title: "錯誤", message: "任一空格不得為空", preferredStyle: .alert)
+        let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)
     }
-    
     
 }
