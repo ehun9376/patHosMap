@@ -14,6 +14,7 @@ class VaccTVC: UITableViewController {
     var userID = 0
     var signal = 0
     var count = 0
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.signal = 0
@@ -73,20 +74,15 @@ class VaccTVC: UITableViewController {
             self.present(alert, animated: true,completion: {})
             section = 0
         }
-          return array.count
-        
+          return section
     }
 
-
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell:UITableViewCell = UITableViewCell()
+      // cell.title.text=self.array[indexPath.row]
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
