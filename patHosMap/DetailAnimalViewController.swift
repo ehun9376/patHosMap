@@ -10,6 +10,7 @@ import UIKit
 
 class DetailAnimalViewController: UIViewController,UINavigationControllerDelegate {
     weak var VaccTVC:VaccTVC!
+    var currentData = 0
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!
     let Picker = UIDatePicker()
@@ -58,13 +59,20 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         //向通知中心註冊鍵盤收合通知
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        // Do any additional setup after loading the view.
+        //todo
+//        currentData = VaccTVC.array[VaccTVC.count]
+//        txtName.text = currentData.name
+
     }
 
     
 
 
     @IBAction func btnUpdate(_ sender: UIButton) {
+        //todo
+//        VaccTVC.array[VaccTVC.count] =
+//       (name: txtName.text!,birthday: txtBirthday.text)
+//        print("修改過後的當筆資料：\(VaccTVC.array[VaccTVC.count])")
     }
     
 }
