@@ -13,6 +13,7 @@ class Favorite: UITableViewController {
     var hospitalsArray:[[String:String]] = [[:]]
     var count = 0
     var root:DatabaseReference!
+    var datafavorite:DatabaseReference!
     var userFavoriteName:String!
     var userID = 0
     var userFavoriteNameArray:[String]!
@@ -28,8 +29,6 @@ class Favorite: UITableViewController {
         self.root = Database.database().reference()
         self.navigationItem.title = "我的最愛"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(buttonEditAction))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(buttonAddAction))
-        
     }
     // MARK: - Table view data source
 
@@ -41,14 +40,14 @@ class Favorite: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         print("資料載入中")
-        var section = 0
+        var rows = 0
         DispatchQueue.main.async {
             let little_data_center:UserDefaults
             little_data_center = UserDefaults.init()
             self.userID = little_data_center.integer(forKey: "userID") - 1
             self.root = Database.database().reference()
-            let datafavorite =  self.root.child("user").child("\(self.userID)").child("favorite")
-            datafavorite.observeSingleEvent(of: .value) { (shot) in
+            self.datafavorite =  self.root.child("user").child("\(self.userID)").child("favorite")
+            self.datafavorite.observeSingleEvent(of: .value) { (shot) in
                 let data = shot.value! as! String
                 if data != ""{
                     self.userFavoriteNameArray = data.components(separatedBy: ",")
@@ -69,7 +68,7 @@ class Favorite: UITableViewController {
             self.present(alert, animated: true, completion: {})
         }
         else if signal == 1{
-            section = self.userFavoriteNameArray.count
+            rows = self.userFavoriteNameArray.count
         }
         else if signal == 2{
             let alert = UIAlertController(title: "警告", message: "找不到資料", preferredStyle: .alert)
@@ -77,9 +76,9 @@ class Favorite: UITableViewController {
             }
             alert.addAction(button)
             self.present(alert, animated: true, completion: {})
-            section = 0
+            rows = 0
         }
-        return section
+        return rows
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell:UITableViewCell = UITableViewCell()
@@ -87,39 +86,20 @@ class Favorite: UITableViewController {
         return cell
     }
     // MARK: - Table view Delegate
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
-        //準備"更多"按鈕
-        let actionMore = UIContextualAction(style: .normal, title: "修改") { (action, view, completionHanlder) in
-            print("修改按鈕被按下")
-        }
-        actionMore.backgroundColor = .blue
-        //準備"刪除"按鈕
-        let actionDelete = UIContextualAction(style: .normal, title: "刪除") { (action, view, completionHanlder) in
-            print("刪除按鈕被按下")
-            //刪除本地也要刪除資料庫
-//            print("刪除前陣列：\(self.userFavoriteNameArray!)")
-//            self.userFavoriteNameArray.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            //
-//            let datafavorite =  self.root.child("user").child("\(self.userID)").child("favorite")
-//            datafavorite.setValue(self.userFavoriteNameArray)
-//
-//            //
-//            print("刪除後陣列：\(self.userFavoriteNameArray!)")
-            
-        }
-        actionDelete.backgroundColor = .red
-        //將兩個按鈕合併
-        let config = UISwipeActionsConfiguration(actions: [actionDelete,actionMore])
-        config.performsFirstActionWithFullSwipe = true
-        //回傳按鈕組合
-        return config
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath){
+        self.userFavoriteNameArray!.insert(self.userFavoriteNameArray!.remove(at: fromIndexPath.row), at: to.row)
+        self.datafavorite =  self.root.child("user").child("\(self.userID)").child("favorite")
+        self.datafavorite.setValue(self.userFavoriteNameArray!.joined(separator: ","))
     }
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
-            tableView.deleteRows(at: [indexPath], with: .fade)
+        self.userFavoriteNameArray!.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        self.datafavorite =  self.root.child("user").child("\(self.userID)").child("favorite")
+        self.datafavorite.setValue(self.userFavoriteNameArray!.joined(separator: ","))
     }
     
-    // MARK: - 自訂函示
+    // MARK: - 自訂函式
     func download() -> Void {
         let session:URLSession = URLSession(configuration: .default)
         let task:URLSessionDataTask = session.dataTask(with: URL(string:"https://data.coa.gov.tw/Service/OpenData/DataFileService.aspx?UnitId=078&$top=1000&$skip=0")!){
@@ -143,11 +123,16 @@ class Favorite: UITableViewController {
         }
         task.resume()
     }
-    @objc func buttonEditAction()
-    {
+    @objc func buttonEditAction(){
         print("編輯按鈕被按下")
-    }
-    @objc func buttonAddAction(){
-        print("新增按鈕被按下")
+        if !self.tableView.isEditing{
+        self.tableView.isEditing = true
+        self.navigationItem.leftBarButtonItem?.title = "完成"
+        }
+        else{
+            self.tableView.isEditing = false
+            self.navigationItem.leftBarButtonItem?.title = "編輯"
+        }
+
     }
 }

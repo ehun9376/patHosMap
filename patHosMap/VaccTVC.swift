@@ -126,7 +126,7 @@ class VaccTVC: UITableViewController {
             self.array.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             print("刪除按鈕被按下")
-            print("刪除後陣列：\(self.array)")
+            print("刪除後陣列：\(self.array!)")
         }
         actionDelete.backgroundColor = .systemPink
         //將兩個按鈕合併
