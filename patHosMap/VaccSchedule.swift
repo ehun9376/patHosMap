@@ -12,6 +12,7 @@ struct vaccReminder
 {
     var title = ""
     var date = Date.init()
+    var done = false
 }
 
 class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -23,7 +24,8 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var strucRow = vaccReminder()
     var vaccTable = [vaccReminder]()
     var currentRow = 0
-    var vaccDate = Date.init()
+    //var vaccDate = Date.init()
+    var vaccDate:Date?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return Vacc.count
@@ -44,12 +46,18 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+        let cell = tableView.cellForRow(at: indexPath)!
+        if vaccTable[indexPath.row].done == true{
+            cell.accessoryType = UITableViewCell.AccessoryType.none
+            vaccTable[indexPath.row].done = false
+            print("現在done = false \(vaccTable[indexPath.row])")
         }else{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+            vaccTable[indexPath.row].done = true
+            print("現在done = true \(vaccTable[indexPath.row])")
         }
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
             Vacc.remove(at: indexPath.row)
@@ -65,12 +73,13 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         self.listTable.dataSource = self
         self.listTable.delegate = self
         vaccTable = [
-        vaccReminder(title: "三合一", date: vaccDate),
-        vaccReminder(title: "三合一", date: vaccDate),
-        vaccReminder(title: "結紮", date: vaccDate),
-        vaccReminder(title: "狂犬病", date: vaccDate),
-        vaccReminder(title: "三合一＆狂犬病", date: vaccDate),
-        vaccReminder(title: "三合一＆狂犬病", date: vaccDate),
+        vaccReminder(title: "8週三合一", date: vaccDate!, done: false),
+        vaccReminder(title: "16週三合一", date: vaccDate!, done: false),
+        vaccReminder(title: "結紮", date: vaccDate!, done: false),
+        vaccReminder(title: "狂犬病", date: vaccDate!, done: false),
+        vaccReminder(title: "1歲-三合一＆狂犬病", date: vaccDate!, done: false),
+        vaccReminder(title: "2歲-三合一＆狂犬病", date: vaccDate!, done: false),
+        vaccReminder(title: "3歲-三合一＆狂犬病", date: vaccDate!, done: false),
         ]
     }
     
@@ -80,6 +89,8 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
 //        addVC.vaccTableViewController = self
 //        self.show(addVC, sender: nil)
     }
+    
+    
     
 
     /*

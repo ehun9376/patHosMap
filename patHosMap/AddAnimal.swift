@@ -49,6 +49,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     @objc func donePressed(){
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
+        //formatter.dateFormat = "yyyy.mm.dd"
         formatter.timeStyle = .none
         let dateString = formatter.string(from: Picker.date)
         
