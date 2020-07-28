@@ -113,7 +113,7 @@ class VaccTVC: UITableViewController {
         let str = stringConvertDate(string: d1)
         print(str)
         VaccS.vaccDate = str
-        
+        VaccS.petName = array[indexPath.row]["name"]!
     }
     
     
