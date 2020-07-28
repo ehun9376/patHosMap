@@ -622,12 +622,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEndOnExit:" destination="Dz1-U4-WvP" eventType="editingDidEndOnExit" id="whc-0n-Lqw"/>
+                                    <action selector="editDidBegin:" destination="Dz1-U4-WvP" eventType="editingDidBegin" id="jdd-Rj-j65"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d7o-hc-p1k">
                                 <rect key="frame" x="154" y="226" width="199" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEndOnExit:" destination="Dz1-U4-WvP" eventType="editingDidEndOnExit" id="oDL-1U-HWD"/>
+                                    <action selector="editDidBegin:" destination="Dz1-U4-WvP" eventType="editingDidBegin" id="6kO-aB-7P5"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXk-iZ-NEM">
                                 <rect key="frame" x="332" y="287" width="31" height="30"/>
