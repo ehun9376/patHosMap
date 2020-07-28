@@ -130,13 +130,13 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         {
             print("進入else段")
             vaccTable = [
-            vaccReminder(title: "8週三合一", date: vaccDate!, done: false),
-            vaccReminder(title: "16週三合一", date: vaccDate!, done: false),
-            vaccReminder(title: "結紮", date: vaccDate!, done: false),
-            vaccReminder(title: "狂犬病", date: vaccDate!, done: false),
-            vaccReminder(title: "1歲-三合一＆狂犬病", date: vaccDate!, done: false),
-            vaccReminder(title: "2歲-三合一＆狂犬病", date: vaccDate!, done: false),
-            vaccReminder(title: "3歲-三合一＆狂犬病", date: vaccDate!, done: false),
+            vaccReminder(title: "8週三合一", date: vaccDate! + 4838400, done: false),
+            vaccReminder(title: "16週三合一", date: vaccDate! + 9676800, done: false),
+            vaccReminder(title: "結紮", date: vaccDate! + 9676800, done: false),
+            vaccReminder(title: "狂犬病", date: vaccDate! + 14515200, done: false),
+            vaccReminder(title: "1歲-三合一＆狂犬病", date: vaccDate! + 31536000, done: false),
+            vaccReminder(title: "2歲-三合一＆狂犬病", date: vaccDate! + 63072000, done: false),
+            vaccReminder(title: "3歲-三合一＆狂犬病", date: vaccDate! + 94608000, done: false),
             ]
         }
     }
