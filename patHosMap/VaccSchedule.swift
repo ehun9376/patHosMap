@@ -1,11 +1,3 @@
-//
-//  VaccSchedule.swift
-//  patHosMap
-//
-//  Created by anna on 2020/7/20.
-//  Copyright © 2020 陳逸煌. All rights reserved.
-//
-
 import UIKit
 
 struct vaccReminder
@@ -20,28 +12,38 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var listTable: UITableView!
     
            
-    var strucRow = vaccReminder()
+    //var strucRow = vaccReminder()
     var vaccTable = [vaccReminder]()
-    var currentRow = 0
+    //var currentRow = 0
     var vaccDate:Date?
     var petName = ""
+    var petKind = 0  //to do:根據貓/狗給不同的預防針清單
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return Vacc.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return vaccTable.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell:UITableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        
+        //顯示項目
         cell.textLabel?.text = vaccTable[indexPath.row].title
+        
+        //將日期轉為字串
         let date: Date = Date()
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
         dateFormatter.locale = Locale(identifier: "zh_Hant_TW") // 設定地區(台灣)
         dateFormatter.timeZone = TimeZone(identifier: "Asia/Taipei") // 設定時區(台灣)
         let dateFormatString: String = dateFormatter.string(from: vaccTable[indexPath.row].date)
+        //顯示日期
         cell.detailTextLabel?.text = dateFormatString
+        cell.detailTextLabel?.textColor = UIColor(red: 78/255, green: 205/255, blue: 196/255, alpha: 0.9)
+        
+        //若以做過狀態為打勾
         if vaccTable[indexPath.row].done
         {
             cell.accessoryType = .checkmark
@@ -49,51 +51,50 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         let cell = tableView.cellForRow(at: indexPath)!
-        if vaccTable[indexPath.row].done == true{
+        //依紀錄判斷是否已被完成，若為完成的項目會顯示打勾，再按該項須改為不打勾並將狀態改為false
+        if vaccTable[indexPath.row].done == true
+        {
             cell.accessoryType = UITableViewCell.AccessoryType.none
             vaccTable[indexPath.row].done = false
             print("現在done = false \(vaccTable[indexPath.row])")
-        }else{
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        }
+        else
+        {
+            cell.accessoryType = UITableViewCell.AccessoryType.checkmark
             vaccTable[indexPath.row].done = true
             print("現在done = true \(vaccTable[indexPath.row])")
         }
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete{
-            //Vacc.remove(at: indexPath.row)
-            tableView.reloadData()
-        }
-    }
+//清單不使用刪除功能
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCell.EditingStyle.delete{
+//            //Vacc.remove(at: indexPath.row)
+//            tableView.reloadData()
+//        }
+//    }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.navigationItem.title = "疫苗施打紀錄"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "儲存", style: .plain, target: self, action: #selector(buttonAddAction))
-        // Do any additional setup after loading the view.
         self.listTable.dataSource = self
         self.listTable.delegate = self
-//        vaccTable = [
-//        vaccReminder(title: "8週三合一", date: vaccDate!, done: false),
-//        vaccReminder(title: "16週三合一", date: vaccDate!, done: false),
-//        vaccReminder(title: "結紮", date: vaccDate!, done: false),
-//        vaccReminder(title: "狂犬病", date: vaccDate!, done: false),
-//        vaccReminder(title: "1歲-三合一＆狂犬病", date: vaccDate!, done: false),
-//        vaccReminder(title: "2歲-三合一＆狂犬病", date: vaccDate!, done: false),
-//        vaccReminder(title: "3歲-三合一＆狂犬病", date: vaccDate!, done: false),
-//        ]
+    //載入預防針清單
         loadlist()
     }
     
-    @objc func buttonAddAction(){
+    @objc func buttonAddAction()
+    {
         print("儲存按鈕被按下")
+        saveList()
 //        let addVC = self.storyboard!.instantiateViewController(identifier: "AddAnimal") as! AddAnimal
 //        addVC.vaccTableViewController = self
 //        self.show(addVC, sender: nil)
-        saveList()
     }
     
     func saveList()
