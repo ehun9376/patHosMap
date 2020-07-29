@@ -88,7 +88,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "listCell")
+        let cell:UITableViewCell = UITableViewCell(style: .value1, reuseIdentifier: "listCell")
         if indexPath.row <= self.hosNameArray.count{
             cell.textLabel?.text = hosNameArray[indexPath.row]
 //            print(hosAddrArray[indexPath.row])
