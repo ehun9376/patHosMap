@@ -45,6 +45,7 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
                     user.removeObserver(withHandle: self.observer)
                     self.observer = 0
                     self.performSegue(withIdentifier: "login", sender: nil)
+                    self.busy.isHidden = true
                 }
                 else{
                     print("登入失敗")
@@ -53,6 +54,7 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
                     }
                     alert.addAction(button)
                     self.present(alert, animated: true, completion: {})
+                    self.busy.isHidden = true
                 }
         }
     }

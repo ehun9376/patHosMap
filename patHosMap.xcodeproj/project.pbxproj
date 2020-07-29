@@ -101,17 +101,17 @@
 				3D06F3E624C1BAB0001F5C3E /* HospitalViewController.swift */,
 				3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */,
 				3DFF6C2D24CD60B50015D9AB /* Favorite.swift */,
-				3DF35BD324C598CF00087826 /* VaccTableViewController.swift */,
-				9DFCEFF724C88634006E865D /* MyCellTableViewCell.swift */,
+				95EE96F324CEB3CD009AD50E /* VaccTVC.swift */,
 				9537CE8C24C56DC300714D63 /* AddAnimal.swift */,
 				9DFCEFFB24C88B6F006E865D /* DetailAnimalViewController.swift */,
+				9DFCEFF724C88634006E865D /* MyCellTableViewCell.swift */,
 				9537CE8E24C56E7100714D63 /* VaccSchedule.swift */,
 				3DBBB7F324C03F04003F5F9F /* Main.storyboard */,
 				3DBBB7F624C03F05003F5F9F /* Assets.xcassets */,
 				3DBBB7F824C03F05003F5F9F /* LaunchScreen.storyboard */,
 				9DFCEFF324C86093006E865D /* GoogleService-Info.plist */,
 				3DBBB7FB24C03F05003F5F9F /* Info.plist */,
-				95EE96F324CEB3CD009AD50E /* VaccTVC.swift */,
+				3DF35BD324C598CF00087826 /* VaccTableViewController.swift */,
 			);
 			path = patHosMap;
 			sourceTree = "<group>";

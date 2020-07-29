@@ -109,6 +109,11 @@ class VaccTVC: UITableViewController {
     count = indexPath.row
     let VaccS = self.storyboard?.instantiateViewController(identifier: "VaccSchedule") as! VaccSchedule
         self.show(VaccS, sender: nil)
+        let d1 = array[indexPath.row]["birthday"]!
+        let str = stringConvertDate(string: d1)
+        print(str)
+        VaccS.vaccDate = str
+        VaccS.petName = array[indexPath.row]["name"]!
     }
     
     
@@ -135,5 +140,11 @@ class VaccTVC: UITableViewController {
         //回傳按鈕組合
         return config
     }
-
+    
+    func stringConvertDate(string:String, dateFormat:String="MMM, dd yyyy") -> Date {
+            let dateFormatter = DateFormatter.init()
+            dateFormatter.dateFormat = "MMM, dd yyyy"
+            let date = dateFormatter.date(from: string)
+            return date!
+    }
 }
