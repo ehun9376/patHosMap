@@ -8,6 +8,9 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var strname = ""
     var count = 0
     var root:DatabaseReference!
+    var datafavorite:DatabaseReference!
+    var little_data_center = UserDefaults.init()
+    var userID:Int!
     @IBOutlet weak var hosName: UILabel!
     //@IBOutlet weak var hosTelephone: UILabel!
     @IBOutlet weak var buttonPhone: UIButton!
@@ -30,10 +33,8 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var userFavoriteName:String!
     //MARK: - 加入最愛按鈕
     @IBAction func btnAddToFavorite(_ sender: UIButton) {
-        let little_data_center:UserDefaults
-        little_data_center = UserDefaults.init()
-        let userID = little_data_center.integer(forKey: "userID") - 1
-        let datafavorite =  root.child("user").child("\(userID)").child("favorite")
+        self.userID = little_data_center.integer(forKey: "userID") - 1
+        self.datafavorite =  root.child("user").child("\(self.userID!)").child("favorite")
         if self.userFavoriteName != nil{
             if self.userFavoriteName.components(separatedBy: ",").contains(strname) || count == 1{
                 let alert = UIAlertController(title: "警告", message: "已在最愛", preferredStyle: .alert)
@@ -43,7 +44,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 self.present(alert, animated: true, completion: {})
             }
             else{
-                datafavorite.setValue(self.userFavoriteName + "," + strname)
+                self.datafavorite.setValue(self.userFavoriteName + "," + strname)
                 count = 1
                 let alert = UIAlertController(title: "通知", message: "已將\(strname)加入最愛", preferredStyle: .alert)
                 let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
@@ -54,7 +55,12 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
 
         }
         else{
-            datafavorite.setValue(strname)
+            self.datafavorite.setValue(strname)
+            let alert = UIAlertController(title: "通知", message: "已將\(strname)加入最愛", preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+            }
+            alert.addAction(button)
+            self.present(alert, animated: true, completion: {})
         }
     }
     override func viewDidLoad() {
@@ -76,14 +82,12 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         mapView.userTrackingMode = .follow  //隨著user移動
         
         //使用userDefaults傳遞使用者ID
-        let little_data_center:UserDefaults
-        little_data_center = UserDefaults.init()
-        let userID = little_data_center.integer(forKey: "userID") - 1
+        self.userID = little_data_center.integer(forKey: "userID") - 1
         
         //連結資料庫取得登入本APP的使用者的資訊
         root = Database.database().reference()
-        let datafavorite =  root.child("user").child("\(userID)").child("favorite")
-        datafavorite.observeSingleEvent(of: .value) { (shot) in
+        self.datafavorite =  root.child("user").child("\(userID!)").child("favorite")
+        self.datafavorite.observeSingleEvent(of: .value) { (shot) in
             let data = shot.value! as! String
             if data != ""{
                 self.userFavoriteName = data
