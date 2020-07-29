@@ -119,18 +119,22 @@ class VaccTVC: UITableViewController {
     
     //左滑修改及刪除
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
-        //準備"更多"按鈕
+        //準備"修改"按鈕
         let actionMore = UIContextualAction(style: .normal, title: "修改") { (action, view, completionHanlder) in
             let DetailAnimalVC = self.storyboard?.instantiateViewController(identifier: "DetailAnimalViewController") as! DetailAnimalViewController
                 self.show(DetailAnimalVC, sender: nil)
+            DetailAnimalVC.petID = indexPath.row
             print("修改按鈕被按下")
         }
         actionMore.backgroundColor = .blue
         //準備"刪除"按鈕//todo尚未完全
         let actionDelete = UIContextualAction(style: .normal, title: "刪除") { (action, view, completionHanlder) in
+            print("刪除按鈕被按下")
             self.array.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            print("刪除按鈕被按下")
+            self.root = Database.database().reference()
+            let delPet = self.root.child("mypet").child("\(self.userID)")
+            delPet.setValue(self.array!)
             print("刪除後陣列：\(self.array!)")
         }
         actionDelete.backgroundColor = .systemPink
@@ -139,6 +143,12 @@ class VaccTVC: UITableViewController {
         config.performsFirstActionWithFullSwipe = true
         //回傳按鈕組合
         return config
+    }
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath){
+        print("排序前陣列\(self.array!)")
+        self.array!.insert(self.array!.remove(at: fromIndexPath.row), at: to.row)
+        let movePet = self.root.child("mypet").child("\(self.userID)")
+        movePet.setValue(self.array!)
     }
     
     func stringConvertDate(string:String, dateFormat:String="MMM, dd yyyy") -> Date {

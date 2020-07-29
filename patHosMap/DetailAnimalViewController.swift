@@ -7,10 +7,15 @@
 //
 
 import UIKit
-
+import Firebase
 class DetailAnimalViewController: UIViewController,UINavigationControllerDelegate {
     weak var VaccTVC:VaccTVC!
     var currentData = 0
+    var userID = 0
+    var petID:Int!
+    var petdata:[String:String]!
+    var root:DatabaseReference!
+    var editPet:DatabaseReference!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!
     let Picker = UIDatePicker()
@@ -30,7 +35,7 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
     @objc func keyboardWillHide(){
                 print("鍵盤收合！")
     }
-    //滾輪轉換日期
+    //MARK: - 滾輪轉換日期
     func creatDatePicker(){
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -51,6 +56,7 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
         txtBirthday.text = "\(dateString)"
         self.view.endEditing(true)
     }
+    //MARK: - 生命循環
     override func viewDidLoad() {
         super.viewDidLoad()
         creatDatePicker()
@@ -60,19 +66,43 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
         //向通知中心註冊鍵盤收合通知
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         //todo
-//        currentData = VaccTVC.array[VaccTVC.count]
-//        txtName.text = currentData.name
+        let mypet_data_center:UserDefaults
+        mypet_data_center = UserDefaults.init()
+        self.userID = mypet_data_center.integer(forKey: "userID") - 1
+        print("\(self.petID!)")
+        self.root = Database.database().reference()
+        self.editPet = self.root.child("mypet").child("\(self.userID)").child("\(self.petID!)/")
+        editPet.observeSingleEvent(of: .value) { (shot) in
+            self.petdata = (shot.value! as! [String:String])
+            self.txtName.text = self.petdata["name"]
+            self.txtBirthday.text = self.petdata["birthday"]
+        }
 
     }
 
     
 
-
+    //MARK: - target action
     @IBAction func btnUpdate(_ sender: UIButton) {
-        //todo
-//        VaccTVC.array[VaccTVC.count] =
-//       (name: txtName.text!,birthday: txtBirthday.text)
-//        print("修改過後的當筆資料：\(VaccTVC.array[VaccTVC.count])")
+        if txtName.text!.isEmpty || txtBirthday.text!.isEmpty{
+            let alert = UIAlertController(title: "資料輸入錯誤", message: "任一欄位都不可為空", preferredStyle: .alert)
+
+            let btnok = UIAlertAction(title: "確認", style: .default, handler: nil)
+            alert.addAction(btnok)
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        else{
+            self.petdata["name"] = self.txtName.text
+            self.petdata["birthday"] = self.txtBirthday.text
+            self.editPet.setValue(petdata)
+            let alert = UIAlertController(title: "完成", message: "資料修改成功！", preferredStyle: .alert)
+            let btnok = UIAlertAction(title: "確認", style: .default, handler: nil)
+            alert.addAction(btnok)
+            self.present(alert, animated: true, completion: {})
+            
+        }
+        
     }
     
 }
