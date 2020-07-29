@@ -127,7 +127,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="vom-Na-oVo"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="台中市">
+                                        <state key="normal" title="臺中市">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
@@ -169,7 +169,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="rE1-8b-KNG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="台南市">
+                                        <state key="normal" title="臺南市">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
@@ -197,7 +197,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="kec-Jw-2GF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="台東縣">
+                                        <state key="normal" title="臺東縣">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
