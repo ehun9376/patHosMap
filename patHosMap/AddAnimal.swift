@@ -146,8 +146,10 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         let newData = ["name":"\(self.txtName.text!)","birthday":"\(self.txtBirthday.text!)","kind":"\(self.kind)",]
         
         dataAddanimal.setValue(newData)
-        let alert = UIAlertController(title: "錯誤", message: "任一空格不得為空", preferredStyle: .alert)
-        let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)
+        let alert = UIAlertController(title: "完成", message: "資料修改成功！", preferredStyle: .alert)
+        let btnok = UIAlertAction(title: "確定", style: .default, handler: nil)
+        alert.addAction(btnok)
+        self.present(alert, animated: true, completion: {})
     }
     
 }
