@@ -16,6 +16,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     var addanimalname:String!
     var addname = ""
     var vc:UIImagePickerController!
+    var petCount:Int!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!
     let Picker = UIDatePicker()
@@ -35,6 +36,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     override func viewDidLoad() {
         super.viewDidLoad()
         creatDatePicker()
+        //print(petCount!)
     }
     func creatDatePicker(){
         let toolbar = UIToolbar()
@@ -116,7 +118,8 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     }
 
     @IBAction func btnInsert(_ sender: UIButton) {
-        if txtName.text!.isEmpty || txtBirthday.text!.isEmpty || imgPicture.image == nil {
+//        if txtName.text!.isEmpty || txtBirthday.text!.isEmpty || imgPicture.image == nil
+        if txtName.text!.isEmpty || txtBirthday.text!.isEmpty {
             //製作訊息視窗
             let alert = UIAlertController(title: "資料輸入錯誤", message: "任何一個欄位都不可空白", preferredStyle: .alert)
             //初始化訊息視窗準備使用的按鈕
@@ -143,9 +146,14 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         let little_data_center:UserDefaults
         little_data_center = UserDefaults.init()
         let userID = little_data_center.integer(forKey: "userID") - 1
+        let petcount = "\(petCount!)"
+        print("寵物數量\(petcount)")
+        let dataAddanimal =  root.child("mypet").child("\(userID)").child(petcount)
         
-        let dataAddanimal =  root.child("mypet").child("\(userID)").child("0")
-        let newData = ["name":"\(self.txtName.text!)","birthday":"\(self.txtBirthday.text!)","picture":"\(self.imgPicture.image!)","kind":"\(self.kind)",]
+//        let newData = ["name":"\(self.txtName.text!)","birthday":"\(self.txtBirthday.text!)","picture":"\(self.imgPicture.image!)","kind":"\(self.kind)",]
+        
+        let newData = ["name":"\(self.txtName.text!)","birthday":"\(self.txtBirthday.text!)","kind":"\(self.kind)",]
+        
         dataAddanimal.setValue(newData)
         let alert = UIAlertController(title: "錯誤", message: "任一空格不得為空", preferredStyle: .alert)
         let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)

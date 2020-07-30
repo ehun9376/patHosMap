@@ -48,6 +48,7 @@ class VaccTVC: UITableViewController {
         let addVC = self.storyboard!.instantiateViewController(identifier: "AddAnimal") as! AddAnimal
         addVC.VaccTVC = self
         self.show(addVC, sender: nil)
+        addVC.petCount = array.count
     }
     // MARK: - Table view data source
 
