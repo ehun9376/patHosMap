@@ -36,6 +36,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     override func viewDidLoad() {
         super.viewDidLoad()
         creatDatePicker()
+        root = Database.database().reference()
         //print(petCount!)
     }
     func creatDatePicker(){
@@ -131,24 +132,14 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
             //離開函式
             return
         }
-        //假資料
-//        let newRow =
-//            Animal(name: txtName.text!, picture: imgPicture.image!.jpegData(compressionQuality: 0.8), birthday: txtBirthday.text!)
-//        vaccTableViewController.arrTable.append(newRow)
-//        let alert = UIAlertController(title: "資料處理訊息", message: "資料新增成功！", preferredStyle: .alert)
-//        //初始化訊息視窗準備使用的按鈕
-//        let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)
-//        //將按鈕加入訊息視窗
-//        alert.addAction(btnOK)
-//        //顯示訊息視窗
-//        self.present(alert, animated: true, completion: nil)
-        //新增動物資料到firebase
+
         let little_data_center:UserDefaults
         little_data_center = UserDefaults.init()
         let userID = little_data_center.integer(forKey: "userID") - 1
+        print(userID)
         let petcount = "\(petCount!)"
         print("寵物數量\(petcount)")
-        let dataAddanimal =  root.child("mypet").child("\(userID)").child(petcount)
+        let dataAddanimal = root.child("mypet").child("\(userID)").child("\(petcount)")
         
 //        let newData = ["name":"\(self.txtName.text!)","birthday":"\(self.txtBirthday.text!)","picture":"\(self.imgPicture.image!)","kind":"\(self.kind)",]
         
