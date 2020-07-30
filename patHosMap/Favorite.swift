@@ -18,6 +18,7 @@ class Favorite: UITableViewController {
     var userID = 0
     var userFavoriteNameArray:[String]!
     var signal = 0
+    var rows = 0
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.signal = 0
@@ -40,46 +41,40 @@ class Favorite: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         print("資料載入中")
-        var rows = 0
-        DispatchQueue.main.async {
-            let little_data_center:UserDefaults
-            little_data_center = UserDefaults.init()
-            self.userID = little_data_center.integer(forKey: "userID") - 1
-            self.root = Database.database().reference()
-            self.datafavorite =  self.root.child("user").child("\(self.userID)").child("favorite")
-            self.datafavorite.observeSingleEvent(of: .value) { (shot) in
-                let data = shot.value! as! String
-                if data != ""{
-                    self.userFavoriteNameArray = data.components(separatedBy: ",")
-                    print(self.userFavoriteNameArray!)
-                    self.signal = 1
-                    self.tableView.reloadData()
+        if self.signal != 1{
+            DispatchQueue.main.async {
+                print("進入非1")
+                let little_data_center:UserDefaults
+                little_data_center = UserDefaults.init()
+                self.userID = little_data_center.integer(forKey: "userID") - 1
+                self.root = Database.database().reference()
+                self.datafavorite =  self.root.child("user").child("\(self.userID)").child("favorite")
+                self.datafavorite.observeSingleEvent(of: .value) { (shot) in
+                    let data = shot.value! as! String
+                    if data != ""{
+                        self.userFavoriteNameArray = data.components(separatedBy: ",")
+                        print(self.userFavoriteNameArray!)
+                        self.signal = 1
+                        self.rows = self.userFavoriteNameArray.count
+                        self.tableView.reloadData()
+                    }
+                    else{
+                        print("進入非1else")
+                        let alert = UIAlertController(title: "警告", message: "找不到資料", preferredStyle: .alert)
+                        let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+                        }
+                        alert.addAction(button)
+                        self.present(alert, animated: true, completion: {})
+                    }
                 }
-                else{
-                    self.signal = 2
-                }
             }
         }
-        if signal == 0{
-            let alert = UIAlertController(title: "警告", message: "資料下載中", preferredStyle: .alert)
-            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
-                self.tableView.reloadData()
-            }
-            alert.addAction(button)
-            self.present(alert, animated: true, completion: {})
+        else{
+            self.rows = self.userFavoriteNameArray.count
         }
-        else if signal == 1{
-            rows = self.userFavoriteNameArray.count
-        }
-        else if signal == 2{
-            let alert = UIAlertController(title: "警告", message: "找不到資料", preferredStyle: .alert)
-            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
-            }
-            alert.addAction(button)
-            self.present(alert, animated: true, completion: {})
-            rows = 0
-        }
-        return rows
+        print(self.signal)
+        
+        return self.rows
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell:UITableViewCell = UITableViewCell()
@@ -94,10 +89,19 @@ class Favorite: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        print("進入刪除")
         self.userFavoriteNameArray!.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
+        print("刪除本地陣列")
+        
         self.datafavorite =  self.root.child("user").child("\(self.userID)").child("favorite")
         self.datafavorite.setValue(self.userFavoriteNameArray!.joined(separator: ","))
+        print("修改資料酷")
+        
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        print("刪除tableROW")
+        
+        
+
     }
     
     // MARK: - 自訂函式
