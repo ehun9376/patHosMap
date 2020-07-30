@@ -151,9 +151,9 @@ class VaccTVC: UITableViewController {
         movePet.setValue(self.array!)
     }
     
-    func stringConvertDate(string:String, dateFormat:String="MMM, dd yyyy") -> Date {
+    func stringConvertDate(string:String, dateFormat:String="MMM dd, yyyy") -> Date {
             let dateFormatter = DateFormatter.init()
-            dateFormatter.dateFormat = "MMM, dd yyyy"
+            dateFormatter.dateFormat = "MMM dd, yyyy"
             let date = dateFormatter.date(from: string)
             return date!
     }

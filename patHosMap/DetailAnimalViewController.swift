@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+
 class DetailAnimalViewController: UIViewController,UINavigationControllerDelegate {
     weak var VaccTVC:VaccTVC!
     var currentData = 0
@@ -16,6 +17,9 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
     var petdata:[String:String]!
     var root:DatabaseReference!
     var editPet:DatabaseReference!
+    var vaccTable = [vaccReminder]()
+    var originalPet = ""
+    var newPet = ""
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!
     let Picker = UIDatePicker()
@@ -76,6 +80,8 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
             self.petdata = (shot.value! as! [String:String])
             self.txtName.text = self.petdata["name"]
             self.txtBirthday.text = self.petdata["birthday"]
+            self.originalPet = self.petdata["name"]!
+            self.loadlist()
         }
 
     }
@@ -94,15 +100,52 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
         }
         else{
             self.petdata["name"] = self.txtName.text
+            self.newPet = self.txtName.text!
             self.petdata["birthday"] = self.txtBirthday.text
             self.editPet.setValue(petdata)
             let alert = UIAlertController(title: "完成", message: "資料修改成功！", preferredStyle: .alert)
             let btnok = UIAlertAction(title: "確認", style: .default, handler: nil)
             alert.addAction(btnok)
             self.present(alert, animated: true, completion: {})
-            
+            self.saveList()
         }
         
+    }
+    
+    func saveList()
+    {
+           
+        let vaccItemsDic = vaccTable.map { (Item) -> [String: Any] in
+
+        return ["title": Item.title , "date": Item.date, "done": Item.done]
+           }
+
+           UserDefaults.standard.set(vaccItemsDic, forKey: newPet)
+          
+       }
+    
+    func loadlist()
+    {
+        
+        print("petName is \(originalPet)")
+        if let userVaccList = UserDefaults.standard.array(forKey: originalPet) as? [[String:Any]]
+        {
+            vaccTable = []
+            for (index,item) in userVaccList.enumerated()
+            {
+                let title = userVaccList[index]["title"] as! String
+                let date = userVaccList[index]["date"] as! Date
+                let done = userVaccList[index]["done"] as! Bool
+                
+                vaccTable.append(vaccReminder(title: title, date: date, done: done))
+            }
+            //print("vacc陣列儲存到\(NSHomeDirectory())")
+            //print(vaccTable)
+        }
+        else
+        {
+           //do nothing
+        }
     }
     
 }

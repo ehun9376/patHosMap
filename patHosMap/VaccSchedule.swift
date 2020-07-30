@@ -124,7 +124,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 
                 vaccTable.append(vaccReminder(title: title, date: date, done: done))
             }
-            print("vacc陣列儲存到\(NSHomeDirectory())")
+            //print("vacc陣列儲存到\(NSHomeDirectory())")
         }
         else
         {
