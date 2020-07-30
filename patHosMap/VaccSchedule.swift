@@ -87,11 +87,15 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
     //載入預防針清單
         loadlist()
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        saveList()
+    }
     
     @objc func buttonAddAction()
     {
         print("儲存按鈕被按下")
-        saveList()
+        
 //        let addVC = self.storyboard!.instantiateViewController(identifier: "AddAnimal") as! AddAnimal
 //        addVC.vaccTableViewController = self
 //        self.show(addVC, sender: nil)

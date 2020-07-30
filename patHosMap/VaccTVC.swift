@@ -48,7 +48,13 @@ class VaccTVC: UITableViewController {
         let addVC = self.storyboard!.instantiateViewController(identifier: "AddAnimal") as! AddAnimal
         addVC.VaccTVC = self
         self.show(addVC, sender: nil)
-        addVC.petCount = array.count
+        if array != nil{
+            addVC.petCount = array.count
+        }
+        else{
+            addVC.petCount = 0
+        }
+        
     }
     // MARK: - Table view data source
 
@@ -65,12 +71,13 @@ class VaccTVC: UITableViewController {
         self.userID = mypet_data_center.integer(forKey: "userID") - 1
         self.root = Database.database().reference()
         let addPet = self.root.child("mypet").child("\(self.userID)")
+        print(addPet)
         addPet.observeSingleEvent(of: .value) { (shot) in
             let data = shot.value! as! [[String:String]]
-            print(data)
+            print("從網路下載的\(data)")
             if data != [["birthday": "", "name": "", "kind": ""]]{
                 self.array = data
-                print(self.array!)
+                print("下載後的陣列\(self.array!)")
                 self.signal = 1
             }
             else {
@@ -132,10 +139,21 @@ class VaccTVC: UITableViewController {
         let actionDelete = UIContextualAction(style: .normal, title: "刪除") { (action, view, completionHanlder) in
             print("刪除按鈕被按下")
             self.array.remove(at: indexPath.row)
+            print("刪除本地陣列")
             tableView.deleteRows(at: [indexPath], with: .fade)
+            print("刪除tableROW")
             self.root = Database.database().reference()
+            
             let delPet = self.root.child("mypet").child("\(self.userID)")
-            delPet.setValue(self.array!)
+            
+            if self.array == []{
+                let data = [["birthday": "", "name": "", "kind": ""]]
+                delPet.setValue(data)
+                print("將資料庫資料設為data")
+            }else{
+                delPet.setValue(self.array!)
+            }
+            
             print("刪除後陣列：\(self.array!)")
         }
         actionDelete.backgroundColor = .systemPink
