@@ -53,6 +53,7 @@ class Favorite: UITableViewController {
                     self.userFavoriteNameArray = data.components(separatedBy: ",")
                     print(self.userFavoriteNameArray!)
                     self.signal = 1
+                    self.tableView.reloadData()
                 }
                 else{
                     self.signal = 2

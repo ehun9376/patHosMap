@@ -30,6 +30,7 @@
 /* Begin PBXFileReference section */
 		11B90A8FD0A5DB3E22247E4C /* Pods_patHosMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_patHosMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D06F3E624C1BAB0001F5C3E /* HospitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalViewController.swift; sourceTree = "<group>"; };
+		3D0CF71424D24DE600051A39 /* mylocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mylocation.gpx; sourceTree = "<group>"; };
 		3DBBB7EA24C03F04003F5F9F /* patHosMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = patHosMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DBBB7ED24C03F04003F5F9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DBBB7EF24C03F04003F5F9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 				9DFCEFF324C86093006E865D /* GoogleService-Info.plist */,
 				3DBBB7FB24C03F05003F5F9F /* Info.plist */,
 				3DF35BD324C598CF00087826 /* VaccTableViewController.swift */,
+				3D0CF71424D24DE600051A39 /* mylocation.gpx */,
 			);
 			path = patHosMap;
 			sourceTree = "<group>";
