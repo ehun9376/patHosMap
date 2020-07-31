@@ -81,6 +81,7 @@ class Favorite: UITableViewController {
         cell.textLabel?.text = self.userFavoriteNameArray[indexPath.row]
         return cell
     }
+    
     // MARK: - Table view Delegate
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath){
         self.userFavoriteNameArray!.insert(self.userFavoriteNameArray!.remove(at: fromIndexPath.row), at: to.row)

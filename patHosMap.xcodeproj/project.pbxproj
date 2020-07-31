@@ -14,7 +14,6 @@
 		3DBBB7F724C03F05003F5F9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBBB7F624C03F05003F5F9F /* Assets.xcassets */; };
 		3DBBB7FA24C03F05003F5F9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBBB7F824C03F05003F5F9F /* LaunchScreen.storyboard */; };
 		3DF35BCE24C535DB00087826 /* HosDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */; };
-		3DF35BD424C598CF00087826 /* VaccTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD324C598CF00087826 /* VaccTableViewController.swift */; };
 		3DF35BD824C5A4F500087826 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD724C5A4F500087826 /* LoginViewController.swift */; };
 		3DF35BDA24C5A51C00087826 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF35BD924C5A51C00087826 /* RegisterViewController.swift */; };
 		3DFF6C2E24CD60B50015D9AB /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF6C2D24CD60B50015D9AB /* Favorite.swift */; };
@@ -39,7 +38,6 @@
 		3DBBB7F924C03F05003F5F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DBBB7FB24C03F05003F5F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosDetailViewController.swift; sourceTree = "<group>"; };
-		3DF35BD324C598CF00087826 /* VaccTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccTableViewController.swift; sourceTree = "<group>"; };
 		3DF35BD724C5A4F500087826 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3DF35BD924C5A51C00087826 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3DFF6C2D24CD60B50015D9AB /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				3DBBB7F824C03F05003F5F9F /* LaunchScreen.storyboard */,
 				9DFCEFF324C86093006E865D /* GoogleService-Info.plist */,
 				3DBBB7FB24C03F05003F5F9F /* Info.plist */,
-				3DF35BD324C598CF00087826 /* VaccTableViewController.swift */,
 				3D0CF71424D24DE600051A39 /* mylocation.gpx */,
 			);
 			path = patHosMap;
@@ -249,7 +246,6 @@
 				3DBBB7EE24C03F04003F5F9F /* AppDelegate.swift in Sources */,
 				3DBBB7F024C03F04003F5F9F /* SceneDelegate.swift in Sources */,
 				9DFCEFFC24C88B6F006E865D /* DetailAnimalViewController.swift in Sources */,
-				3DF35BD424C598CF00087826 /* VaccTableViewController.swift in Sources */,
 				9537CE8D24C56DC300714D63 /* AddAnimal.swift in Sources */,
 				3D06F3E724C1BAB0001F5C3E /* HospitalViewController.swift in Sources */,
 				95EE96F424CEB3CD009AD50E /* VaccTVC.swift in Sources */,
