@@ -63,6 +63,10 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
         root = Database.database().reference()
         busy.isHidden = true
         locationManager.requestWhenInUseAuthorization()
+        password.clearButtonMode = .always
+        password.clearButtonMode = .whileEditing
+        account.clearButtonMode = .always
+        account.clearButtonMode = .whileEditing
     }
 
 }

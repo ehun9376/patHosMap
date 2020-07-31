@@ -71,6 +71,10 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     root = Database.database().reference()
+        password.clearButtonMode = .always
+        password.clearButtonMode = .whileEditing
+        account.clearButtonMode = .always
+        account.clearButtonMode = .whileEditing
         // Do any additional setup after loading the view.
     }
     
