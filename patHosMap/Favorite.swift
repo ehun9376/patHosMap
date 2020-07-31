@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import CoreLocation
+import MapKit
+
 class Favorite: UITableViewController {
 
     var hospitalsArray:[[String:String]] = [[:]]
@@ -81,6 +84,47 @@ class Favorite: UITableViewController {
         cell.textLabel?.text = self.userFavoriteNameArray[indexPath.row]
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        //使用者點到哪間
+        print(userFavoriteNameArray[indexPath.row])
+        
+        //比對大資料
+        for hospital in self.hospitalsArray
+        {
+            if hospital["機構名稱"]! == userFavoriteNameArray[indexPath.row]
+            {
+                print(hospital["機構地址"]!)
+                //初始化地理資訊編碼器
+               let geoCoder = CLGeocoder()
+               geoCoder.geocodeAddressString(hospital["機構地址"]!) { (arrPlacemark, error)
+                   in
+                   if error != nil
+                   {
+                       print("地址解碼錯誤:\(error.debugDescription)")
+                       return
+                   }
+        
+                   //arrPlacemark回傳[CLPlacemark]?是陣列選擇值
+                   //當確定可以取得地址所對應的經緯度資訊時，確認陣列的第一個元素是否為nil
+                   if let toPlacemark = arrPlacemark?.first
+                   {
+                       //將經緯度資訊轉換成導航地圖上目的地的大頭針
+                       let toPin = MKPlacemark(placemark: toPlacemark)
+                       //設定導航模式選項字典，給openInMaps使用，固定用法，可選開車/行走模式
+                       let naviOption = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
+                       //產生導航地圖上目的地的大頭針
+                       let destinationMapItem = MKMapItem(placemark: toPin)
+                       //從現在位置導航到目的地
+                       destinationMapItem.openInMaps(launchOptions: naviOption)
+                   }
+               }
+            }
+        }
+
+    }
+    
     // MARK: - Table view Delegate
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath){
         self.userFavoriteNameArray!.insert(self.userFavoriteNameArray!.remove(at: fromIndexPath.row), at: to.row)
