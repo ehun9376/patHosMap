@@ -38,6 +38,10 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtName.clearButtonMode = .always
+        txtName.clearButtonMode = .whileEditing
+        txtBirthday.clearButtonMode = .always
+        txtBirthday.clearButtonMode = .whileEditing
         creatDatePicker()
         root = Database.database().reference()
         storage = Storage.storage()

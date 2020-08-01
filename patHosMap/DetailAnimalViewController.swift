@@ -66,6 +66,10 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
     //MARK: - 生命循環
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtName.clearButtonMode = .always
+        txtName.clearButtonMode = .whileEditing
+        txtBirthday.clearButtonMode = .always
+        txtBirthday.clearButtonMode = .whileEditing
         creatDatePicker()
         let notificationCenter = NotificationCenter.default
         //向通知中心註冊鍵盤彈出通知
