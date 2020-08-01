@@ -16,7 +16,8 @@ class VaccTVC: UITableViewController {
     var count = 0
     var section = 0
     var rows = 0
-
+    var picRef : StorageReference!
+    var storage = Storage.storage()
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.signal = 0
@@ -99,26 +100,6 @@ class VaccTVC: UITableViewController {
             self.rows = self.array.count
         }
 
-      
-//        if signal == 0{
-//            let alert = UIAlertController(title: "警告", message: "資料下載中", preferredStyle: .alert)
-//            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
-//                self.tableView.reloadData()
-//            }
-//            alert.addAction(button)
-//            self.present(alert, animated: true, completion: {})
-//        }
-//        else if signal == 1 {
-//            self.section = self.array.count
-//        }
-//        else if signal == 2 {
-//            let alert = UIAlertController(title: "警告", message: "找不到資料", preferredStyle: .alert)
-//            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
-//            }
-//            alert.addAction(button)
-//            self.present(alert, animated: true,completion: {})
-//            self.section = 0
-//        }
         return self.rows
     }
     
@@ -126,6 +107,19 @@ class VaccTVC: UITableViewController {
         let cell:UITableViewCell = UITableViewCell()
         cell.textLabel?.text=self.array[indexPath.row]["name"]
         cell.imageView?.image = UIImage(named: "DefaultPhoto")
+        self.storage = Storage.storage()
+        self.picRef = self.storage.reference().child("data/picture/user\(self.userID)pet\(indexPath.row).jpeg")
+        DispatchQueue.main.async {
+            self.picRef.getData(maxSize: 100000000) { (bytes, error) in
+                if let err = error{
+                    print("下載出錯\(err)")
+                    cell.imageView?.image = UIImage(named: "DefaultPhoto")
+                }else{
+                    let petPic = UIImage(data: bytes!)
+                    cell.imageView!.image = petPic
+                }
+            }
+        }
         return cell
     }
     //畫面轉入VaccSchedule

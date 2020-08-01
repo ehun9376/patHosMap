@@ -1013,6 +1013,12 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="kR1-Dt-B32">
                                         <rect key="frame" x="0.0" y="471.5" width="414" height="352.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="99824" translatesAutoresizingMaskIntoConstraints="NO" id="aT9-hd-9MZ">
+                                                <rect key="frame" x="16" y="-13" width="382" height="377"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Sb-4X-IaR">
@@ -1171,6 +1177,7 @@
     </scenes>
     <resources>
         <image name="21554565135" width="400" height="300"/>
+        <image name="99824" width="2160" height="1440"/>
         <image name="arrowtriangle.down.circle.fill" catalog="system" width="128" height="121"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>
