@@ -1006,7 +1006,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="oeU-pj-ojW">
-                                        <rect key="frame" x="0.0" y="136" width="414" height="327.5"/>
+                                        <rect key="frame" x="0.0" y="136" width="414" height="307.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歡迎回來！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axI-Rp-L8e">
                                                 <rect key="frame" x="16" y="8" width="382" height="33.5"/>
@@ -1032,8 +1032,8 @@
                                                     <constraint firstAttribute="height" constant="130" id="dyT-hO-JlS"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="n9Y-TG-u2k">
-                                                <rect key="frame" x="16" y="245.5" width="382" height="74"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="n9Y-TG-u2k">
+                                                <rect key="frame" x="16" y="245.5" width="382" height="54"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAl-px-jD2">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
@@ -1046,7 +1046,7 @@
                                                         </connections>
                                                     </button>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="6c2-Ew-HUE">
-                                                        <rect key="frame" x="0.0" y="54" width="382" height="20"/>
+                                                        <rect key="frame" x="0.0" y="34" width="382" height="20"/>
                                                     </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1055,23 +1055,23 @@
                                         <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="kR1-Dt-B32">
-                                        <rect key="frame" x="0.0" y="471.5" width="414" height="355.5"/>
+                                        <rect key="frame" x="0.0" y="451.5" width="414" height="363.5"/>
                                         <color key="backgroundColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Sb-4X-IaR">
-                                        <rect key="frame" x="0.0" y="835" width="414" height="27"/>
+                                        <rect key="frame" x="0.0" y="823" width="414" height="39"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PHy-0j-uct">
-                                                <rect key="frame" x="130.5" y="0.0" width="153" height="27"/>
+                                                <rect key="frame" x="130.5" y="0.0" width="153" height="39"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="還沒有帳號？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRw-kg-Znq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104" height="27"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104" height="39"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.1019607843" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHB-DV-fqy">
-                                                        <rect key="frame" x="108" y="0.0" width="45" height="27"/>
+                                                        <rect key="frame" x="108" y="0.0" width="45" height="39"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <state key="normal" title="註冊">
                                                             <color key="titleColor" red="1" green="0.41960784309999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
