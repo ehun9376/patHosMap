@@ -440,7 +440,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.90196078430000004" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="nsO-05-L1E"/>
                     </view>
                     <navigationItem key="navigationItem" id="tGd-m3-7bv"/>
@@ -957,7 +957,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="T5E-46-4la">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2rG-Ge-wfg">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="天空" translatesAutoresizingMaskIntoConstraints="NO" id="2rG-Ge-wfg">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="FRA-0d-8ua"/>
@@ -1014,7 +1014,7 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="kR1-Dt-B32">
                                         <rect key="frame" x="0.0" y="471.5" width="414" height="355.5"/>
-                                        <color key="backgroundColor" red="1" green="0.90196078430000004" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Sb-4X-IaR">
                                         <rect key="frame" x="0.0" y="835" width="414" height="27"/>
@@ -1045,7 +1045,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.90196078430000004" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="T5E-46-4la" firstAttribute="top" secondItem="tbE-Oz-b4C" secondAttribute="top" id="9BX-eH-0oP"/>
                             <constraint firstItem="ooZ-7b-fIh" firstAttribute="bottom" secondItem="T5E-46-4la" secondAttribute="bottom" id="BCZ-Fz-svn"/>
@@ -1185,5 +1185,6 @@
         <image name="post" width="256" height="256"/>
         <image name="smartphone-with-map-phone-screen-red-gps-dot-isolated-white-background-illustration-location-search_185004-41" width="626" height="626"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="天空" width="259" height="194"/>
     </resources>
 </document>
