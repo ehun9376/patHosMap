@@ -153,6 +153,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         let jData = self.imgPicture.image!.jpegData(compressionQuality: 0.5)
         picRef.putData(jData!)
         
+        //訊息視窗
         let alert = UIAlertController(title: "通知", message: "已新增寵物", preferredStyle: .alert)
         let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)
         alert.addAction(btnOK)
