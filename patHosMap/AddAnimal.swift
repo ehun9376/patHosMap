@@ -140,9 +140,6 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         let petcount = "\(petCount!)"
         print("寵物數量\(petcount)")
         let dataAddanimal = root.child("mypet").child("\(userID)").child("\(petcount)")
-        
-//        let newData = ["name":"\(self.txtName.text!)","birthday":"\(self.txtBirthday.text!)","picture":"\(self.imgPicture.image!)","kind":"\(self.kind)",]
-        
         let newData = ["name":"\(self.txtName.text!)","birthday":"\(self.txtBirthday.text!)","kind":"\(self.kind)",]
         
         dataAddanimal.setValue(newData)
