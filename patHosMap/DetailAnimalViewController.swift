@@ -81,7 +81,7 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
             self.storage = Storage.storage()
             self.picRef = self.storage.reference().child("data/picture/user\(self.userID)pet\(self.petID!).jpeg")
             DispatchQueue.main.async {
-                self.picRef.getData(maxSize: 1000000) { (bytes, error) in
+                self.picRef.getData(maxSize: 10000000) { (bytes, error) in
                     if let err = error{
                         print("下載出錯\(err)")
                     }else{
