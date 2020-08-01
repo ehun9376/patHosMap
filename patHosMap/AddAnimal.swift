@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIPickerViewDelegate {
     
     weak var VaccTVC:VaccTVC!
@@ -17,6 +18,8 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     var addname = ""
     var vc:UIImagePickerController!
     var petCount:Int!
+    var userID:Int!
+    var storage:Storage!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!
     let Picker = UIDatePicker()
@@ -37,7 +40,10 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         super.viewDidLoad()
         creatDatePicker()
         root = Database.database().reference()
-        //print(petCount!)
+        storage = Storage.storage()
+        let little_data_center:UserDefaults
+        little_data_center = UserDefaults.init()
+        self.userID = little_data_center.integer(forKey: "userID") - 1
     }
     func creatDatePicker(){
         let toolbar = UIToolbar()
@@ -120,7 +126,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
 
     @IBAction func btnInsert(_ sender: UIButton) {
 //        if txtName.text!.isEmpty || txtBirthday.text!.isEmpty || imgPicture.image == nil
-        if txtName.text!.isEmpty || txtBirthday.text!.isEmpty {
+        if txtName.text!.isEmpty || txtBirthday.text!.isEmpty || imgPicture.image == nil{
             //製作訊息視窗
             let alert = UIAlertController(title: "資料輸入錯誤", message: "任何一個欄位都不可空白", preferredStyle: .alert)
             //初始化訊息視窗準備使用的按鈕
@@ -140,9 +146,13 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         let petcount = "\(petCount!)"
         print("寵物數量\(petcount)")
         let dataAddanimal = root.child("mypet").child("\(userID)").child("\(petcount)")
-        let newData = ["name":"\(self.txtName.text!)","birthday":"\(self.txtBirthday.text!)","kind":"\(self.kind)",]
-        
+        let newData = ["name":"\(self.txtName.text!)","birthday":"\(self.txtBirthday.text!)","kind":"\(self.kind)","picture":"user\(self.userID!)pet\(self.petCount!).jpeg",]
         dataAddanimal.setValue(newData)
+        //處理上傳
+        let picRef = storage.reference().child("data/picture/user\(self.userID!)pet\(self.petCount!).jpeg")
+        let jData = self.imgPicture.image!.jpegData(compressionQuality: 0.5)
+        picRef.putData(jData!)
+        
         let alert = UIAlertController(title: "通知", message: "已新增寵物", preferredStyle: .alert)
         let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)
         alert.addAction(btnOK)
