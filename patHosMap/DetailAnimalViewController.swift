@@ -64,8 +64,20 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
         self.view.endEditing(true)
     }
     //MARK: - 生命循環
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        txtName.clearButtonMode = .always
+        txtName.clearButtonMode = .whileEditing
+        txtBirthday.clearButtonMode = .always
+        txtBirthday.clearButtonMode = .whileEditing
+        creatDatePicker()
+        let notificationCenter = NotificationCenter.default
+        //向通知中心註冊鍵盤彈出通知
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        //向通知中心註冊鍵盤收合通知
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        //todo
+        
         let mypet_data_center:UserDefaults
         mypet_data_center = UserDefaults.init()
         self.userID = mypet_data_center.integer(forKey: "userID") - 1
@@ -92,25 +104,6 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
             }
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        txtName.clearButtonMode = .always
-        txtName.clearButtonMode = .whileEditing
-        txtBirthday.clearButtonMode = .always
-        txtBirthday.clearButtonMode = .whileEditing
-        creatDatePicker()
-        let notificationCenter = NotificationCenter.default
-        //向通知中心註冊鍵盤彈出通知
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        //向通知中心註冊鍵盤收合通知
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        //todo
-        
-
-    }
-
-    
-
     //MARK: - target action
     @IBAction func btnUpdate(_ sender: UIButton) {
         if txtName.text!.isEmpty || txtBirthday.text!.isEmpty{
