@@ -68,5 +68,12 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
         account.clearButtonMode = .always
         account.clearButtonMode = .whileEditing
     }
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //編輯用鍵盤使用結束後收起
+        self.view.endEditing(true)
+    }
+    @IBAction func didEndOnExit(_ sender: UITextField)
+    {
+        //只需對應，即可按下Return鍵收起鍵盤！
+    }
 }

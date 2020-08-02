@@ -14,11 +14,6 @@ class RegisterViewController: UIViewController {
     var root:DatabaseReference!
 
     let observer:UInt = 0
-//    let sales = root.child("sale_mangers").child("2")
-//    var is_manager = false
-//    sales.setValue([["account":"jacky"],["password":"123456"]])
-//    sales.observe(DataEventType.value) { (data) in
-//        print(data.value!)
     
     @IBAction func back(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -82,16 +77,12 @@ class RegisterViewController: UIViewController {
         account.clearButtonMode = .whileEditing
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //編輯用鍵盤使用結束後收起
+        self.view.endEditing(true)
     }
-    */
-
+    @IBAction func didEndOnExit(_ sender: UITextField)
+    {
+        //只需對應，即可按下Return鍵收起鍵盤！
+    }
 }

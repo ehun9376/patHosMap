@@ -104,17 +104,25 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
                 else
                 {
                     let placemarks = arrPlaceMarks
-                    let location = placemarks?.first?.location as! CLLocation
+                    let location = placemarks?.first?.location!
                     //print(location.coordinate.latitude, location.coordinate.longitude)
-                    self.latitude = location.coordinate.latitude
-                    self.longitude = location.coordinate.longitude
+                    self.latitude = location!.coordinate.latitude
+                    self.longitude = location!.coordinate.longitude
                     
                     //計算距離
-                    var firsLocation = CLLocation(latitude:self.latitude, longitude:self.longitude)
-                    var secondLocation = CLLocation(latitude: self.userlatitube, longitude: self.userlongitube)
-                    let distance = firsLocation.distance(from: secondLocation) / 1000
+                    let firsLocation = CLLocation(latitude:self.latitude, longitude:self.longitude)
+                    if self.userlatitube != nil && self.longitude != nil{
+                        let secondLocation = CLLocation(latitude: self.userlatitube, longitude: self.userlongitube)
+                        let distance = firsLocation.distance(from: secondLocation) / 1000
+                        cell.detailTextLabel?.text = " \(String(format:"%.01f", distance)) 公里 "
+                    }
+                    else{
+                        cell.detailTextLabel?.text = "轉碼錯誤"
+                    }
+                    
+                    
                     //顯示於label上
-                    cell.detailTextLabel?.text = " \(String(format:"%.01f", distance)) 公里 "
+                    
                 }
             }
             cell.detailTextLabel?.textColor = UIColor.gray

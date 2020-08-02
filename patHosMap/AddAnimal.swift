@@ -30,10 +30,21 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     @IBOutlet weak var btnDog: UIButton!
 
     @IBAction func btndog(_ sender: UIButton) {
+        DispatchQueue.main.async {
+            sender.imageView?.image = UIImage(named: "fullcircle")
+            self.btnCat.imageView?.image = UIImage(named: "circle")
+        }
+
         kind = 1
+        print("1")
     }
     @IBAction func btncat(_ sender: UIButton) {
+        DispatchQueue.main.async {
+            sender.imageView?.image = UIImage(named: "fullcircle")
+            self.btnDog.imageView?.image = UIImage(named: "circle")
+        }
         kind = 2
+        print("2")
     }
     
     override func viewDidLoad() {

@@ -102,14 +102,14 @@ class VaccTVC: UITableViewController {
 
         return self.rows
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell()
         cell.textLabel?.text=self.array[indexPath.row]["name"]
         cell.imageView?.image = UIImage(named: "DefaultPhoto")
         self.storage = Storage.storage()
-        self.picRef = self.storage.reference().child("data/picture/user\(self.userID)pet\(indexPath.row).jpeg")
         DispatchQueue.main.async {
+            self.picRef = self.storage.reference().child("data/picture/user\(self.userID)pet\(indexPath.row).jpeg")
             self.picRef.getData(maxSize: 100000000) { (bytes, error) in
                 if let err = error{
                     print("下載出錯\(err)")

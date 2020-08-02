@@ -328,7 +328,7 @@
                                 <color key="textColor" red="0.1019607843" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGO-bM-LEH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="轉碼錯誤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGO-bM-LEH">
                                 <rect key="frame" x="80" y="408" width="164" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -443,11 +443,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="didEndOnExit:" destination="uXO-Rj-VE6" eventType="editingDidEndOnExit" id="MAB-5z-TeE"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SwL-15-yyz">
                                                         <rect key="frame" x="0.0" y="64" width="382" height="56"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="didEndOnExit:" destination="uXO-Rj-VE6" eventType="editingDidEndOnExit" id="vQS-Yc-MMV"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -737,14 +743,6 @@
                                     <action selector="didEndOnExit:" destination="Zjm-Il-gRu" eventType="editingDidEndOnExit" id="ca7-R2-0FW"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eH-4B-wHW">
-                                <rect key="frame" x="227" y="433" width="61" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button貓"/>
-                                <connections>
-                                    <action selector="btncat:" destination="Zjm-Il-gRu" eventType="touchUpInside" id="ERF-fN-CXX"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vF-oo-3W7">
                                 <rect key="frame" x="134" y="352" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -767,10 +765,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNH-nG-EE2">
-                                <rect key="frame" x="88" y="433" width="61" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNH-nG-EE2">
+                                <rect key="frame" x="103" y="432" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button狗"/>
+                                <state key="normal" image="circle"/>
                                 <connections>
                                     <action selector="btndog:" destination="Zjm-Il-gRu" eventType="touchUpInside" id="dH4-I4-iFG"/>
                                 </connections>
@@ -787,13 +785,6 @@
                                     <action selector="btnPhotoAlbum:" destination="Zjm-Il-gRu" eventType="touchUpInside" id="qP5-gn-0FG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新增寵物" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-wj-omP">
-                                <rect key="frame" x="169" y="70" width="98" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xix-Ye-bck">
                                 <rect key="frame" x="167" y="600" width="82" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -801,6 +792,21 @@
                                 <state key="normal" title="確認新增"/>
                                 <connections>
                                     <action selector="btnInsert:" destination="Zjm-Il-gRu" eventType="touchUpInside" id="msq-p8-boH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新增寵物" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-wj-omP">
+                                <rect key="frame" x="169" y="70" width="98" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eH-4B-wHW">
+                                <rect key="frame" x="256" y="432" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="circle"/>
+                                <connections>
+                                    <action selector="btncat:" destination="Zjm-Il-gRu" eventType="touchUpInside" id="ERF-fN-CXX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -987,11 +993,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="53.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="didEndOnExit:" destination="FGt-Af-Lk8" eventType="editingDidEndOnExit" id="Fhq-ZQ-4f1"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="使用者密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xoe-I5-UzJ">
                                                         <rect key="frame" x="0.0" y="76.5" width="382" height="53.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="didEndOnExit:" destination="FGt-Af-Lk8" eventType="editingDidEndOnExit" id="XjX-32-JGT"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -1185,6 +1197,7 @@
         <image name="21554565135" width="400" height="300"/>
         <image name="arrowtriangle.down.circle.fill" catalog="system" width="128" height="121"/>
         <image name="camera (1)" width="32" height="32"/>
+        <image name="circle" width="32" height="32"/>
         <image name="close" width="32" height="32"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>

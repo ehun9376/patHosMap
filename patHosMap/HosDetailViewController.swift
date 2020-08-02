@@ -125,11 +125,15 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 self.mapView.setRegion(region, animated: true)
                 
                 //計算距離
-                var firsLocation = CLLocation(latitude:self.latitude, longitude:self.longitude)
-                var secondLocation = CLLocation(latitude: self.userlatitube, longitude: self.userlongitube)
-                let distance = firsLocation.distance(from: secondLocation) / 1000
-                //顯示於label上
-                self.labelDistance.text = " \(String(format:"%.01f", distance)) 公里 "
+                if self.latitude != nil && self.longitude != nil && self.userlatitube != nil && self.userlongitube != nil{
+                    let firsLocation = CLLocation(latitude:self.latitude, longitude:self.longitude)
+                    let secondLocation = CLLocation(latitude: self.userlatitube, longitude: self.userlongitube)
+                    let distance = firsLocation.distance(from: secondLocation) / 1000
+                    //顯示於label上
+                    self.labelDistance.text = " \(String(format:"%.01f", distance)) 公里 "
+                }else{
+                    self.labelDistance.text = "轉碼錯誤"
+                }
             }
         }
     }
@@ -148,12 +152,21 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     
     @IBAction func buttonOpenMap(_ sender: UIButton)
     {
-        let mapURL = URL(string: "http://maps.apple.com/?daddr=\(latitude!),\(longitude!)")
-        print(latitude!, longitude!)
-        if (UIApplication.shared.canOpenURL(mapURL!)){
-            UIApplication.shared.open(mapURL!, options: [:], completionHandler: nil)
-        } else {
-                // do nothing
+        if self.latitude != nil && self.longitude != nil{
+            let mapURL = URL(string: "http://maps.apple.com/?daddr=\(latitude!),\(longitude!)")
+            print(latitude!, longitude!)
+            if (UIApplication.shared.canOpenURL(mapURL!)){
+                UIApplication.shared.open(mapURL!, options: [:], completionHandler: nil)
+            } else {
+
+                
+            }
+        }else{
+            let alert = UIAlertController(title: "警告", message: "轉碼錯誤", preferredStyle: .alert)
+            let button = UIAlertAction(title: "請稍後再試", style: UIAlertAction.Style.default) { (button) in
+            }
+            alert.addAction(button)
+            self.present(alert, animated: true, completion: {})
         }
     }
     
