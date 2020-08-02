@@ -19,6 +19,11 @@ class RegisterViewController: UIViewController {
 //    sales.setValue([["account":"jacky"],["password":"123456"]])
 //    sales.observe(DataEventType.value) { (data) in
 //        print(data.value!)
+    
+    @IBAction func back(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func register(_ sender: UIButton) {
         var count = 0
         var is_manager = false
