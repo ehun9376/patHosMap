@@ -12,8 +12,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var account: UITextField!
     @IBOutlet weak var password: UITextField!
     var root:DatabaseReference!
-
-    let observer:UInt = 0
     
     @IBAction func back(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -46,8 +44,8 @@ class RegisterViewController: UIViewController {
                     let newData = ["account":"\(self.account.text!)","password":"\(self.password.text!)","favorite":""]
                     
                     let newpet = self.root.child("mypet").child("\(count)")
-                        var aaa=[["birthday":"","kind":"","name":""]]
-                    newpet.setValue(aaa)
+                    let petdefault=[["birthday":"","kind":"","name":""]]
+                    newpet.setValue(petdefault)
                     newUser.setValue(newData)
                     let alert = UIAlertController(title: "通知", message: "帳號已創建", preferredStyle: .alert)
                     let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in

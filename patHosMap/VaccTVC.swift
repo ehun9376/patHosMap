@@ -10,12 +10,12 @@ import UIKit
 import Firebase
 class VaccTVC: UITableViewController {
     var array:[[String:String]]!
-    var root:DatabaseReference!
     var userID = 0
     var signal = 0
     var count = 0
     var section = 0
     var rows = 0
+    var root:DatabaseReference!
     var picRef : StorageReference!
     var storage = Storage.storage()
     override func viewDidAppear(_ animated: Bool) {

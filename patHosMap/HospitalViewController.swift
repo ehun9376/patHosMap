@@ -5,15 +5,14 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
 
     
     @IBOutlet weak var table: UITableView!
-
     @IBOutlet var citys: [UIButton]!
     @IBOutlet weak var city: UILabel!
     var locationManager = CLLocationManager()
     var cityHosArray:[[String:String]] = [[:]]
+    var hospitalsArray:[[String:String]] = [[:]]
     var hosNameArray:[String] = []
     var hosTelArray:[String] = []
     var hosAddrArray:[String] = []
-    var hospitalsArray:[[String:String]] = [[:]]
     //各家經緯度
     var latitude:CLLocationDegrees!
     var longitude:CLLocationDegrees!
@@ -22,7 +21,6 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     var userlongitube:CLLocationDegrees!
     
     @IBAction func changeCity(_ sender: UIButton) {
-        
         UIView.animate(withDuration: 0.5) {
             for city in self.citys{
                 city.isHidden = !city.isHidden
@@ -52,23 +50,18 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
                 }
                 self.hospitalsArray[0]["距離"] = "20"
                  //print("\(self.hospitalsArray[0])")
-                 for i in 0..<self.hospitalsArray.count
-                 {
+                 for i in 0..<self.hospitalsArray.count{
                     self.hospitalsArray[i]["距離"] = "20"
                  }
             }
-            print("\(self.hospitalsArray[60])")
             self.table.dataSource = self
             self.table.delegate = self
             self.table.reloadData()
-            
-          
         }
         else{
             DispatchQueue.main.async{
                 let alert = UIAlertController(title: "警告", message: "資料下載未完成，請稍待幾秒鐘再試一次", preferredStyle: .alert)
-                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
-                }
+                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in}
                 alert.addAction(button)
                 self.present(alert, animated: true, completion: {})
             }
@@ -91,7 +84,6 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         let cell:UITableViewCell = UITableViewCell(style: .value1, reuseIdentifier: "listCell")
         if indexPath.row <= self.hosNameArray.count{
             cell.textLabel?.text = hosNameArray[indexPath.row]
-//            print(hosAddrArray[indexPath.row])
             let geocoder = CLGeocoder()
             geocoder.geocodeAddressString(hosAddrArray[indexPath.row])
             {
@@ -105,7 +97,6 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
                 {
                     let placemarks = arrPlaceMarks
                     let location = placemarks?.first?.location!
-                    //print(location.coordinate.latitude, location.coordinate.longitude)
                     self.latitude = location!.coordinate.latitude
                     self.longitude = location!.coordinate.longitude
                     
@@ -119,10 +110,6 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
                     else{
                         cell.detailTextLabel?.text = "轉碼錯誤"
                     }
-                    
-                    
-                    //顯示於label上
-                    
                 }
             }
             cell.detailTextLabel?.textColor = UIColor.gray
@@ -138,8 +125,14 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         self.show(HosDetailVC, sender: nil)
         
     }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+     {
+         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+         print("locations = \(locValue.latitude) \(locValue.longitude)")
+         userlatitube = locValue.latitude
+         userlongitube = locValue.longitude
+     }
     
-    //
     func download() -> Void {
         let session:URLSession = URLSession(configuration: .default)
         let task:URLSessionDataTask = session.dataTask(with: URL(string:"https://data.coa.gov.tw/Service/OpenData/DataFileService.aspx?UnitId=078&$top=1000&$skip=0")!){
@@ -147,28 +140,18 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
             in
             if let error = err{
                 let alert = UIAlertController(title: "警告", message: "連線出現問題！\n\(error.localizedDescription)", preferredStyle: .alert)
-                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
-                }
+                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in }
                 alert.addAction(button)
                 self.present(alert, animated: true, completion: {})
             }
             else{
                 do{
                     self.hospitalsArray = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [[String:String]]
-                   
                 }catch{
                     print("伺服器出錯\(error)")
                 }
             }
         }
         task.resume()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
-    {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        userlatitube = locValue.latitude
-        userlongitube = locValue.longitude
     }
 }

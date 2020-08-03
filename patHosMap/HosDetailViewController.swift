@@ -31,15 +31,14 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var userlongitube:CLLocationDegrees!
     var stringWithLink:String!
     var userFavoriteName:String!
-    //MARK: - 加入最愛按鈕
+
     @IBAction func btnAddToFavorite(_ sender: UIButton) {
         self.userID = little_data_center.integer(forKey: "userID") - 1
         self.datafavorite =  root.child("user").child("\(self.userID!)").child("favorite")
         if self.userFavoriteName != nil{
             if self.userFavoriteName.components(separatedBy: ",").contains(strname) || count == 1{
                 let alert = UIAlertController(title: "警告", message: "已在最愛", preferredStyle: .alert)
-                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
-                }
+                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in }
                 alert.addAction(button)
                 self.present(alert, animated: true, completion: {})
             }
@@ -47,8 +46,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 self.datafavorite.setValue(self.userFavoriteName + "," + strname)
                 count = 1
                 let alert = UIAlertController(title: "通知", message: "已將\(strname)加入最愛", preferredStyle: .alert)
-                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
-                }
+                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in }
                 alert.addAction(button)
                 self.present(alert, animated: true, completion: {})
             }
@@ -57,8 +55,47 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         else{
             self.datafavorite.setValue(strname)
             let alert = UIAlertController(title: "通知", message: "已將\(strname)加入最愛", preferredStyle: .alert)
-            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (button) in}
+            alert.addAction(button)
+            self.present(alert, animated: true, completion: {})
+        }
+    }
+    @IBAction func buttonPhone(_ sender: UIButton)
+    {
+        if let phoneURL = URL(string: "tel://\(strtel)")
+        {
+            if application.canOpenURL(phoneURL)
+            {
+                application.open(phoneURL, options: [:], completionHandler: nil)
             }
+            else
+            {
+                //alert
+            }
+        }
+    }
+    
+    @IBAction func buttonShare(_ sender: Any)
+    {
+        let activityController = UIActivityViewController(activityItems: [stringWithLink!], applicationActivities: nil)
+        
+         self.present(activityController, animated: true) {
+             print("presented")
+         }
+    }
+    @IBAction func buttonOpenMap(_ sender: UIButton)
+    {
+        if self.latitude != nil && self.longitude != nil{
+            let mapURL = URL(string: "http://maps.apple.com/?daddr=\(latitude!),\(longitude!)")
+            print(latitude!, longitude!)
+            if (UIApplication.shared.canOpenURL(mapURL!)){
+                UIApplication.shared.open(mapURL!, options: [:], completionHandler: nil)
+            }
+            else {
+            }
+        }else{
+            let alert = UIAlertController(title: "警告", message: "轉碼錯誤", preferredStyle: .alert)
+            let button = UIAlertAction(title: "請稍後再試", style: UIAlertAction.Style.default) { (button) in }
             alert.addAction(button)
             self.present(alert, animated: true, completion: {})
         }
@@ -66,12 +103,12 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     override func viewDidLoad() {
         super.viewDidLoad()
         background.layer.cornerRadius = 25
-        //self.hosTelephone.text = strtel
+        
         self.buttonPhone.setTitle(strtel, for: .normal)
         self.hosAddress.text = straddr
         self.hosName.text = strname
+        
         stringWithLink = "http://maps.apple.com/?daddr=\(hosAddress.text!)"
-        //print(stringWithLink)
         getDestination()
         locationManager.delegate = self  //委派給ViewController
         locationManager.desiredAccuracy = kCLLocationAccuracyBest  //設定為最佳精度
@@ -139,59 +176,9 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         userlatitube = locValue.latitude
         userlongitube = locValue.longitude
-        
-//        print("userlocation\(userlatitube),\(userlongitube)")
-        
-        
     }
-    
-    @IBAction func buttonOpenMap(_ sender: UIButton)
-    {
-        if self.latitude != nil && self.longitude != nil{
-            let mapURL = URL(string: "http://maps.apple.com/?daddr=\(latitude!),\(longitude!)")
-            print(latitude!, longitude!)
-            if (UIApplication.shared.canOpenURL(mapURL!)){
-                UIApplication.shared.open(mapURL!, options: [:], completionHandler: nil)
-            } else {
-
-                
-            }
-        }else{
-            let alert = UIAlertController(title: "警告", message: "轉碼錯誤", preferredStyle: .alert)
-            let button = UIAlertAction(title: "請稍後再試", style: UIAlertAction.Style.default) { (button) in
-            }
-            alert.addAction(button)
-            self.present(alert, animated: true, completion: {})
-        }
-    }
-    
-    @IBAction func buttonPhone(_ sender: UIButton)
-    {
-        if let phoneURL = URL(string: "tel://\(strtel)")
-        {
-            if application.canOpenURL(phoneURL)
-            {
-                application.open(phoneURL, options: [:], completionHandler: nil)
-            }
-            else
-            {
-                //alert
-            }
-        }
-    }
-    
-    @IBAction func buttonShare(_ sender: Any)
-    {
-        let activityController = UIActivityViewController(activityItems: [stringWithLink!], applicationActivities: nil)
-        
-         self.present(activityController, animated: true) {
-             print("presented")
-         }
-    }
-    
 }

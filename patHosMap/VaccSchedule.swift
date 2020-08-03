@@ -10,11 +10,7 @@ struct vaccReminder
 class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var listTable: UITableView!
-    
-           
-    //var strucRow = vaccReminder()
     var vaccTable = [vaccReminder]()
-    //var currentRow = 0
     var vaccDate:Date?
     var petName = ""
     var petKind = 0  //to do:根據貓/狗給不同的預防針清單
@@ -33,7 +29,6 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         cell.textLabel?.text = vaccTable[indexPath.row].title
         
         //將日期轉為字串
-        let date: Date = Date()
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
         dateFormatter.locale = Locale(identifier: "zh_Hant_TW") // 設定地區(台灣)
@@ -68,20 +63,12 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
             print("現在done = true \(vaccTable[indexPath.row])")
         }
     }
-    
-//清單不使用刪除功能
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == UITableViewCell.EditingStyle.delete{
-//            //Vacc.remove(at: indexPath.row)
-//            tableView.reloadData()
-//        }
-//    }
+
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.navigationItem.title = "疫苗施打紀錄"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "儲存", style: .plain, target: self, action: #selector(buttonAddAction))
         self.listTable.dataSource = self
         self.listTable.delegate = self
     //載入預防針清單
@@ -91,16 +78,6 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         super.viewWillDisappear(true)
         saveList()
     }
-    
-    @objc func buttonAddAction()
-    {
-        print("儲存按鈕被按下")
-        
-//        let addVC = self.storyboard!.instantiateViewController(identifier: "AddAnimal") as! AddAnimal
-//        addVC.vaccTableViewController = self
-//        self.show(addVC, sender: nil)
-    }
-    
     func saveList()
     {
            
@@ -110,7 +87,6 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
            }
 
            UserDefaults.standard.set(vaccItemsDic, forKey: petName)
-          //print(vaccTable)
        }
     
     func loadlist()
@@ -128,7 +104,6 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 
                 vaccTable.append(vaccReminder(title: title, date: date, done: done))
             }
-            //print("vacc陣列儲存到\(NSHomeDirectory())")
         }
         else
         {

@@ -14,14 +14,15 @@ import MapKit
 class Favorite: UITableViewController {
 
     var hospitalsArray:[[String:String]] = [[:]]
-    var count = 0
+    var userFavoriteNameArray:[String]!
     var root:DatabaseReference!
     var datafavorite:DatabaseReference!
     var userFavoriteName:String!
+    var count = 0
     var userID = 0
-    var userFavoriteNameArray:[String]!
     var signal = 0
     var rows = 0
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.signal = 0
@@ -42,7 +43,6 @@ class Favorite: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         print("資料載入中")
         if self.signal != 1{
             DispatchQueue.main.async {
