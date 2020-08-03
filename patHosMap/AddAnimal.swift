@@ -20,6 +20,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     var petCount:Int!
     var userID:Int!
     var storage:Storage!
+    var currentObjectBottomYPosition:CGFloat = 0
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirthday: UITextField!
     let Picker = UIDatePicker()
@@ -79,6 +80,39 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         
         txtBirthday.text = "\(dateString)"
         self.view.endEditing(true)
+    }
+    @IBAction func editingDidBegin(_ sender: UITextField) {
+        print("開始編輯")
+        switch sender.tag {
+        case 3: //電話
+            sender.keyboardType = .phonePad
+        case 6:
+            sender.keyboardType = .emailAddress
+        default:
+            sender.keyboardType = .default
+        }
+        //計算輸入元件的Ｙ軸底緣位置
+        currentObjectBottomYPosition = sender.frame.origin.y + sender.frame.height
+    }
+    @objc func keyboardWillShow(_ sender:Notification){
+        print("鍵盤彈出")
+        print("通知資訊\(sender.userInfo!)")
+        if let keyBoardHeight = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height{
+            print("鍵盤高度\(keyBoardHeight)")
+            //計算扣除鍵盤後的可視高度
+            let visibleHeight = self.view.bounds.size.height - keyBoardHeight
+            print("可視高度\(visibleHeight)")
+            //如果『Ｙ軸底緣位置』比『可視高度』還高，表示元件被鍵盤遮住
+            if currentObjectBottomYPosition > visibleHeight{
+                //移動『Ｙ軸底緣位置』與『可視高度之間的差值』（即被遮住的範圍高度，再少10點）
+                self.view.frame.origin.y -= currentObjectBottomYPosition - visibleHeight + 10
+            }
+        }
+    }
+    @objc func keyboardWillHide(){
+        print("鍵盤收合")
+        //將畫面移回原來的位置
+        self.view.frame.origin.y = 0
     }
     
         @IBAction func didEndOnExit(_ sender: UITextField)
