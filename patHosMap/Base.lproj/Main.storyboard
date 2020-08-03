@@ -655,6 +655,7 @@
                                 <connections>
                                     <action selector="didEndOnExit:" destination="Dz1-U4-WvP" eventType="editingDidEndOnExit" id="whc-0n-Lqw"/>
                                     <action selector="editDidBegin:" destination="Dz1-U4-WvP" eventType="editingDidBegin" id="jdd-Rj-j65"/>
+                                    <action selector="editingDidBegin:" destination="Dz1-U4-WvP" eventType="editingDidEnd" id="Jjf-8h-V89"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="birthday" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d7o-hc-p1k">
@@ -665,6 +666,7 @@
                                 <connections>
                                     <action selector="didEndOnExit:" destination="Dz1-U4-WvP" eventType="editingDidEndOnExit" id="oDL-1U-HWD"/>
                                     <action selector="editDidBegin:" destination="Dz1-U4-WvP" eventType="editingDidBegin" id="6kO-aB-7P5"/>
+                                    <action selector="editingDidBegin:" destination="Dz1-U4-WvP" eventType="editingDidEnd" id="681-8O-NBj"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXk-iZ-NEM">
@@ -732,6 +734,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="didEndOnExit:" destination="Zjm-Il-gRu" eventType="editingDidEndOnExit" id="seF-gD-4IU"/>
+                                    <action selector="editingDidBegin:" destination="Zjm-Il-gRu" eventType="editingDidEnd" id="8m2-kk-RL0"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="生日" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WUb-3A-j6e">
@@ -741,6 +744,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="didEndOnExit:" destination="Zjm-Il-gRu" eventType="editingDidEndOnExit" id="ca7-R2-0FW"/>
+                                    <action selector="editingDidBegin:" destination="Zjm-Il-gRu" eventType="editingDidEnd" id="Ins-gq-oyy"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vF-oo-3W7">
