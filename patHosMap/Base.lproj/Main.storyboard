@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGt-Af-Lk8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGt-Af-Lk8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -465,7 +465,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="JHd-h7-D5p">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome-1" translatesAutoresizingMaskIntoConstraints="NO" id="JHd-h7-D5p">
                                         <rect key="frame" x="16" y="48" width="382" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="pGh-AV-hTE"/>
@@ -1180,7 +1180,7 @@
         <scene sceneID="u0f-sX-Gda">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="gnB-EH-Nkc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="預防針" image="pencil.tip" catalog="system" id="ICo-Y3-OWj"/>
+                    <tabBarItem key="tabBarItem" title="預防針" image="vaccine" id="ICo-Y3-OWj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MDZ-Up-VR8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -1224,13 +1224,13 @@
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
-        <image name="pencil.tip" catalog="system" width="99" height="128"/>
         <image name="phone.circle" catalog="system" width="128" height="121"/>
         <image name="photo-album" width="32" height="32"/>
         <image name="post" width="256" height="256"/>
         <image name="smartphone-with-map-phone-screen-red-gps-dot-isolated-white-background-illustration-location-search_185004-41" width="626" height="626"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <image name="welcome" width="1024" height="369"/>
+        <image name="vaccine" width="24" height="24"/>
+        <image name="welcome-1" width="512" height="512"/>
         <image name="大頭照範例" width="640" height="800"/>
         <image name="天空" width="259" height="194"/>
     </resources>
