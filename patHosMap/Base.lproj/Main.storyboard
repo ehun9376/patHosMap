@@ -358,7 +358,7 @@
                                     <constraint firstAttribute="height" constant="25" id="pJV-RM-n68"/>
                                     <constraint firstAttribute="width" constant="25" id="yeG-pv-hhZ"/>
                                 </constraints>
-                                <state key="normal" image="post"/>
+                                <state key="normal" image="favorite"/>
                                 <connections>
                                     <action selector="btnAddToFavorite:" destination="VfV-7t-FG0" eventType="touchUpInside" id="b3X-gQ-Dif"/>
                                 </connections>
@@ -432,6 +432,7 @@
                     </view>
                     <connections>
                         <outlet property="background" destination="4zT-WX-mAk" id="EBv-Se-DD9"/>
+                        <outlet property="buttonFavorite" destination="XU4-Yz-kJJ" id="UMS-JO-LWF"/>
                         <outlet property="buttonPhone" destination="0RJ-bA-o2J" id="fqB-Aq-y8i"/>
                         <outlet property="hosAddress" destination="5eV-aq-WB5" id="RGN-1f-cC2"/>
                         <outlet property="hosName" destination="K8M-LR-LaZ" id="1RA-fX-V5p"/>
@@ -1227,12 +1228,12 @@
         <image name="camera (1)" width="32" height="32"/>
         <image name="circle" width="16" height="16"/>
         <image name="close" width="32" height="32"/>
+        <image name="favorite" width="32" height="32"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <image name="phone.circle" catalog="system" width="128" height="121"/>
         <image name="photo-album" width="32" height="32"/>
-        <image name="post" width="256" height="256"/>
         <image name="smartphone-with-map-phone-screen-red-gps-dot-isolated-white-background-illustration-location-search_185004-41" width="626" height="626"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="vaccine" width="24" height="24"/>

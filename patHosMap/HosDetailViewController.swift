@@ -15,8 +15,10 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     //@IBOutlet weak var hosTelephone: UILabel!
     @IBOutlet weak var buttonPhone: UIButton!
     @IBOutlet weak var hosAddress: UILabel!
+    @IBOutlet weak var buttonFavorite: UIButton!
     @IBOutlet weak var labelDistance: UILabel!
     @IBOutlet weak var background: UIImageView!
+    
     
     //MARK: - Map相關
     @IBOutlet weak var mapView: MKMapView!
@@ -41,14 +43,21 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in }
                 alert.addAction(button)
                 self.present(alert, animated: true, completion: {})
+                DispatchQueue.main.async {
+                     sender.imageView?.image = UIImage(named: "favorite2")
+                }
             }
             else{
                 self.datafavorite.setValue(self.userFavoriteName + "," + strname)
                 count = 1
+               
                 let alert = UIAlertController(title: "通知", message: "已將\(strname)加入最愛", preferredStyle: .alert)
                 let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in }
                 alert.addAction(button)
                 self.present(alert, animated: true, completion: {})
+                DispatchQueue.main.async {
+                     sender.imageView?.image = UIImage(named: "favorite2")
+                }
             }
 
         }
@@ -132,6 +141,23 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 print(self.userFavoriteName!)
             }
         }
+        
+        if self.userFavoriteName != nil{
+            if self.userFavoriteName.components(separatedBy: ",").contains(strname)
+            {
+                DispatchQueue.main.async {
+                    self.buttonFavorite.imageView?.image = UIImage(named: "favorite2")
+                }
+            }
+            else
+            {
+                DispatchQueue.main.async {
+                    self.buttonFavorite.imageView?.image = UIImage(named: "favorite")
+                }
+            }
+
+        }
+        
     }
     //MARK: - 地圖連結
     func getDestination()

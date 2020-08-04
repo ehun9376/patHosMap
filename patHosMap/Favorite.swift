@@ -157,6 +157,10 @@ class Favorite: UITableViewController, UIActionSheetDelegate {
                 self.present(alert, animated: true, completion: nil)
               
             }
+            else
+            {
+                print("資料尚未下載完成或無資料")
+            }
         }
 
     }
