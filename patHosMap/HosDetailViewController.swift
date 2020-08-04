@@ -170,7 +170,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                     //顯示於label上
                     self.labelDistance.text = "\(String(format:"%.01f", distance)) 公里"
                 }else{
-                    self.labelDistance.text = "轉碼錯誤"
+                    self.labelDistance.text = ""
                 }
             }
         }
