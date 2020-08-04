@@ -68,7 +68,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.navigationItem.title = "疫苗施打紀錄"
+        self.navigationItem.title = "預防針施打紀錄"
         self.listTable.dataSource = self
         self.listTable.delegate = self
     //載入預防針清單
