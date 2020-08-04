@@ -71,6 +71,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         self.navigationItem.title = "預防針施打紀錄"
         self.listTable.dataSource = self
         self.listTable.delegate = self
+        
     //載入預防針清單
         loadlist()
     }
