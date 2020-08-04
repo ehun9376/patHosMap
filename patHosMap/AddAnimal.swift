@@ -114,6 +114,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         let little_data_center:UserDefaults
         little_data_center = UserDefaults.init()
         self.userID = little_data_center.integer(forKey: "userID") - 1
+        self.navigationItem.title = "新增寵物"
     }
     func creatDatePicker(){
         let toolbar = UIToolbar()

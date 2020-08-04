@@ -99,6 +99,7 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
         txtBirthday.clearButtonMode = .always
         txtBirthday.clearButtonMode = .whileEditing
         creatDatePicker()
+        self.navigationItem.title = "修改資料"
         let notificationCenter = NotificationCenter.default
         //向通知中心註冊鍵盤彈出通知
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
