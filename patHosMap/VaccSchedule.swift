@@ -46,6 +46,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
             cell.accessoryType = .checkmark
         }
         cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 230/255, blue: 109/255, alpha: 0.8)
+        cell.selectionStyle = .none
         return cell
     }
     

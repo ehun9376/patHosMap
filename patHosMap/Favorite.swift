@@ -86,6 +86,7 @@ class Favorite: UITableViewController, UIActionSheetDelegate {
         cell.textLabel?.text = self.userFavoriteNameArray[indexPath.row]
         cell.accessoryType = .disclosureIndicator
         cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 230/255, blue: 109/255, alpha: 0.6)
+        cell.selectionStyle = .none
         return cell
     }
     
