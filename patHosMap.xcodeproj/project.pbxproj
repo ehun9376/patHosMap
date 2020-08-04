@@ -22,7 +22,6 @@
 		9537CE8F24C56E7100714D63 /* VaccSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537CE8E24C56E7100714D63 /* VaccSchedule.swift */; };
 		95EE96F424CEB3CD009AD50E /* VaccTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EE96F324CEB3CD009AD50E /* VaccTVC.swift */; };
 		9DFCEFF424C86093006E865D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DFCEFF324C86093006E865D /* GoogleService-Info.plist */; };
-		9DFCEFF824C88634006E865D /* MyCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFCEFF724C88634006E865D /* MyCellTableViewCell.swift */; };
 		9DFCEFFC24C88B6F006E865D /* DetailAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFCEFFB24C88B6F006E865D /* DetailAnimalViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +45,6 @@
 		9537CE8E24C56E7100714D63 /* VaccSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccSchedule.swift; sourceTree = "<group>"; };
 		95EE96F324CEB3CD009AD50E /* VaccTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccTVC.swift; sourceTree = "<group>"; };
 		9DFCEFF324C86093006E865D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9DFCEFF724C88634006E865D /* MyCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellTableViewCell.swift; sourceTree = "<group>"; };
 		9DFCEFFB24C88B6F006E865D /* DetailAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalViewController.swift; sourceTree = "<group>"; };
 		B8909154AF0687E70C9C0427 /* Pods-patHosMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patHosMap.debug.xcconfig"; path = "Target Support Files/Pods-patHosMap/Pods-patHosMap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,7 +108,6 @@
 				9DFCEFF324C86093006E865D /* GoogleService-Info.plist */,
 				3DBBB7FB24C03F05003F5F9F /* Info.plist */,
 				3D0CF71424D24DE600051A39 /* mylocation.gpx */,
-				9DFCEFF724C88634006E865D /* MyCellTableViewCell.swift */,
 			);
 			path = patHosMap;
 			sourceTree = "<group>";
@@ -250,7 +247,6 @@
 				3D06F3E724C1BAB0001F5C3E /* HospitalViewController.swift in Sources */,
 				95EE96F424CEB3CD009AD50E /* VaccTVC.swift in Sources */,
 				9537CE8F24C56E7100714D63 /* VaccSchedule.swift in Sources */,
-				9DFCEFF824C88634006E865D /* MyCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
