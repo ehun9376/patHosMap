@@ -13,7 +13,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var vaccTable = [vaccReminder]()
     var vaccDate:Date?
     var petName = ""
-    var petKind = 0  //to do:根據貓/狗給不同的預防針清單
+    var petKind = "2"  //to do:根據貓/狗給不同的預防針清單
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -108,15 +108,35 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         else
         {
             print("進入else段")
-            vaccTable = [
-            vaccReminder(title: "8週三合一", date: vaccDate! + 4838400, done: false),
-            vaccReminder(title: "16週三合一", date: vaccDate! + 9676800, done: false),
-            vaccReminder(title: "結紮", date: vaccDate! + 9676800, done: false),
-            vaccReminder(title: "狂犬病", date: vaccDate! + 14515200, done: false),
-            vaccReminder(title: "1歲-三合一＆狂犬病", date: vaccDate! + 31536000, done: false),
-            vaccReminder(title: "2歲-三合一＆狂犬病", date: vaccDate! + 63072000, done: false),
-            vaccReminder(title: "3歲-三合一＆狂犬病", date: vaccDate! + 94608000, done: false),
-            ]
+            if petKind == "2"
+            {
+                vaccTable = [
+                vaccReminder(title: "8週-三合一疫苗", date: vaccDate! + 4838400, done: false),
+                vaccReminder(title: "16週-三合一疫苗", date: vaccDate! + 9676800, done: false),
+                vaccReminder(title: "結紮", date: vaccDate! + 9676800, done: false),
+                vaccReminder(title: "狂犬病", date: vaccDate! + 14515200, done: false),
+                vaccReminder(title: "1歲-三合一＆狂犬病", date: vaccDate! + 31536000, done: false),
+                vaccReminder(title: "2歲-三合一＆狂犬病", date: vaccDate! + 63072000, done: false),
+                vaccReminder(title: "3歲-三合一＆狂犬病", date: vaccDate! + 94608000, done: false),
+                ]
+            }
+            else if petKind == "1"
+            {
+                vaccTable = [
+                vaccReminder(title: "6週-六合一疫苗", date: vaccDate! + 3888000, done: false),
+                vaccReminder(title: "10週-第一劑八合一疫苗", date: vaccDate! + 6048000, done: false),
+                vaccReminder(title: "14週-第二劑八合一疫苗", date: vaccDate! + 8467200, done: false),
+                vaccReminder(title: "狂犬病", date: vaccDate! + 9679800, done: false),
+                vaccReminder(title: "18週-第三劑八合一疫苗", date: vaccDate! + 10886400, done: false),
+                vaccReminder(title: "1Y4M-八合一＆狂犬病", date: vaccDate! + 41126400, done: false),
+                vaccReminder(title: "2Y4M-三合一＆狂犬病", date: vaccDate! + 9676904, done: false),
+                ]
+            }
+            else
+            {
+                print("pet kind傳遞錯誤")
+            }
+            
         }
     }
     

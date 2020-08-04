@@ -151,7 +151,9 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
             let jData = self.imgPicture.image!.jpegData(compressionQuality: 0.5)
             picRef.putData(jData!)
             let alert = UIAlertController(title: "完成", message: "資料修改成功！", preferredStyle: .alert)
-            let btnok = UIAlertAction(title: "確認", style: .default, handler: nil)
+            let btnok = UIAlertAction(title: "確定", style: .default) { (ok) in
+                self.navigationController?.popViewController(animated: true)
+            }
             alert.addAction(btnok)
             self.present(alert, animated: true, completion: {})
             self.saveList()

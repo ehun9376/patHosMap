@@ -69,7 +69,9 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         
         //訊息視窗
         let alert = UIAlertController(title: "通知", message: "已新增寵物", preferredStyle: .alert)
-        let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)
+        let btnOK = UIAlertAction(title: "確定", style: .default) { (ok) in
+            self.navigationController?.popViewController(animated: true)
+        }
         alert.addAction(btnOK)
         //顯示訊息視窗
         self.present(alert, animated: true, completion: nil)

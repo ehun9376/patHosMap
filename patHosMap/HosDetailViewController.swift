@@ -167,7 +167,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                     let secondLocation = CLLocation(latitude: self.userlatitube, longitude: self.userlongitube)
                     let distance = firsLocation.distance(from: secondLocation) / 1000
                     //顯示於label上
-                    self.labelDistance.text = " \(String(format:"%.01f", distance)) 公里 "
+                    self.labelDistance.text = "\(String(format:"%.01f", distance)) 公里"
                 }else{
                     self.labelDistance.text = "轉碼錯誤"
                 }

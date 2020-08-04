@@ -144,6 +144,7 @@ class VaccTVC: UITableViewController {
         print(str)
         VaccS.vaccDate = str
         VaccS.petName = array[indexPath.row]["name"]!
+        VaccS.petKind = array[indexPath.row]["kind"]!
     }
     
     
