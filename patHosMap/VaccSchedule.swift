@@ -17,6 +17,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        
         return vaccTable.count
     }
     
@@ -28,6 +29,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         //顯示項目
         cell.textLabel?.text = vaccTable[indexPath.row].title
         cell.textLabel?.textColor = UIColor(red: 26/255, green: 83/255, blue: 92/255, alpha: 0.9)
+        cell.textLabel?.font = .boldSystemFont(ofSize: 18)
         //將日期轉為字串
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
@@ -36,13 +38,14 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let dateFormatString: String = dateFormatter.string(from: vaccTable[indexPath.row].date)
         //顯示日期
         cell.detailTextLabel?.text = dateFormatString
-        cell.detailTextLabel?.textColor = UIColor(red: 78/255, green: 205/255, blue: 196/255, alpha: 0.9)
+        cell.detailTextLabel?.textColor = UIColor.black
         
         //若以做過狀態為打勾
         if vaccTable[indexPath.row].done
         {
             cell.accessoryType = .checkmark
         }
+        cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 230/255, blue: 109/255, alpha: 0.8)
         return cell
     }
     
@@ -71,7 +74,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         self.navigationItem.title = "預防針施打紀錄"
         self.listTable.dataSource = self
         self.listTable.delegate = self
-        
+        self.listTable.rowHeight = 70
     //載入預防針清單
         loadlist()
     }
@@ -83,7 +86,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
     {
            
         let vaccItemsDic = vaccTable.map { (Item) -> [String: Any] in
-
+            
         return ["title": Item.title , "date": Item.date, "done": Item.done]
            }
 

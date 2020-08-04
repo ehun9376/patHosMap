@@ -74,6 +74,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()  //開始update user位置
+       self.table.rowHeight = 70
     }
     // MARK: - Table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
