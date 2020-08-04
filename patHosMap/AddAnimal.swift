@@ -24,7 +24,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     let Picker = UIDatePicker()
     @IBOutlet weak var imgPicture: UIImageView!
     
-    var kind = 1
+    var kind = 0
     @IBOutlet weak var btnCat: UIButton!
     @IBOutlet weak var btnDog: UIButton!
     //MARK: - target action
@@ -43,7 +43,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         kind = 2
     }
     @IBAction func btnInsert(_ sender: UIButton) {
-        if txtName.text!.isEmpty || txtBirthday.text!.isEmpty || imgPicture.image == nil{
+        if txtName.text!.isEmpty || kind == 0 || txtBirthday.text!.isEmpty || imgPicture.image == nil{
             let alert = UIAlertController(title: "資料輸入錯誤", message: "任何一個欄位都不可空白", preferredStyle: .alert)
             let btnOK = UIAlertAction(title: "確定", style: .default, handler: nil)
             alert.addAction(btnOK)
