@@ -65,7 +65,7 @@ class Favorite: UITableViewController, UIActionSheetDelegate {
                     }
                     else{
                         print("進入非1else")
-                        let alert = UIAlertController(title: "警告", message: "找不到資料", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "警告", message: "找不到資料，請先至清單頁新增醫院", preferredStyle: .alert)
                         let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
                         }
                         alert.addAction(button)
