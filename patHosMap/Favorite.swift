@@ -22,7 +22,7 @@ class Favorite: UITableViewController {
     var userID = 0
     var signal = 0
     var rows = 0
-    
+    //MARK: - 生命循環
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.signal = 0

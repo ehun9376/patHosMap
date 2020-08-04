@@ -18,7 +18,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     @IBOutlet weak var labelDistance: UILabel!
     @IBOutlet weak var background: UIImageView!
     
-    //Map相關
+    //MARK: - Map相關
     @IBOutlet weak var mapView: MKMapView!
     let annomation = MKPointAnnotation()
     fileprivate let application = UIApplication.shared
@@ -26,12 +26,12 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var longitude:CLLocationDegrees!
     //locationManager，用於偵測用戶位置變化
     var locationManager = CLLocationManager()
-    //紀錄使用者位置
+    //MARK: - 紀錄使用者位置
     var userlatitube:CLLocationDegrees!
     var userlongitube:CLLocationDegrees!
     var stringWithLink:String!
     var userFavoriteName:String!
-
+    //MARK: - target action
     @IBAction func btnAddToFavorite(_ sender: UIButton) {
         self.userID = little_data_center.integer(forKey: "userID") - 1
         self.datafavorite =  root.child("user").child("\(self.userID!)").child("favorite")
@@ -100,6 +100,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             self.present(alert, animated: true, completion: {})
         }
     }
+    //MARK: - 生命循環
     override func viewDidLoad() {
         super.viewDidLoad()
         background.layer.cornerRadius = 25
@@ -132,7 +133,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             }
         }
     }
-    
+    //MARK: - 地圖連結
     func getDestination()
     {
         let geoCoder = CLGeocoder()

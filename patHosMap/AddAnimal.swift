@@ -14,8 +14,6 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     weak var VaccTVC:VaccTVC!
     var currentObjectBottomPosition:CGFloat = 0
     var root:DatabaseReference!
-    var addanimalname:String!
-    var addname = ""
     var vc:UIImagePickerController!
     var petCount:Int!
     var userID:Int!
@@ -29,7 +27,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     var kind = 1
     @IBOutlet weak var btnCat: UIButton!
     @IBOutlet weak var btnDog: UIButton!
-
+    //MARK: - target action
     @IBAction func btndog(_ sender: UIButton) {
         DispatchQueue.main.async {
             sender.imageView?.image = UIImage(named: "fullcircle")
@@ -66,16 +64,15 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         let picRef = storage.reference().child("data/picture/user\(self.userID!)pet\(self.petCount!).jpeg")
         let jData = self.imgPicture.image!.jpegData(compressionQuality: 0.5)
         picRef.putData(jData!)
-        
         //訊息視窗
         let alert = UIAlertController(title: "通知", message: "已新增寵物", preferredStyle: .alert)
         let btnOK = UIAlertAction(title: "確定", style: .default) { (ok) in
             self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(btnOK)
-        //顯示訊息視窗
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)//顯示訊息視窗
     }
+    //MARK: - UIImagePickerControllerDelegate
     @IBAction func btnCamera(_ sender: UIButton) {
         vc = UIImagePickerController()
         vc.sourceType = .camera
@@ -84,7 +81,6 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         vc.delegate = self
         self.present(vc, animated: true, completion: {})
     }
-    //相簿
     @IBAction func btnPhotoAlbum(_ sender: UIButton) {
         if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
                print("此裝置沒有相簿")
@@ -102,6 +98,16 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
            //開啟相簿
            self.show(imagePicker, sender: nil)
     }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("影像資訊:\(info)")
+        if let image = info[.originalImage] as? UIImage{
+            //將拍照結果顯示在拍照位置
+            imgPicture.image = image
+            //由picker退掉相機畫面
+            picker.dismiss(animated: true, completion: nil)
+        }
+    }
+    //MARK: - 生命循環
     override func viewDidLoad() {
         super.viewDidLoad()
         txtName.clearButtonMode = .always
@@ -116,6 +122,8 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         self.userID = little_data_center.integer(forKey: "userID") - 1
         self.navigationItem.title = "新增寵物"
     }
+    //MARK: - keyboard
+    //日期鍵盤
     func creatDatePicker(){
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -135,6 +143,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         txtBirthday.text = "\(dateString)"
         self.view.endEditing(true)
     }
+    
     @IBAction func editingDidBegin(_ sender: UITextField) {
         print("開始編輯")
         switch sender.tag {
@@ -176,15 +185,6 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     {
 
     }
-    //MARK - UIImagePickerControllerDelegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        print("影像資訊:\(info)")
-        if let image = info[.originalImage] as? UIImage{
-            //將拍照結果顯示在拍照位置
-            imgPicture.image = image
-            //由picker退掉相機畫面
-            picker.dismiss(animated: true, completion: nil)
-        }
-    }
+
 
 }

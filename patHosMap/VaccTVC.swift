@@ -18,6 +18,7 @@ class VaccTVC: UITableViewController {
     var root:DatabaseReference!
     var picRef : StorageReference!
     var storage = Storage.storage()
+    //MARK: - 生命循環
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.signal = 0
@@ -31,7 +32,7 @@ class VaccTVC: UITableViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(buttonEditAction))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(buttonAddAction))
     }
-
+    //MARK: - target action
     @objc func buttonEditAction()
     {
         print("編輯按鈕被按下")

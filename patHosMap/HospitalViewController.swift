@@ -19,7 +19,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
     //紀錄使用者位置
     var userlatitube:CLLocationDegrees!
     var userlongitube:CLLocationDegrees!
-    
+    //MARK: - target action
     @IBAction func changeCity(_ sender: UIButton) {
         UIView.animate(withDuration: 0.5) {
             for city in self.citys{
@@ -75,7 +75,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()  //開始update user位置
     }
-    
+    // MARK: - Table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return hosNameArray.count
     }
