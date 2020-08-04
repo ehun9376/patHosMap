@@ -77,22 +77,33 @@ class VaccTVC: UITableViewController {
                 let addPet = self.root.child("mypet").child("\(self.userID)")
                 print(addPet)
                 addPet.observeSingleEvent(of: .value) { (shot) in
-                    let data = shot.value! as! [[String:String]]
-                    print("從網路下載的\(data)")
-                    if data != [["birthday": "", "name": "", "kind": ""]]{
-                        self.array = data
-                        print("下載後的陣列\(self.array!)")
-                        self.signal = 1
-                        self.rows = self.array.count
-                        self.tableView.reloadData()
+                    if shot.value != nil{
+                        let data = shot.value! as! [[String:String]]
+                        print("從網路下載的\(data)")
+                        if data != [["birthday": "", "name": "", "kind": ""]]{
+                            self.array = data
+                            print("下載後的陣列\(self.array!)")
+                            self.signal = 1
+                            self.rows = self.array.count
+                            self.tableView.reloadData()
+                        }
+                        else {
+                            let alert = UIAlertController(title: "警告", message: "找不到資料", preferredStyle: .alert)
+                            let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+                            }
+                            alert.addAction(button)
+                            self.present(alert, animated: true, completion: {})
+                        }
+
                     }
-                    else {
-                        let alert = UIAlertController(title: "警告", message: "找不到資料", preferredStyle: .alert)
-                        let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
+                    else{
+                        let alert = UIAlertController(title: "警告", message: "資料下載中", preferredStyle: .alert)
+                        let button = UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default) { (button) in
                         }
                         alert.addAction(button)
                         self.present(alert, animated: true, completion: {})
                     }
+                    
                 }
             }
         }
@@ -117,6 +128,7 @@ class VaccTVC: UITableViewController {
                 }else{
                     let petPic = UIImage(data: bytes!)
                     cell.imageView!.image = petPic
+                    
                 }
             }
         }

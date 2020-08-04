@@ -108,7 +108,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
                         cell.detailTextLabel?.text = " \(String(format:"%.01f", distance)) 公里 "
                     }
                     else{
-                        cell.detailTextLabel?.text = "轉碼錯誤"
+                        
                     }
                 }
             }
