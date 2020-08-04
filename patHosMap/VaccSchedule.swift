@@ -27,7 +27,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         //顯示項目
         cell.textLabel?.text = vaccTable[indexPath.row].title
-        
+        cell.textLabel?.textColor = UIColor(red: 26/255, green: 83/255, blue: 92/255, alpha: 0.9)
         //將日期轉為字串
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
