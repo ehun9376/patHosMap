@@ -1,4 +1,4 @@
-//
+ //
 //  Favorite.swift
 //  patHosMap
 //
@@ -11,7 +11,7 @@ import Firebase
 import CoreLocation
 import MapKit
 
-class Favorite: UITableViewController {
+class Favorite: UITableViewController, UIActionSheetDelegate {
 
     var hospitalsArray:[[String:String]] = [[:]]
     var userFavoriteNameArray:[String]!
@@ -22,7 +22,8 @@ class Favorite: UITableViewController {
     var userID = 0
     var signal = 0
     var rows = 0
-    //MARK: - 生命循環
+    fileprivate let application = UIApplication.shared
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.signal = 0
@@ -95,31 +96,62 @@ class Favorite: UITableViewController {
         {
             if hospital["機構名稱"]! == userFavoriteNameArray[indexPath.row]
             {
-                print(hospital["機構地址"]!)
+                //print(hospital["機構地址"]!)
                 //初始化地理資訊編碼器
-               let geoCoder = CLGeocoder()
-               geoCoder.geocodeAddressString(hospital["機構地址"]!) { (arrPlacemark, error)
-                   in
-                   if error != nil
-                   {
-                       print("地址解碼錯誤:\(error.debugDescription)")
-                       return
-                   }
-        
-                   //arrPlacemark回傳[CLPlacemark]?是陣列選擇值
-                   //當確定可以取得地址所對應的經緯度資訊時，確認陣列的第一個元素是否為nil
-                   if let toPlacemark = arrPlacemark?.first
-                   {
-                       //將經緯度資訊轉換成導航地圖上目的地的大頭針
-                       let toPin = MKPlacemark(placemark: toPlacemark)
-                       //設定導航模式選項字典，給openInMaps使用，固定用法，可選開車/行走模式
-                       let naviOption = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
-                       //產生導航地圖上目的地的大頭針
-                       let destinationMapItem = MKMapItem(placemark: toPin)
-                       //從現在位置導航到目的地
-                       destinationMapItem.openInMaps(launchOptions: naviOption)
-                   }
-               }
+                let alert: UIAlertController = UIAlertController(title: "", message: "請選擇", preferredStyle: .actionSheet)
+                
+                let cancelActionButton = UIAlertAction(title: "取消", style: .cancel) { _ in
+                    print("Cancel")
+                }
+                alert.addAction(cancelActionButton)
+
+                let saveActionButton = UIAlertAction(title: "電話", style: .default)
+                    { _ in
+                       print("打電話")
+                        let phoneNumber = hospital["機構電話"]!
+                        if let phoneURL = URL(string: "tel://\(phoneNumber)")
+                        {
+                            if self.application.canOpenURL(phoneURL)
+                            {
+                                self.application.open(phoneURL, options: [:], completionHandler: nil)
+                            }
+                            else
+                            {
+                                //alert
+                            }
+                        }
+                }
+                alert.addAction(saveActionButton)
+
+                let deleteActionButton = UIAlertAction(title: "地圖", style: .default)
+                    { _ in
+                        let geoCoder = CLGeocoder()
+                       geoCoder.geocodeAddressString(hospital["機構地址"]!) { (arrPlacemark, error)
+                           in
+                           if error != nil
+                           {
+                               print("地址解碼錯誤:\(error.debugDescription)")
+                               return
+                           }
+                
+                           //arrPlacemark回傳[CLPlacemark]?是陣列選擇值
+                           //當確定可以取得地址所對應的經緯度資訊時，確認陣列的第一個元素是否為nil
+                           if let toPlacemark = arrPlacemark?.first
+                           {
+                               //將經緯度資訊轉換成導航地圖上目的地的大頭針
+                               let toPin = MKPlacemark(placemark: toPlacemark)
+                               //設定導航模式選項字典，給openInMaps使用，固定用法，可選開車/行走模式
+                               let naviOption = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
+                               //產生導航地圖上目的地的大頭針
+                               let destinationMapItem = MKMapItem(placemark: toPin)
+                               //從現在位置導航到目的地
+                               destinationMapItem.openInMaps(launchOptions: naviOption)
+                           }
+                       }
+                }
+                alert.addAction(deleteActionButton)
+                self.present(alert, animated: true, completion: nil)
+              
             }
         }
 
