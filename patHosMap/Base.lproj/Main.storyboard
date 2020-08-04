@@ -342,9 +342,12 @@
                                 <color key="textColor" red="0.1019607843" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGO-bM-LEH">
-                                <rect key="frame" x="68" y="409" width="164" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGO-bM-LEH">
+                                <rect key="frame" x="68" y="408.5" width="145" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="6HA-w8-UiE"/>
+                                    <constraint firstAttribute="height" constant="21" id="gwX-oa-BjP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -402,6 +405,7 @@
                         <constraints>
                             <constraint firstItem="Xfc-Gb-xG3" firstAttribute="trailing" secondItem="5eV-aq-WB5" secondAttribute="trailing" constant="12" id="2Zg-OS-SQ6"/>
                             <constraint firstItem="4zT-WX-mAk" firstAttribute="leading" secondItem="Xfc-Gb-xG3" secondAttribute="leading" id="2m8-RT-3nI"/>
+                            <constraint firstItem="LuN-il-xjb" firstAttribute="centerY" secondItem="wGO-bM-LEH" secondAttribute="centerY" id="368-Vc-MBb"/>
                             <constraint firstItem="FWA-aS-uxi" firstAttribute="top" secondItem="Xfc-Gb-xG3" secondAttribute="top" id="4V8-Qf-gIJ"/>
                             <constraint firstItem="Xfc-Gb-xG3" firstAttribute="trailing" secondItem="0RJ-bA-o2J" secondAttribute="trailing" constant="118" id="4v5-JL-vtK"/>
                             <constraint firstItem="K8M-LR-LaZ" firstAttribute="leading" secondItem="Xfc-Gb-xG3" secondAttribute="leading" constant="35" id="5ES-Aq-Xbl"/>
@@ -420,6 +424,7 @@
                             <constraint firstItem="QXx-yp-c0z" firstAttribute="leading" secondItem="Xfc-Gb-xG3" secondAttribute="leading" constant="35" id="nnF-8I-Sq7"/>
                             <constraint firstItem="LuN-il-xjb" firstAttribute="top" secondItem="5eV-aq-WB5" secondAttribute="bottom" constant="9" id="ofw-Nt-eHS"/>
                             <constraint firstItem="Xfc-Gb-xG3" firstAttribute="trailing" secondItem="XU4-Yz-kJJ" secondAttribute="trailing" constant="20" id="orS-lF-VqR"/>
+                            <constraint firstItem="wGO-bM-LEH" firstAttribute="leading" secondItem="5eV-aq-WB5" secondAttribute="leading" id="rZt-8j-4M4"/>
                             <constraint firstItem="7ap-je-GNi" firstAttribute="leading" secondItem="Xfc-Gb-xG3" secondAttribute="leading" constant="35" id="rbb-IZ-t68"/>
                             <constraint firstItem="XU4-Yz-kJJ" firstAttribute="top" secondItem="Xfc-Gb-xG3" secondAttribute="top" constant="227" id="yme-6J-gsD"/>
                         </constraints>
