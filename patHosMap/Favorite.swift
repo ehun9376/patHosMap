@@ -35,6 +35,7 @@ class Favorite: UITableViewController, UIActionSheetDelegate {
         self.root = Database.database().reference()
         self.navigationItem.title = "我的最愛"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(buttonEditAction))
+        tableView.rowHeight = 70
     }
     // MARK: - Table view data source
 
@@ -83,6 +84,8 @@ class Favorite: UITableViewController, UIActionSheetDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell:UITableViewCell = UITableViewCell()
         cell.textLabel?.text = self.userFavoriteNameArray[indexPath.row]
+        cell.accessoryType = .disclosureIndicator
+        cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 230/255, blue: 109/255, alpha: 0.6)
         return cell
     }
     

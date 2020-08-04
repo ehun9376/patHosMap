@@ -103,6 +103,7 @@ class AddAnimal: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         if let image = info[.originalImage] as? UIImage{
             //將拍照結果顯示在拍照位置
             imgPicture.image = image
+            
             //由picker退掉相機畫面
             picker.dismiss(animated: true, completion: nil)
         }

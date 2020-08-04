@@ -31,6 +31,7 @@ class VaccTVC: UITableViewController {
         self.navigationItem.title = "我的寵物"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(buttonEditAction))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(buttonAddAction))
+        tableView.rowHeight = 70
     }
     //MARK: - target action
     @objc func buttonEditAction()
@@ -133,7 +134,10 @@ class VaccTVC: UITableViewController {
                 }
             }
         }
+        cell.accessoryType = .disclosureIndicator
+        cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 230/255, blue: 109/255, alpha: 0.6)
         return cell
+        
     }
     //畫面轉入VaccSchedule
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

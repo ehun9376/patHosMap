@@ -114,7 +114,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
             }
             cell.detailTextLabel?.textColor = UIColor.gray
         }
-        
+        cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 230/255, blue: 109/255, alpha: 0.6)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
