@@ -139,23 +139,21 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             if data != ""{
                 self.userFavoriteName = data
                 print(self.userFavoriteName!)
+                if self.userFavoriteName != nil{
+                    if self.userFavoriteName.components(separatedBy: ",").contains(self.strname)
+                {
+                    DispatchQueue.main.async {
+                        self.buttonFavorite.imageView?.image = UIImage(named: "favorite2")
+                    }
+                }
+                else
+                {
+                    DispatchQueue.main.async {
+                        self.buttonFavorite.imageView?.image = UIImage(named: "favorite")
+                    }
+                }
             }
         }
-        
-        if self.userFavoriteName != nil{
-            if self.userFavoriteName.components(separatedBy: ",").contains(strname)
-            {
-                DispatchQueue.main.async {
-                    self.buttonFavorite.imageView?.image = UIImage(named: "favorite2")
-                }
-            }
-            else
-            {
-                DispatchQueue.main.async {
-                    self.buttonFavorite.imageView?.image = UIImage(named: "favorite")
-                }
-            }
-
         }
         
     }
