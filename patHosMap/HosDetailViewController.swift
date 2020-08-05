@@ -39,12 +39,19 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.datafavorite =  root.child("user").child("\(self.userID!)").child("favorite")
         if self.userFavoriteName != nil{
             if self.userFavoriteName.components(separatedBy: ",").contains(strname) || count == 1{
-                let alert = UIAlertController(title: "警告", message: "已在最愛", preferredStyle: .alert)
-                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in }
-                alert.addAction(button)
-                self.present(alert, animated: true, completion: {})
+//                let alert = UIAlertController(title: "警告", message: "已在最愛", preferredStyle: .alert)
+//                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in }
+//                alert.addAction(button)
+//                self.present(alert, animated: true, completion: {})
+                let tempdata = self.userFavoriteName.components(separatedBy: ",").filter { (word) -> Bool in
+                    return word != self.strname
+                }
+                let newdata = tempdata.joined(separator: ",")
+                print("~~~~~~~~~~~\(newdata)")
+                self.datafavorite.setValue(newdata)
+                count = 0
                 DispatchQueue.main.async {
-                     sender.imageView?.image = UIImage(named: "favorite2")
+                     sender.imageView?.image = UIImage(named: "favorite")
                 }
             }
             else{
@@ -134,7 +141,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         //連結資料庫取得登入本APP的使用者的資訊
         root = Database.database().reference()
         self.datafavorite =  root.child("user").child("\(userID!)").child("favorite")
-        self.datafavorite.observeSingleEvent(of: .value) { (shot) in
+        self.datafavorite.observe(.value) { (shot) in
             let data = shot.value! as! String
             if data != ""{
                 self.userFavoriteName = data
