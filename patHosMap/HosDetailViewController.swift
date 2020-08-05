@@ -113,7 +113,7 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     override func viewDidLoad() {
         super.viewDidLoad()
         background.layer.cornerRadius = 25
-        
+        hosName.adjustsFontSizeToFitWidth = true
         self.buttonPhone.setTitle(strtel, for: .normal)
         self.hosAddress.text = straddr
         self.hosName.text = strname

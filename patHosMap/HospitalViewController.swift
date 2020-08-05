@@ -85,6 +85,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
         let cell:UITableViewCell = UITableViewCell(style: .value1, reuseIdentifier: "listCell")
         if indexPath.row <= self.hosNameArray.count{
             cell.textLabel?.text = hosNameArray[indexPath.row]
+            cell.textLabel?.adjustsFontSizeToFitWidth = true
             let geocoder = CLGeocoder()
             geocoder.geocodeAddressString(hosAddrArray[indexPath.row])
             {
@@ -114,6 +115,7 @@ class HospitalViewController: UIViewController,UITableViewDataSource,UITableView
                 }
             }
             cell.detailTextLabel?.textColor = UIColor.gray
+            cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
         }
         //表格背景顏色
         cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 230/255, blue: 109/255, alpha: 0.2)
