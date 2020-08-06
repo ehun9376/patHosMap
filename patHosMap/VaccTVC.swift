@@ -136,10 +136,10 @@ class VaccTVC: UITableViewController {
         }
         cell.accessoryType = .disclosureIndicator
         //表格背景顏色
-        cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 230/255, blue: 109/255, alpha: 0.2)
+        cell.backgroundColor = UIColor(red: 247/255, green: 255/255, blue: 247/255, alpha: 0.8)
         //表格點擊顏色
         let bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor(red: 247/255, green: 255/255, blue: 247/255, alpha: 0.8)
+        bgColorView.backgroundColor = UIColor(displayP3Red: 255/255, green: 230/255, blue: 109/255, alpha: 0.5)
         cell.selectedBackgroundView = bgColorView
         return cell
         
