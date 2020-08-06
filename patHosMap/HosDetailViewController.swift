@@ -37,12 +37,13 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     @IBAction func btnAddToFavorite(_ sender: UIButton) {
         self.userID = little_data_center.integer(forKey: "userID") - 1
         self.datafavorite =  root.child("user").child("\(self.userID!)").child("favorite")
-        if self.userFavoriteName != nil{
+        if self.userFavoriteName != ""{
             if self.userFavoriteName.components(separatedBy: ",").contains(strname) || count == 1{
 //                let alert = UIAlertController(title: "警告", message: "已在最愛", preferredStyle: .alert)
 //                let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in }
 //                alert.addAction(button)
 //                self.present(alert, animated: true, completion: {})
+                print(self.userFavoriteName!)
                 let tempdata = self.userFavoriteName.components(separatedBy: ",").filter { (word) -> Bool in
                     return word != self.strname
                 }
@@ -161,6 +162,9 @@ class HosDetailViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 }
             }
         }
+            else{
+                self.userFavoriteName = data
+            }
         }
         
     }
