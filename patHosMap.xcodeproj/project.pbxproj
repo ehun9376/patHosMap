@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D06F3E724C1BAB0001F5C3E /* HospitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D06F3E624C1BAB0001F5C3E /* HospitalViewController.swift */; };
+		3D4E1D1524E4CBEE009CA582 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E1D1424E4CBEE009CA582 /* MyCell.swift */; };
 		3DBBB7EE24C03F04003F5F9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBB7ED24C03F04003F5F9F /* AppDelegate.swift */; };
 		3DBBB7F024C03F04003F5F9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBB7EF24C03F04003F5F9F /* SceneDelegate.swift */; };
 		3DBBB7F524C03F04003F5F9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBBB7F324C03F04003F5F9F /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		11B90A8FD0A5DB3E22247E4C /* Pods_patHosMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_patHosMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D06F3E624C1BAB0001F5C3E /* HospitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalViewController.swift; sourceTree = "<group>"; };
 		3D0CF71424D24DE600051A39 /* mylocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mylocation.gpx; sourceTree = "<group>"; };
+		3D4E1D1424E4CBEE009CA582 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		3DBBB7EA24C03F04003F5F9F /* patHosMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = patHosMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DBBB7ED24C03F04003F5F9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DBBB7EF24C03F04003F5F9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				3DF35BCD24C535DB00087826 /* HosDetailViewController.swift */,
 				3DFF6C2D24CD60B50015D9AB /* Favorite.swift */,
 				95EE96F324CEB3CD009AD50E /* VaccTVC.swift */,
+				3D4E1D1424E4CBEE009CA582 /* MyCell.swift */,
 				9537CE8C24C56DC300714D63 /* AddAnimal.swift */,
 				9DFCEFFB24C88B6F006E865D /* DetailAnimalViewController.swift */,
 				9537CE8E24C56E7100714D63 /* VaccSchedule.swift */,
@@ -245,6 +248,7 @@
 				9DFCEFFC24C88B6F006E865D /* DetailAnimalViewController.swift in Sources */,
 				9537CE8D24C56DC300714D63 /* AddAnimal.swift in Sources */,
 				3D06F3E724C1BAB0001F5C3E /* HospitalViewController.swift in Sources */,
+				3D4E1D1524E4CBEE009CA582 /* MyCell.swift in Sources */,
 				95EE96F424CEB3CD009AD50E /* VaccTVC.swift in Sources */,
 				9537CE8F24C56E7100714D63 /* VaccSchedule.swift in Sources */,
 			);

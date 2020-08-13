@@ -31,7 +31,7 @@ class VaccTVC: UITableViewController {
         self.navigationItem.title = "我的寵物"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(buttonEditAction))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(buttonAddAction))
-        tableView.rowHeight = 70
+        tableView.rowHeight = 150
     }
     //MARK: - target action
     @objc func buttonEditAction()
@@ -117,19 +117,22 @@ class VaccTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = UITableViewCell()
-        cell.textLabel?.text=self.array[indexPath.row]["name"]
-        cell.imageView?.image = UIImage(named: "DefaultPhoto")
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! MyCell
+//        cell.textLabel?.text=self.array[indexPath.row]["name"]
+//        cell.imageView?.image = UIImage(named: "DefaultPhoto")
+        cell.lblName.text = self.array[indexPath.row]["name"]
+        cell.imgPicture.image = UIImage(named: "DefaultPhoto")
+        
         self.storage = Storage.storage()
         DispatchQueue.main.async {
             self.picRef = self.storage.reference().child("data/picture/user\(self.userID)pet\(indexPath.row).jpeg")
             self.picRef.getData(maxSize: 100000000) { (bytes, error) in
                 if let err = error{
                     print("下載出錯\(err)")
-                    cell.imageView?.image = UIImage(named: "DefaultPhoto")
+                    cell.imgPicture.image = UIImage(named: "DefaultPhoto")
                 }else{
                     let petPic = UIImage(data: bytes!)
-                    cell.imageView!.image = petPic
+                    cell.imgPicture.image = petPic
                     
                 }
             }
