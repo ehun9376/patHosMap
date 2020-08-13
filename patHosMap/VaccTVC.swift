@@ -31,7 +31,7 @@ class VaccTVC: UITableViewController {
         self.navigationItem.title = "我的寵物"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(buttonEditAction))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(buttonAddAction))
-        tableView.rowHeight = 150
+        tableView.rowHeight = 110
     }
     //MARK: - target action
     @objc func buttonEditAction()
