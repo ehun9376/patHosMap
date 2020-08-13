@@ -158,6 +158,7 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
             alert.addAction(btnok)
             self.present(alert, animated: true, completion: {})
             self.saveList()
+            
         }
         
     }
@@ -209,7 +210,7 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
            }
 
            UserDefaults.standard.set(vaccItemsDic, forKey: newPet)
-          
+        UserDefaults.standard.removeObject(forKey: originalPet)
        }
     
     func loadlist()
