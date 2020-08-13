@@ -14,6 +14,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var vaccDate:Date?
     var petName = ""
     var petKind = "2"  //to do:根據貓/狗給不同的預防針清單
+    let userID = UserDefaults.init().integer(forKey: "userID") - 1
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -83,6 +84,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         self.listTable.rowHeight = 70
     //載入預防針清單
         loadlist()
+        print(userID)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
@@ -96,14 +98,16 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return ["title": Item.title , "date": Item.date, "done": Item.done]
            }
 
-           UserDefaults.standard.set(vaccItemsDic, forKey: petName)
+            
+           UserDefaults.standard.set(vaccItemsDic, forKey: "\(userID)" + petName)
+        
        }
     
     func loadlist()
     {
         
-        print("petName is \(petName)")
-        if let userVaccList = UserDefaults.standard.array(forKey: petName) as? [[String:Any]]
+        print(NSHomeDirectory())
+        if let userVaccList = UserDefaults.standard.array(forKey: "\(userID)" + petName) as? [[String:Any]]
         {
             vaccTable = []
             for (index,item) in userVaccList.enumerated()
