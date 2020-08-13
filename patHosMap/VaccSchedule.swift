@@ -94,6 +94,19 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         loadlist()
         print(userID)
         print("viewDidLoad")
+        var date = DateComponents()
+        date.second = 10
+        
+        print("date: \(date)")
+        
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "通知"
+        notificationContent.body = "任務將於 \(date) 到期"
+        notificationContent.badge = 3
+        notificationContent.sound = UNNotificationSound.default
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+        let request = UNNotificationRequest(identifier: "todoNotification", content: notificationContent, trigger:trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
