@@ -173,11 +173,13 @@ class VaccTVC: UITableViewController {
         actionMore.backgroundColor = .blue
         //準備"刪除"按鈕//todo尚未完全
         let actionDelete = UIContextualAction(style: .normal, title: "刪除") { (action, view, completionHanlder) in
+            print("刪除tableROW, 刪除的寵物名稱是\("\(self.userID)" + self.array[indexPath.row]["name"]!)")
+            UserDefaults.standard.removeObject(forKey: "\(self.userID)" + self.array[indexPath.row]["name"]!)
             print("刪除按鈕被按下")
             self.array.remove(at: indexPath.row)
             print("刪除本地陣列")
             tableView.deleteRows(at: [indexPath], with: .fade)
-            print("刪除tableROW")
+            
             self.root = Database.database().reference()
             
             let delPet = self.root.child("mypet").child("\(self.userID)")
