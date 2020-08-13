@@ -45,12 +45,18 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
         if vaccTable[indexPath.row].done
         {
             cell.accessoryType = .checkmark
+            cell.backgroundColor = UIColor(red: 247/255, green: 255/255, blue: 247/255, alpha: 0.8)
+        }
+        else
+        {
+            cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 107/255, blue: 107/255, alpha: 0.1)
         }
         //表格背景顏色
-        cell.backgroundColor = UIColor(red: 247/255, green: 255/255, blue: 247/255, alpha: 0.8)
+        //cell.backgroundColor = UIColor(red: 247/255, green: 255/255, blue: 247/255, alpha: 0.8)
         //表格點擊顏色
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor(displayP3Red: 255/255, green: 230/255, blue: 109/255, alpha: 0.5)
+        
         cell.selectedBackgroundView = bgColorView
         //cell.selectionStyle = .none
         return cell
@@ -65,12 +71,14 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
             cell.accessoryType = UITableViewCell.AccessoryType.none
             vaccTable[indexPath.row].done = false
             print("現在done = false \(vaccTable[indexPath.row])")
+            cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 107/255, blue: 107/255, alpha: 0.1)
         }
         else
         {
             cell.accessoryType = UITableViewCell.AccessoryType.checkmark
             vaccTable[indexPath.row].done = true
             print("現在done = true \(vaccTable[indexPath.row])")
+            cell.backgroundColor = UIColor(red: 247/255, green: 255/255, blue: 247/255, alpha: 0.8)
         }
     }
 
@@ -85,6 +93,7 @@ class VaccSchedule: UIViewController,UITableViewDelegate,UITableViewDataSource {
     //載入預防針清單
         loadlist()
         print(userID)
+        print("viewDidLoad")
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
