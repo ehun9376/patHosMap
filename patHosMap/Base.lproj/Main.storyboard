@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGt-Af-Lk8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGt-Af-Lk8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -106,6 +106,20 @@
                                             <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="JG5-93-0hk"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUg-ZM-7b3">
+                                        <rect key="frame" x="-200" y="0.0" width="400" height="0.0"/>
+                                        <color key="backgroundColor" red="0.30588235289999999" green="0.80392156859999997" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="obT-VG-z4e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="新竹市">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="Kut-8W-Tel"/>
+                                        </connections>
+                                    </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJt-jf-DQn">
                                         <rect key="frame" x="-200" y="0.0" width="400" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -190,6 +204,21 @@
                                             <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="5wv-Da-5UQ"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azz-Wu-alT">
+                                        <rect key="frame" x="-200" y="0.0" width="400" height="0.0"/>
+                                        <color key="backgroundColor" red="0.30588235289999999" green="0.80392156859999997" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="h5w-xD-Zzy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.0" height="-1"/>
+                                        <state key="normal" title="嘉義縣">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="vOe-mu-CWN"/>
+                                        </connections>
+                                    </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Th-8w-63f">
                                         <rect key="frame" x="-200" y="0.0" width="400" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -218,6 +247,20 @@
                                             <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="sVZ-aN-GP2"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqd-Sq-EFg">
+                                        <rect key="frame" x="-200" y="0.0" width="400" height="0.0"/>
+                                        <color key="backgroundColor" red="0.30588235289999999" green="0.80392156859999997" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="g5M-DP-a6V"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="宜蘭縣">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="unS-lc-gkl"/>
+                                        </connections>
+                                    </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD5-hd-2fe">
                                         <rect key="frame" x="-200" y="0.0" width="400" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -230,6 +273,48 @@
                                         </state>
                                         <connections>
                                             <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="494-xB-w6w"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6G-ja-HMh">
+                                        <rect key="frame" x="-200" y="0.0" width="400" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="mAH-jZ-tg8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="高雄市">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="XWm-Lp-wZI"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFo-t5-3Tz">
+                                        <rect key="frame" x="-200" y="0.0" width="400" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="JP5-Ys-N8e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="澎湖縣">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="FgB-u9-Bst"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JF-V6-jzA">
+                                        <rect key="frame" x="-200" y="0.0" width="400" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="Lyf-ZY-Wio"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="金門縣">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choicedCity:" destination="7Xy-u4-Rhr" eventType="touchUpInside" id="nbQ-4q-0Wr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -281,6 +366,12 @@
                         <outletCollection property="citys" destination="9Th-8w-63f" collectionClass="NSMutableArray" id="hcn-J0-xfp"/>
                         <outletCollection property="citys" destination="w2L-S3-Izs" collectionClass="NSMutableArray" id="9aN-Xc-wjg"/>
                         <outletCollection property="citys" destination="xD5-hd-2fe" collectionClass="NSMutableArray" id="BtZ-rZ-G14"/>
+                        <outletCollection property="citys" destination="A6G-ja-HMh" collectionClass="NSMutableArray" id="PM9-Bv-yfd"/>
+                        <outletCollection property="citys" destination="gUg-ZM-7b3" collectionClass="NSMutableArray" id="gzv-wP-2uF"/>
+                        <outletCollection property="citys" destination="bFo-t5-3Tz" collectionClass="NSMutableArray" id="7LG-HE-Dov"/>
+                        <outletCollection property="citys" destination="7JF-V6-jzA" collectionClass="NSMutableArray" id="bTD-em-2r7"/>
+                        <outletCollection property="citys" destination="bqd-Sq-EFg" collectionClass="NSMutableArray" id="Fq1-cb-6tN"/>
+                        <outletCollection property="citys" destination="Azz-Wu-alT" collectionClass="NSMutableArray" id="3To-Fk-5Hy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyz-PC-KHw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

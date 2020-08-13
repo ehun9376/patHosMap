@@ -171,7 +171,7 @@ class VaccTVC: UITableViewController {
             print("修改按鈕被按下")
         }
         actionMore.backgroundColor = .blue
-        //準備"刪除"按鈕//todo尚未完全
+        //準備"刪除"按鈕//todo尚未完全 
         let actionDelete = UIContextualAction(style: .normal, title: "刪除") { (action, view, completionHanlder) in
             print("刪除tableROW, 刪除的寵物名稱是\("\(self.userID)" + self.array[indexPath.row]["name"]!)")
             UserDefaults.standard.removeObject(forKey: "\(self.userID)" + self.array[indexPath.row]["name"]!)
