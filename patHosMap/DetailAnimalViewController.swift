@@ -117,7 +117,7 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
             self.petdata = (shot.value! as! [String:String])
             self.txtName.text = self.petdata["name"]
             self.txtBirthday.text = self.petdata["birthday"]
-            self.originalPet = self.petdata["name"]!
+            self.originalPet = "\(self.userID)" + self.petdata["name"]!
             self.loadlist()
             self.storage = Storage.storage()
             self.picRef = self.storage.reference().child("data/picture/user\(self.userID)pet\(self.petID!).jpeg")
@@ -145,7 +145,7 @@ class DetailAnimalViewController: UIViewController,UINavigationControllerDelegat
         }
         else{
             self.petdata["name"] = self.txtName.text
-            self.newPet = self.txtName.text!
+            self.newPet = "\(userID)" + self.txtName.text!
             self.petdata["birthday"] = self.txtBirthday.text
             self.editPet.setValue(petdata)
             self.picRef = storage.reference().child("data/picture/user\(self.userID)pet\(self.petID!).jpeg")
