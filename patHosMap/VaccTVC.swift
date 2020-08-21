@@ -90,7 +90,7 @@ class VaccTVC: UITableViewController {
                             self.tableView.reloadData()
                         }
                         else {
-                            let alert = UIAlertController(title: "警告", message: "找不到資料", preferredStyle: .alert)
+                            let alert = UIAlertController(title: "警告", message: "請先新增寵物", preferredStyle: .alert)
                             let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (button) in
                             }
                             alert.addAction(button)
